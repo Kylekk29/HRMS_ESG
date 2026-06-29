@@ -1,0 +1,42 @@
+Employee: Thomas Yip
+ID: EMP009
+Department: Marketing
+Position: Marketing Manager
+Email: thomas.yip@company.com
+Phone: +852-9123-4009
+Hire Date: 2020-06-01
+Status: Active
+Salary: HKD$75000/month
+KPI Average: 84/100
+Notes: Solid marketing leader, growing digital capabilities
+
+--- Recent KPI ---
+  2025-Q1: 88/100 (Exceeds Expectations) — Successful product launch campaign, 50K leads generated
+  2025-Q2: 85/100 (Exceeds Expectations) — Brand awareness up 35% YoY
+  2025-Q3: 82/100 (Exceeds Expectations) — Digital marketing ROI improved by 25%
+  2025-Q4: 80/100 (Meets Expectations) — Holiday campaign results met targets
+
+--- CV ---
+CV: Thomas Yip
+Email: thomas.yip@company.com | Phone: +852-9123-4009
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Marketing Manager with 8+ years in marketing. KPI average: 83.8/100.
+
+EXPERIENCE
+Marketing Manager | AI-HR Bridge Tech | 2020-06-01 - Present
+Based in Hong Kong, marketing department.
+  - 2025-Q1: Score 88/100 (Exceeds Expectations)
+  - 2025-Q2: Score 85/100 (Exceeds Expectations)
+  - 2025-Q3: Score 82/100 (Exceeds Expectations)
+  - 2025-Q4: Score 80/100 (Meets Expectations)
+
+Tools: Google Analytics, SEMrush, HubSpot, Canva
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

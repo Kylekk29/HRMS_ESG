@@ -1,0 +1,42 @@
+Employee: Vincent Lau
+ID: EMP012
+Department: Human Resources
+Position: HR Specialist
+Email: vincent.lau@company.com
+Phone: +852-9123-4012
+Hire Date: 2024-06-01
+Status: Active
+Salary: HKD$32000/month
+KPI Average: 79/100
+Notes: Reliable junior HR staff
+
+--- Recent KPI ---
+  2025-Q1: 80/100 (Meets Expectations) — Good onboarding coordination, positive feedback
+  2025-Q2: 78/100 (Meets Expectations) — Completed payroll processing accurately
+  2025-Q3: 82/100 (Exceeds Expectations) — Took initiative to improve onboarding docs
+  2025-Q4: 76/100 (Meets Expectations) — Solid support during benefits enrollment
+
+--- CV ---
+CV: Vincent Lau
+Email: vincent.lau@company.com | Phone: +852-9123-4012
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+HR Specialist with 4+ years in human resources. KPI average: 79.0/100.
+
+EXPERIENCE
+HR Specialist | AI-HR Bridge Tech | 2024-06-01 - Present
+Based in Hong Kong, human resources department.
+  - 2025-Q1: Score 80/100 (Meets Expectations)
+  - 2025-Q2: Score 78/100 (Meets Expectations)
+  - 2025-Q3: Score 82/100 (Exceeds Expectations)
+  - 2025-Q4: Score 76/100 (Meets Expectations)
+
+Tools: BambooHR, Workday, Tableau
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

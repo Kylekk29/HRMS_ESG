@@ -1,0 +1,42 @@
+Employee: Henry Cheng
+ID: EMP015
+Department: Operations
+Position: Operations Manager
+Email: henry.cheng@company.com
+Phone: +852-9123-4015
+Hire Date: 2019-08-01
+Status: Active
+Salary: HKD$70000/month
+KPI Average: 76/100
+Notes: Decent operations manager, could improve on strategic planning
+
+--- Recent KPI ---
+  2025-Q1: 82/100 (Exceeds Expectations) — Operations efficiency improved by 15%
+  2025-Q2: 78/100 (Meets Expectations) — Stable operations, routine management
+  2025-Q3: 75/100 (Meets Expectations) — Vendor management improved, cost savings 8%
+  2025-Q4: 70/100 (Meets Expectations) — Some delays in supply chain coordination
+
+--- CV ---
+CV: Henry Cheng
+Email: henry.cheng@company.com | Phone: +852-9123-4015
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Operations Manager with 8+ years in operations. KPI average: 76.2/100.
+
+EXPERIENCE
+Operations Manager | AI-HR Bridge Tech | 2019-08-01 - Present
+Based in Hong Kong, operations department.
+  - 2025-Q1: Score 82/100 (Exceeds Expectations)
+  - 2025-Q2: Score 78/100 (Meets Expectations)
+  - 2025-Q3: Score 75/100 (Meets Expectations)
+  - 2025-Q4: Score 70/100 (Meets Expectations)
+
+Tools: SAP, Oracle, MS Office, Jira
+
+EDUCATION
+Relevant degree -- INSEAD
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

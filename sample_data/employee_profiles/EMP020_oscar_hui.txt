@@ -1,0 +1,42 @@
+Employee: Oscar Hui
+ID: EMP020
+Department: Sales
+Position: Regional Sales Manager
+Email: oscar.hui@company.com
+Phone: +852-9123-4020
+Hire Date: 2020-11-01
+Status: Active
+Salary: HKD$65000/month
+KPI Average: 74/100
+Notes: Pressure from underperforming region
+
+--- Recent KPI ---
+  2025-Q1: 80/100 (Meets Expectations) — Region achieved 100% of target
+  2025-Q2: 76/100 (Meets Expectations) — New team members ramping up
+  2025-Q3: 72/100 (Meets Expectations) — Regional growth flat, competition intensifying
+  2025-Q4: 68/100 (Below Expectations) — Missed regional target, 2 reps resigned
+
+--- CV ---
+CV: Oscar Hui
+Email: oscar.hui@company.com | Phone: +852-9123-4020
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Regional Sales Manager with 7+ years in sales. KPI average: 74.0/100.
+
+EXPERIENCE
+Regional Sales Manager | AI-HR Bridge Tech | 2020-11-01 - Present
+Based in Hong Kong, sales department.
+  - 2025-Q1: Score 80/100 (Meets Expectations)
+  - 2025-Q2: Score 76/100 (Meets Expectations)
+  - 2025-Q3: Score 72/100 (Meets Expectations)
+  - 2025-Q4: Score 68/100 (Below Expectations)
+
+Tools: Salesforce, HubSpot, Tableau, LinkedIn Sales Nav
+
+EDUCATION
+Relevant degree -- CityU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

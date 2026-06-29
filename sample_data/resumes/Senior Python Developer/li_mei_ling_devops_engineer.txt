@@ -1,0 +1,35 @@
+Name: 李美玲 (Lee Mei-Ling)
+Email: lee.mei.ling@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced DevOps Engineer with 7+ years of expertise in AWS. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+DevOps Engineer
+
+=== WORK EXPERIENCE ===
+
+Sr. DevOps Engineer | Tech Company | 2019-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+DevOps Engineer | Previous Company | 2016-2019
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: AWS, K8s, Terraform, CI/CD, Helm, ArgoCD, Prometheus, Python
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 7+ years of professional experience in AWS
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

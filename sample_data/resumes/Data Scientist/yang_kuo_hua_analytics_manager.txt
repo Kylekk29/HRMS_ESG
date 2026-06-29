@@ -1,0 +1,35 @@
+Name: 楊國華 (Yang Kuo-Hua)
+Email: yang.kuo.hua@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Analytics Manager with 8+ years of expertise in Python. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Analytics Manager
+
+=== WORK EXPERIENCE ===
+
+Sr. Analytics Manager | Tech Company | 2018-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Analytics Manager | Previous Company | 2015-2018
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: Python, SQL, Tableau, Airflow, dbt, Data Modeling, Team Leadership
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 8+ years of professional experience in Python
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

@@ -1,0 +1,42 @@
+Employee: Tiffany Mak
+ID: EMP022
+Department: Marketing
+Position: Digital Marketing Specialist
+Email: tiffany.mak@company.com
+Phone: +852-9123-4022
+Hire Date: 2024-09-01
+Status: Active
+Salary: HKD$30000/month
+KPI Average: 75/100
+Notes: Growing marketer, potential to specialize
+
+--- Recent KPI ---
+  2025-Q1: 72/100 (Meets Expectations) — Learning quickly, supported campaign execution
+  2025-Q2: 76/100 (Meets Expectations) — Social media engagement up 25%
+  2025-Q3: 74/100 (Meets Expectations) — Running SEM campaigns with improving ROI
+  2025-Q4: 78/100 (Meets Expectations) — Good performance on holiday campaigns
+
+--- CV ---
+CV: Tiffany Mak
+Email: tiffany.mak@company.com | Phone: +852-9123-4022
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Digital Marketing Specialist with 3+ years in marketing. KPI average: 75.0/100.
+
+EXPERIENCE
+Digital Marketing Specialist | AI-HR Bridge Tech | 2024-09-01 - Present
+Based in Hong Kong, marketing department.
+  - 2025-Q1: Score 72/100 (Meets Expectations)
+  - 2025-Q2: Score 76/100 (Meets Expectations)
+  - 2025-Q3: Score 74/100 (Meets Expectations)
+  - 2025-Q4: Score 78/100 (Meets Expectations)
+
+Tools: Google Analytics, SEMrush, HubSpot, Canva
+
+EDUCATION
+Relevant degree -- UBC
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

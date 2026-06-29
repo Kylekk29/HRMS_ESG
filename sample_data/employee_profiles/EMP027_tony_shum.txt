@@ -1,0 +1,44 @@
+Employee: Tony Shum
+ID: EMP027
+Department: Engineering
+Position: Software Engineer
+Email: tony.shum@company.com
+Phone: +852-9123-4027
+Hire Date: 2022-08-01
+Status: Active
+Salary: HKD$52000/month
+KPI Average: 67/100
+Notes: Performance issues, PIP recommended, possible restructuring
+
+--- Recent KPI ---
+  2025-Q1: 73/100 (Meets Expectations) — Met most sprint commitments
+  2025-Q2: 70/100 (Meets Expectations) — Average velocity, some rework needed
+  2025-Q3: 68/100 (Below Expectations) — Missed deadlines, communication issues
+  2025-Q4: 58/100 (Below Expectations) — Significant performance drop, code quality concerns
+
+--- CV ---
+CV: Tony Shum
+Email: tony.shum@company.com | Phone: +852-9123-4027
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Software Engineer with 5+ years in engineering. KPI average: 67.2/100.
+
+EXPERIENCE
+Software Engineer | AI-HR Bridge Tech | 2022-08-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 73/100 (Meets Expectations)
+  - 2025-Q2: Score 70/100 (Meets Expectations)
+  - 2025-Q3: Score 68/100 (Below Expectations)
+  - 2025-Q4: Score 58/100 (Below Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- INSEAD
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

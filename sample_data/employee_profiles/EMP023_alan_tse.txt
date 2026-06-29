@@ -1,0 +1,44 @@
+Employee: Alan Tse
+ID: EMP023
+Department: Engineering
+Position: Junior Developer
+Email: alan.tse@company.com
+Phone: +852-9123-4023
+Hire Date: 2025-01-15
+Status: Active
+Salary: HKD$25000/month
+KPI Average: 71/100
+Notes: New hire, growing but needs time
+
+--- Recent KPI ---
+  2025-Q1: 68/100 (Below Expectations) — Steep learning curve, needs mentoring
+  2025-Q2: 72/100 (Meets Expectations) — Improving, completed first feature independently
+  2025-Q3: 75/100 (Meets Expectations) — Becoming productive, good attitude
+  2025-Q4: 70/100 (Meets Expectations) — Progress steady but slower than expected
+
+--- CV ---
+CV: Alan Tse
+Email: alan.tse@company.com | Phone: +852-9123-4023
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Junior Developer with 3+ years in engineering. KPI average: 71.2/100.
+
+EXPERIENCE
+Junior Developer | AI-HR Bridge Tech | 2025-01-15 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 68/100 (Below Expectations)
+  - 2025-Q2: Score 72/100 (Meets Expectations)
+  - 2025-Q3: Score 75/100 (Meets Expectations)
+  - 2025-Q4: Score 70/100 (Meets Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

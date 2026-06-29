@@ -1,0 +1,42 @@
+Employee: Grace Tam
+ID: EMP008
+Department: Sales
+Position: Sales Development Rep
+Email: grace.tam@company.com
+Phone: +852-9123-4008
+Hire Date: 2024-01-15
+Status: Active
+Salary: HKD$28000/month
+KPI Average: 81/100
+Notes: Promising SDR, consider promoting to AE
+
+--- Recent KPI ---
+  2025-Q1: 85/100 (Exceeds Expectations) — Exceeded lead generation target by 40%
+  2025-Q2: 80/100 (Meets Expectations) — Consistent performance, good pipeline contribution
+  2025-Q3: 82/100 (Exceeds Expectations) — Top SDR for Q3, 120% of target
+  2025-Q4: 78/100 (Meets Expectations) — Steady performance, ready for AE promotion
+
+--- CV ---
+CV: Grace Tam
+Email: grace.tam@company.com | Phone: +852-9123-4008
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Sales Development Rep with 4+ years in sales. KPI average: 81.2/100.
+
+EXPERIENCE
+Sales Development Rep | AI-HR Bridge Tech | 2024-01-15 - Present
+Based in Hong Kong, sales department.
+  - 2025-Q1: Score 85/100 (Exceeds Expectations)
+  - 2025-Q2: Score 80/100 (Meets Expectations)
+  - 2025-Q3: Score 82/100 (Exceeds Expectations)
+  - 2025-Q4: Score 78/100 (Meets Expectations)
+
+Tools: Salesforce, HubSpot, Tableau, LinkedIn Sales Nav
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

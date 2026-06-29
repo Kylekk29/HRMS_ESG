@@ -1,0 +1,44 @@
+Employee: Sam Leung
+ID: EMP025
+Department: Engineering
+Position: Senior Data Scientist
+Email: sam.leung@company.com
+Phone: +852-9123-4025
+Hire Date: 2021-05-15
+Status: Active
+Salary: HKD$95000/month
+KPI Average: 92/100
+Notes: Top talent, high market demand for skills
+
+--- Recent KPI ---
+  2025-Q1: 94/100 (Outstanding) — ML model improved prediction accuracy by 35%
+  2025-Q2: 91/100 (Outstanding) — Deployed recommendation system to production
+  2025-Q3: 89/100 (Exceeds Expectations) — Published research paper, brought recognition
+  2025-Q4: 92/100 (Outstanding) — Built NLP pipeline for customer feedback analysis
+
+--- CV ---
+CV: Sam Leung
+Email: sam.leung@company.com | Phone: +852-9123-4025
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Senior Data Scientist with 7+ years in engineering. KPI average: 91.5/100.
+
+EXPERIENCE
+Senior Data Scientist | AI-HR Bridge Tech | 2021-05-15 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 94/100 (Outstanding)
+  - 2025-Q2: Score 91/100 (Outstanding)
+  - 2025-Q3: Score 89/100 (Exceeds Expectations)
+  - 2025-Q4: Score 92/100 (Outstanding)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

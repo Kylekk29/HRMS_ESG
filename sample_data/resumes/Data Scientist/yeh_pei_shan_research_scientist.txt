@@ -1,0 +1,35 @@
+Name: 葉佩珊 (Yeh Pei-Shan)
+Email: yeh.pei.shan@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Research Scientist with 5+ years of expertise in Python. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Research Scientist
+
+=== WORK EXPERIENCE ===
+
+Sr. Research Scientist | Tech Company | 2021-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Research Scientist | Previous Company | 2018-2021
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: Python, PyTorch, Computer Vision, OpenCV, YOLO, Research, Publications
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 5+ years of professional experience in Python
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

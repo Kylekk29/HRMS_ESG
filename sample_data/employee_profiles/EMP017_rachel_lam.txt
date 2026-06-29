@@ -1,0 +1,42 @@
+Employee: Rachel Lam
+ID: EMP017
+Department: Product
+Position: Product Manager
+Email: rachel.lam@company.com
+Phone: +852-9123-4017
+Hire Date: 2021-01-10
+Status: Active
+Salary: HKD$78000/month
+KPI Average: 86/100
+Notes: Excellent PM, potential for Director of Product
+
+--- Recent KPI ---
+  2025-Q1: 90/100 (Outstanding) — Launched flagship product V2 ahead of schedule
+  2025-Q2: 88/100 (Exceeds Expectations) — User adoption up 45% post-launch
+  2025-Q3: 85/100 (Exceeds Expectations) — Strong cross-functional coordination
+  2025-Q4: 82/100 (Exceeds Expectations) — Delivered Q4 roadmap commitments
+
+--- CV ---
+CV: Rachel Lam
+Email: rachel.lam@company.com | Phone: +852-9123-4017
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Product Manager with 7+ years in product. KPI average: 86.2/100.
+
+EXPERIENCE
+Product Manager | AI-HR Bridge Tech | 2021-01-10 - Present
+Based in Hong Kong, product department.
+  - 2025-Q1: Score 90/100 (Outstanding)
+  - 2025-Q2: Score 88/100 (Exceeds Expectations)
+  - 2025-Q3: Score 85/100 (Exceeds Expectations)
+  - 2025-Q4: Score 82/100 (Exceeds Expectations)
+
+Tools: Jira, Figma, Mixpanel, Amplitude
+
+EDUCATION
+Relevant degree -- PolyU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

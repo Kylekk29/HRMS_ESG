@@ -1,0 +1,42 @@
+Employee: Angela Cheung
+ID: EMP011
+Department: Human Resources
+Position: HR Director
+Email: angela.cheung@company.com
+Phone: +852-9123-4011
+Hire Date: 2017-01-15
+Status: Active
+Salary: HKD$95000/month
+KPI Average: 89/100
+Notes: Excellent HR leader, drives culture initiatives
+
+--- Recent KPI ---
+  2025-Q1: 90/100 (Outstanding) — Implemented new HRIS system, improved efficiency 30%
+  2025-Q2: 88/100 (Exceeds Expectations) — Reduced time-to-hire from 45 to 30 days
+  2025-Q3: 92/100 (Outstanding) — Employee satisfaction score up to 4.2/5
+  2025-Q4: 87/100 (Exceeds Expectations) — Completed company-wide DEI initiative
+
+--- CV ---
+CV: Angela Cheung
+Email: angela.cheung@company.com | Phone: +852-9123-4011
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+HR Director with 11+ years in human resources. KPI average: 89.2/100.
+
+EXPERIENCE
+HR Director | AI-HR Bridge Tech | 2017-01-15 - Present
+Based in Hong Kong, human resources department.
+  - 2025-Q1: Score 90/100 (Outstanding)
+  - 2025-Q2: Score 88/100 (Exceeds Expectations)
+  - 2025-Q3: Score 92/100 (Outstanding)
+  - 2025-Q4: Score 87/100 (Exceeds Expectations)
+
+Tools: BambooHR, Workday, Tableau
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

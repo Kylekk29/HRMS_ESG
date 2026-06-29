@@ -1,0 +1,42 @@
+Employee: Brenda Tsang
+ID: EMP035
+Department: Executive
+Position: CEO
+Email: brenda.tsang@company.com
+Phone: +852-9123-4035
+Hire Date: 2015-06-01
+Status: Active
+Salary: HKD$280000/month
+KPI Average: 96/100
+Notes: Founder & CEO, driving company vision
+
+--- Recent KPI ---
+  2025-Q1: 98/100 (Outstanding) — Company revenue up 40% YoY, Series A secured
+  2025-Q2: 96/100 (Outstanding) — Expanded to 3 new markets, headcount grew 50%
+  2025-Q3: 97/100 (Outstanding) — Strategic partnerships with 2 Fortune 500 companies
+  2025-Q4: 95/100 (Outstanding) — Record year: $50M revenue, 200+ employees
+
+--- CV ---
+CV: Brenda Tsang
+Email: brenda.tsang@company.com | Phone: +852-9123-4035
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+CEO with 13+ years in executive. KPI average: 96.5/100.
+
+EXPERIENCE
+CEO | AI-HR Bridge Tech | 2015-06-01 - Present
+Based in Hong Kong, executive department.
+  - 2025-Q1: Score 98/100 (Outstanding)
+  - 2025-Q2: Score 96/100 (Outstanding)
+  - 2025-Q3: Score 97/100 (Outstanding)
+  - 2025-Q4: Score 95/100 (Outstanding)
+
+Tools: Board reporting, Strategic planning, Financial modeling
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

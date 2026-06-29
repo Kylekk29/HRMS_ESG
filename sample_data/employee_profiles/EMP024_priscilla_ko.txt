@@ -1,0 +1,42 @@
+Employee: Priscilla Ko
+ID: EMP024
+Department: Human Resources
+Position: Recruitment Specialist
+Email: priscilla.ko@company.com
+Phone: +852-9123-4024
+Hire Date: 2023-04-01
+Status: Active
+Salary: HKD$36000/month
+KPI Average: 81/100
+Notes: Strong recruiter, key for scaling plans
+
+--- Recent KPI ---
+  2025-Q1: 82/100 (Exceeds Expectations) — Filled 8 positions with avg 20-day time-to-hire
+  2025-Q2: 85/100 (Exceeds Expectations) — Excellent candidate sourcing, quality hires
+  2025-Q3: 80/100 (Meets Expectations) — Consistent recruitment pipeline maintained
+  2025-Q4: 78/100 (Meets Expectations) — Good year overall, met all hiring targets
+
+--- CV ---
+CV: Priscilla Ko
+Email: priscilla.ko@company.com | Phone: +852-9123-4024
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Recruitment Specialist with 5+ years in human resources. KPI average: 81.2/100.
+
+EXPERIENCE
+Recruitment Specialist | AI-HR Bridge Tech | 2023-04-01 - Present
+Based in Hong Kong, human resources department.
+  - 2025-Q1: Score 82/100 (Exceeds Expectations)
+  - 2025-Q2: Score 85/100 (Exceeds Expectations)
+  - 2025-Q3: Score 80/100 (Meets Expectations)
+  - 2025-Q4: Score 78/100 (Meets Expectations)
+
+Tools: BambooHR, Workday, Tableau
+
+EDUCATION
+Relevant degree -- CUHK
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

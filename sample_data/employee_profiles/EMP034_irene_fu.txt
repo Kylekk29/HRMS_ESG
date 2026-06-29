@@ -1,0 +1,36 @@
+Employee: Irene Fu
+ID: EMP034
+Department: Marketing
+Position: Marketing Intern
+Email: irene.fu@company.com
+Phone: +852-9123-4034
+Hire Date: 2026-01-05
+Status: Active
+Salary: HKD$12000/month
+KPI Average: 80/100
+Notes: Intern until June 2026, potential full-time conversion
+
+--- Recent KPI ---
+  2025-Q4: 80/100 (Meets Expectations) — Good intern, supporting social media campaigns
+
+--- CV ---
+CV: Irene Fu
+Email: irene.fu@company.com | Phone: +852-9123-4034
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Marketing Intern with 2+ years in marketing. KPI average: 80.0/100.
+
+EXPERIENCE
+Marketing Intern | AI-HR Bridge Tech | 2026-01-05 - Present
+Based in Hong Kong, marketing department.
+  - 2025-Q4: Score 80/100 (Meets Expectations)
+
+Tools: Google Analytics, SEMrush, HubSpot, Canva
+
+EDUCATION
+Relevant degree -- PolyU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

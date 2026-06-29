@@ -1,0 +1,44 @@
+Employee: Moses Chin
+ID: EMP032
+Department: Engineering
+Position: Security Engineer
+Email: moses.chin@company.com
+Phone: +852-9123-4032
+Hire Date: 2023-01-10
+Status: Active
+Salary: HKD$72000/month
+KPI Average: 89/100
+Notes: Critical role, hard to replace
+
+--- Recent KPI ---
+  2025-Q1: 92/100 (Outstanding) — Security audit passed with zero critical findings
+  2025-Q2: 90/100 (Outstanding) — Implemented SOC 2 compliance framework
+  2025-Q3: 88/100 (Exceeds Expectations) — Security training program for all staff launched
+  2025-Q4: 85/100 (Exceeds Expectations) — Zero security incidents in Q4
+
+--- CV ---
+CV: Moses Chin
+Email: moses.chin@company.com | Phone: +852-9123-4032
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Security Engineer with 5+ years in engineering. KPI average: 88.8/100.
+
+EXPERIENCE
+Security Engineer | AI-HR Bridge Tech | 2023-01-10 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 92/100 (Outstanding)
+  - 2025-Q2: Score 90/100 (Outstanding)
+  - 2025-Q3: Score 88/100 (Exceeds Expectations)
+  - 2025-Q4: Score 85/100 (Exceeds Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- PolyU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

@@ -1,0 +1,44 @@
+Employee: Sarah Wong
+ID: EMP002
+Department: Engineering
+Position: Backend Developer
+Email: sarah.wong@company.com
+Phone: +852-9123-4002
+Hire Date: 2021-07-01
+Status: Active
+Salary: HKD$55000/month
+KPI Average: 69/100
+Notes: Performance declining, consider PIP
+
+--- Recent KPI ---
+  2025-Q1: 78/100 (Meets Expectations) — Completed assigned tasks satisfactorily
+  2025-Q2: 72/100 (Meets Expectations) — Average performance, some delays in delivery
+  2025-Q3: 65/100 (Below Expectations) — Missed 2 sprint deadlines, quality concerns
+  2025-Q4: 60/100 (Below Expectations) — Struggling with technical complexity, needs supervision
+
+--- CV ---
+CV: Sarah Wong
+Email: sarah.wong@company.com | Phone: +852-9123-4002
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Backend Developer with 7+ years in engineering. KPI average: 68.8/100.
+
+EXPERIENCE
+Backend Developer | AI-HR Bridge Tech | 2021-07-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 78/100 (Meets Expectations)
+  - 2025-Q2: Score 72/100 (Meets Expectations)
+  - 2025-Q3: Score 65/100 (Below Expectations)
+  - 2025-Q4: Score 60/100 (Below Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

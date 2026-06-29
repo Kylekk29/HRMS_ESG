@@ -1,0 +1,29 @@
+Senior Python Developer
+
+Job Description:
+We are seeking an experienced Senior Python Developer to join our platform engineering team. You will design and build scalable backend services, lead technical initiatives, and mentor junior developers.
+
+Required Qualifications:
+• 5+ years of professional Python development experience
+• Strong experience with FastAPI or Django REST Framework
+• Deep knowledge of PostgreSQL and database design
+• Experience with Docker and container orchestration (Kubernetes preferred)
+• Proficiency in designing and consuming RESTful APIs
+• Experience with message queuing systems (RabbitMQ, Kafka)
+• Strong understanding of software design patterns and clean architecture
+
+Preferred Qualifications:
+• Experience with Apache Kafka or similar event streaming platforms
+• Kubernetes administration and Helm chart development
+• Experience leading a team of 3+ developers
+• Microservices architecture experience
+• Cloud platform experience (AWS/GCP)
+• CI/CD pipeline implementation
+
+Responsibilities:
+• Design and build scalable backend services and APIs
+• Lead code reviews and establish coding standards
+• Mentor junior and mid-level developers
+• Participate in architecture decisions and system design
+• Ensure high availability and performance of production systems
+• Collaborate with product, QA, and DevOps teams

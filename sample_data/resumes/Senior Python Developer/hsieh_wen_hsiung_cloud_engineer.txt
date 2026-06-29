@@ -1,0 +1,35 @@
+Name: 謝文雄 (Hsieh Wen-Hsiung)
+Email: hsieh.wen.hsiung@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Cloud Engineer with 6+ years of expertise in AWS. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Cloud Engineer
+
+=== WORK EXPERIENCE ===
+
+Sr. Cloud Engineer | Tech Company | 2020-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Cloud Engineer | Previous Company | 2017-2020
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: AWS, GCP, K8s, Terraform, Python, Go, Serverless, CI/CD
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 6+ years of professional experience in AWS
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

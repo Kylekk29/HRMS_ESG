@@ -1,0 +1,42 @@
+Employee: Winnie Chu
+ID: EMP026
+Department: Finance
+Position: Accountant
+Email: winnie.chu@company.com
+Phone: +852-9123-4026
+Hire Date: 2020-01-10
+Status: On Leave
+Salary: HKD$40000/month
+KPI Average: 70/100
+Notes: On maternity leave until September 2026
+
+--- Recent KPI ---
+  2025-Q1: 75/100 (Meets Expectations) — AP/AR processing completed on time
+  2025-Q2: 72/100 (Meets Expectations) — Accurate reconciliations, routine work
+  2025-Q3: 70/100 (Meets Expectations) — Steady performance, minor errors found
+  2025-Q4: 65/100 (Below Expectations) — Extended leave, backup needed for coverage
+
+--- CV ---
+CV: Winnie Chu
+Email: winnie.chu@company.com | Phone: +852-9123-4026
+Location: Hong Kong
+Status: On leave
+
+PROFESSIONAL SUMMARY
+Accountant with 8+ years in finance. KPI average: 70.5/100.
+
+EXPERIENCE
+Accountant | AI-HR Bridge Tech | 2020-01-10 - Present
+Based in Hong Kong, finance department.
+  - 2025-Q1: Score 75/100 (Meets Expectations)
+  - 2025-Q2: Score 72/100 (Meets Expectations)
+  - 2025-Q3: Score 70/100 (Meets Expectations)
+  - 2025-Q4: Score 65/100 (Below Expectations)
+
+Tools: Netsuite, Tableau, Advanced Excel, SAP
+
+EDUCATION
+Relevant degree -- PolyU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

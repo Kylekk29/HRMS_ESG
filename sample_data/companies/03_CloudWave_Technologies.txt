@@ -1,0 +1,43 @@
+=== Company Profile: CloudWave Technologies ===
+
+Industry: Cloud Infrastructure / DevOps Solutions
+Founded: 2020
+Headquarters: Taipei, Taiwan
+Employees: 48
+CEO: Jennifer Chen
+
+=== Mission ===
+Simplify cloud-native infrastructure so engineers can focus on product.
+
+=== Core Values ===
+1. Reliability — Our platform must be boringly stable.
+2. Developer Empathy — We build tools we'd want to use ourselves.
+3. Transparency — Open source, open roadmap, open communication.
+4. Efficiency — Optimize for impact, not hours worked.
+5. Diversity — Different perspectives build better products.
+
+=== Culture & Work Style ===
+- Office-first (Taipei), remote-friendly for senior ICs
+- Stand-up desks, nap pods, and a well-stocked kitchen
+- No fixed working hours — trust-based autonomy
+- Weekly tech talks and knowledge-sharing sessions
+- English and Mandarin bilingual work environment
+- Monthly team social events (board games, karaoke, hiking)
+
+=== Engineering Culture ===
+- Trunk-based development with feature flags
+- Everything runs on Kubernetes (their own product)
+- Chaos engineering Fridays
+- Blameless culture with thorough incident reviews
+- Pair programming for complex features
+- All engineers have on-call rotation (1 week per month)
+
+=== HR Policies ===
+- Probation: 3 months
+- Annual leave: 15 days (starting), up to 22 days after 3 years
+- Sick leave: 30 days half-pay
+- Full health and dental insurance
+- Professional development budget: NT$60,000/year
+- Free lunch and snacks in office
+- Employee stock options available
+- Conference attendance fully covered (2 per year)

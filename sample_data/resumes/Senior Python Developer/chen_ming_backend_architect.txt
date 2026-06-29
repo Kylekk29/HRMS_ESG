@@ -1,0 +1,35 @@
+Name: 陳志明 (Chen Ming)
+Email: chen.ming@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Backend Architect with 10+ years of expertise in Python. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Backend Architect
+
+=== WORK EXPERIENCE ===
+
+Sr. Backend Architect | Tech Company | 2016-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Backend Architect | Previous Company | 2013-2016
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: Python, Go, Distributed Systems, AWS, K8s, System Design, CQRS/ES
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 10+ years of professional experience in Python
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

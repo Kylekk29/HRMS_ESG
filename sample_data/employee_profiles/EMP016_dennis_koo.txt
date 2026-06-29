@@ -1,0 +1,42 @@
+Employee: Dennis Koo
+ID: EMP016
+Department: Operations
+Position: Logistics Coordinator
+Email: dennis.koo@company.com
+Phone: +852-9123-4016
+Hire Date: 2022-10-01
+Status: Active
+Salary: HKD$30000/month
+KPI Average: 62/100
+Notes: Consistent attendance and performance issues
+
+--- Recent KPI ---
+  2025-Q1: 70/100 (Meets Expectations) — Logistics operations ran smoothly
+  2025-Q2: 65/100 (Below Expectations) — Shipping delays on 3 occasions
+  2025-Q3: 60/100 (Below Expectations) — High absenteeism, affecting team throughput
+  2025-Q4: 55/100 (Below Expectations) — Continued attendance issues, performance improvement needed
+
+--- CV ---
+CV: Dennis Koo
+Email: dennis.koo@company.com | Phone: +852-9123-4016
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Logistics Coordinator with 5+ years in operations. KPI average: 62.5/100.
+
+EXPERIENCE
+Logistics Coordinator | AI-HR Bridge Tech | 2022-10-01 - Present
+Based in Hong Kong, operations department.
+  - 2025-Q1: Score 70/100 (Meets Expectations)
+  - 2025-Q2: Score 65/100 (Below Expectations)
+  - 2025-Q3: Score 60/100 (Below Expectations)
+  - 2025-Q4: Score 55/100 (Below Expectations)
+
+Tools: SAP, Oracle, MS Office, Jira
+
+EDUCATION
+Relevant degree -- CityU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

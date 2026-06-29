@@ -1,0 +1,35 @@
+Name: 黃雅婷 (Huang Ya-Ting)
+Email: huang.ya.ting@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Full-Stack Developer with 5+ years of expertise in Python. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Full-Stack Developer
+
+=== WORK EXPERIENCE ===
+
+Sr. Full-Stack Developer | Tech Company | 2021-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Full-Stack Developer | Previous Company | 2018-2021
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: Python, React, TypeScript, Node.js, PostgreSQL, Docker, GraphQL
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 5+ years of professional experience in Python
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

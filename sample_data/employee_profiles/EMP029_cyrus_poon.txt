@@ -1,0 +1,42 @@
+Employee: Cyrus Poon
+ID: EMP029
+Department: Operations
+Position: Facilities Coordinator
+Email: cyrus.poon@company.com
+Phone: +852-9123-4029
+Hire Date: 2024-07-01
+Status: Active
+Salary: HKD$26000/month
+KPI Average: 74/100
+Notes: Reliable admin staff
+
+--- Recent KPI ---
+  2025-Q1: 78/100 (Meets Expectations) — Office operations running smoothly
+  2025-Q2: 75/100 (Meets Expectations) — Good vendor management, cost savings 10%
+  2025-Q3: 72/100 (Meets Expectations) — Admin tasks handled efficiently
+  2025-Q4: 70/100 (Meets Expectations) — Year-end facilities prep completed
+
+--- CV ---
+CV: Cyrus Poon
+Email: cyrus.poon@company.com | Phone: +852-9123-4029
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Facilities Coordinator with 4+ years in operations. KPI average: 73.8/100.
+
+EXPERIENCE
+Facilities Coordinator | AI-HR Bridge Tech | 2024-07-01 - Present
+Based in Hong Kong, operations department.
+  - 2025-Q1: Score 78/100 (Meets Expectations)
+  - 2025-Q2: Score 75/100 (Meets Expectations)
+  - 2025-Q3: Score 72/100 (Meets Expectations)
+  - 2025-Q4: Score 70/100 (Meets Expectations)
+
+Tools: SAP, Oracle, MS Office, Jira
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

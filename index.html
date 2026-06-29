@@ -1,0 +1,3757 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <script src="/static/chart.min.js"></script>
+  <script src="/static/marked.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR Expert Pro 4.0 | AI Talent Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    :root {
+      --ink: #0b0d17;
+      --ink2: #1a1b2f;
+      --ink3: #2d2f4a;
+      --muted: #6b6f8e;
+      --muted2: #8b8fa8;
+      --border: rgba(59, 91, 219, 0.12);
+      --border2: rgba(59, 91, 219, 0.06);
+      --surface: rgba(255, 255, 255, 0.85);
+      --surface2: #f4f5fb;
+      --surface3: #e8eaf6;
+      --accent: #4f46e5;
+      --accent2: #4338ca;
+      --accent-light: rgba(79, 70, 229, 0.08);
+      --accent-glow: rgba(79, 70, 229, 0.15);
+      --green: #059669;
+      --green-light: rgba(5, 150, 105, 0.08);
+      --green-glow: rgba(5, 150, 105, 0.2);
+      --red: #dc2626;
+      --red-light: rgba(220, 38, 38, 0.08);
+      --amber: #d97706;
+      --amber-light: rgba(217, 119, 6, 0.08);
+      --teal: #0891b2;
+      --teal-light: rgba(8, 145, 178, 0.08);
+      --purple: #7c3aed;
+      --pink: #ec4899;
+      --radius: 10px;
+      --radius-lg: 18px;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 16px rgba(79, 70, 229, 0.06);
+      --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 32px rgba(79, 70, 229, 0.08);
+      --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.02), 0 16px 48px rgba(79, 70, 229, 0.1);
+      --bg-gradient: linear-gradient(135deg, #f4f5fb 0%, #eef2ff 50%, #f0f7fe 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0b0d17 0%, #12142b 50%, #1a1b3a 100%);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 50;
+      border-right: 1px solid rgba(79, 70, 229, 0.1);
+    }
+
+    .sidebar-logo {
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), transparent);
+    }
+
+    .sidebar-logo .brand {
+      font-family: "Inter", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #818cf8, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    .sidebar-logo .tagline {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      padding: 16px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow-y: auto;
+    }
+
+    .nav-section-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.2);
+      padding: 16px 14px 6px;
+      font-weight: 600;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: none;
+      background: none;
+      text-align: left;
+      width: 100%;
+      position: relative;
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-item.active {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(124, 58, 237, 0.1));
+      color: #a5b4fc;
+      box-shadow: inset 2px 0 0 var(--accent);
+    }
+
+    .nav-item .icon {
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .main {
+      margin-left: 260px;
+      flex: 1;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .page-title {
+      font-family: "Inter", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--ink), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .badge-status {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--green-light);
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 1px solid rgba(5, 150, 105, 0.15);
+    }
+
+    .content {
+      padding: 28px 32px;
+    }
+
+    .section {
+      display: none;
+      animation: fadeUp 0.3s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-title {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+
+    .card-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-row.full {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row.tri {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink3);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.8);
+      transition: all 0.2s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+
+    .dropzone {
+      border: 2px dashed rgba(79, 70, 229, 0.2);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(124, 58, 237, 0.03));
+      position: relative;
+    }
+
+    .dropzone:hover,
+    .dropzone.drag-over {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    .dropzone input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .dropzone-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .file-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin: 4px;
+      border: 1px solid rgba(79, 70, 229, 0.1);
+    }
+
+    .file-chip button {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      transition: opacity 0.15s;
+    }
+
+    .file-chip button:hover {
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    .speak-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: .85rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0.5;
+      transition: opacity .2s;
+      line-height: 1;
+    }
+
+    .speak-btn:hover {
+      opacity: 1;
+    }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--red);
+      border: 1.5px solid var(--red);
+    }
+
+    .btn-danger:hover {
+      background: var(--red-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+    }
+
+    .btn-full {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .alert {
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .alert.show {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .alert-success {
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid rgba(5, 150, 105, 0.15);
+    }
+
+    .alert-error {
+      background: var(--red-light);
+      color: var(--red);
+      border: 1px solid rgba(220, 38, 38, 0.15);
+    }
+
+    .alert-info {
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(79, 70, 229, 0.15);
+    }
+
+    .alert-warning {
+      background: var(--amber-light);
+      color: var(--amber);
+      border: 1px solid rgba(217, 119, 6, 0.15);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .stat-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-family: "Inter", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--ink), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    thead tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border2);
+      color: var(--ink3);
+      vertical-align: middle;
+    }
+
+    tbody tr {
+      transition: background 0.15s;
+    }
+
+    tbody tr:hover {
+      background: var(--accent-light);
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: capitalize;
+    }
+
+    .pill-green {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .pill-red {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .pill-amber {
+      background: var(--amber-light);
+      color: var(--amber);
+    }
+
+    .pill-blue {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .pill-teal {
+      background: var(--teal-light);
+      color: var(--teal);
+    }
+
+    .score-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .score-bar-bg {
+      flex: 1;
+      height: 6px;
+      background: rgba(79, 70, 229, 0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cand-card {
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .cand-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .cand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cand-name {
+      font-family: "Inter", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .cand-score {
+      font-family: "Inter", sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .metric-item {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.03), rgba(124, 58, 237, 0.03));
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      transition: all 0.2s;
+    }
+
+    .metric-item:hover {
+      background: var(--accent-light);
+      border-color: rgba(79, 70, 229, 0.15);
+    }
+
+    .metric-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+
+    .score-num {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .analysis-box {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.02), rgba(124, 58, 237, 0.02));
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: all 0.2s;
+    }
+
+    .analysis-box:hover {
+      background: rgba(79, 70, 229, 0.04);
+      border-color: rgba(79, 70, 229, 0.1);
+    }
+
+    .analysis-box h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink3);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .analysis-box ul,
+    .analysis-box ol {
+      padding-left: 18px;
+      font-size: 0.82rem;
+      color: var(--ink3);
+    }
+
+    .analysis-box li {
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .summary-strip {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.03));
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--ink3);
+      margin: 14px 0;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-md);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-header h3 {
+      font-family: "Syne", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .tab-pills {
+      display: flex;
+      gap: 8px;
+      background: var(--surface3);
+      padding: 4px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-pill {
+      flex: 1;
+      min-width: 80px;
+      padding: 8px 12px;
+      border: none;
+      background: none;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.15s;
+      text-align: center;
+    }
+
+    .tab-pill.active {
+      background: var(--surface);
+      color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .leave-item {
+      margin-bottom: 12px;
+    }
+
+    .leave-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.83rem;
+      margin-bottom: 4px;
+    }
+
+    .leave-track {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .leave-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .loader {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .loader.show {
+      display: block;
+    }
+
+    .loader p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(79, 70, 229, 0.1);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .labour-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .labour-stat-card {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(124, 58, 237, 0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+    }
+
+    .labour-stat-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .labour-stat-card .stat-value {
+      font-family: "Inter", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .labour-stat-card .stat-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 6px;
+    }
+
+    .labour-section-title {
+      font-family: "Inter", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink3);
+      margin: 24px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .labour-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+
+    .labour-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ink2);
+      border-bottom: 2px solid var(--accent);
+      letter-spacing: 0.07em;
+      background: var(--surface3);
+    }
+
+    .labour-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border2);
+      color: var(--ink3);
+      vertical-align: middle;
+    }
+
+    .labour-table tr {
+      transition: background 0.15s;
+    }
+
+    .labour-table tr:hover td {
+      background: var(--accent-light);
+    }
+
+    .labour-score-bar {
+      display: inline-block;
+      height: 8px;
+      border-radius: 4px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .labour-rec-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin: 8px 0;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      border-left: 4px solid var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .labour-rec-box ul {
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+
+    .labour-rec-box li {
+      margin-bottom: 4px;
+    }
+
+    .tag-critical {
+      background: linear-gradient(135deg, #ff4757, #ff6b81);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-high {
+      background: linear-gradient(135deg, #ff6348, #ff7f50);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-medium {
+      background: linear-gradient(135deg, #ffa502, #ffbe76);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-low {
+      background: linear-gradient(135deg, #2ed573, #7bed9f);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-retain {
+      background: linear-gradient(135deg, #2ed573, #7bed9f);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-upskill {
+      background: linear-gradient(135deg, #1e90ff, #54a0ff);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-pip {
+      background: linear-gradient(135deg, #ffa502, #ffbe76);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .tag-separate {
+      background: linear-gradient(135deg, #ff4757, #ff6b81);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .markdown-body {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--ink3);
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4 {
+      margin: 16px 0 8px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .markdown-body h1 {
+      font-size: 1.2rem;
+    }
+
+    .markdown-body h2 {
+      font-size: 1.1rem;
+    }
+
+    .markdown-body h3 {
+      font-size: 1rem;
+    }
+
+    .markdown-body h4 {
+      font-size: 0.95rem;
+    }
+
+    .markdown-body p {
+      margin: 0 0 10px;
+      color: var(--ink3);
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 22px;
+      margin: 6px 0 12px;
+    }
+
+    .markdown-body li {
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+
+    .markdown-body li>ul,
+    .markdown-body li>ol {
+      margin: 2px 0;
+    }
+
+    .markdown-body strong {
+      font-weight: 700;
+      color: var(--ink2);
+    }
+
+    .markdown-body em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .markdown-body code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      background: var(--surface3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--purple);
+    }
+
+    .markdown-body pre {
+      background: var(--ink2);
+      color: #e2e8f0;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      margin: 12px 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .markdown-body pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .markdown-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 8px 16px;
+      margin: 12px 0;
+      background: var(--accent-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--ink3);
+    }
+
+    .markdown-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.82rem;
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .markdown-body th {
+      background: var(--surface3);
+      font-weight: 700;
+      color: var(--ink2);
+    }
+
+    .markdown-body td {
+      color: var(--ink3);
+    }
+
+    .markdown-body img {
+      max-width: 100%;
+      border-radius: var(--radius);
+    }
+
+    .markdown-body a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .markdown-body a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="brand">HR Expert Pro</div>
+        <div class="tagline">AI Talent Platform v4.0</div>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item" id="nav-dashboard"><span class="icon">📊</span><span>Dashboard</span></button>
+        <div class="nav-section-label">AI Features</div>
+        <button class="nav-item" id="nav-cv"><span class="icon">📄</span><span>CV Screening</span></button>
+        <button class="nav-item" id="nav-culture"><span class="icon">🏢</span><span>Company Culture</span></button>
+        <button class="nav-item" id="nav-interview"><span class="icon">🎤</span><span>Interview Assist</span></button>
+        <button class="nav-item" id="nav-risk"><span class="icon">⚠️</span><span>Employee Chat</span></button>
+        <button class="nav-item" id="nav-empdoc"><span class="icon">📁</span><span>Employee Docs</span></button>
+        <button class="nav-item" id="nav-labour"><span class="icon">🔮</span><span>Labour Demand</span></button>
+        <div class="nav-section-label">HRMS</div>
+        <button class="nav-item" id="nav-hrms"><span class="icon">👥</span><span>Employees</span></button>
+        <button class="nav-item" id="nav-attendance"><span class="icon">🕐</span><span>Attendance</span></button>
+        <button class="nav-item" id="nav-leave"><span class="icon">📅</span><span>Leave Management</span></button>
+        <button class="nav-item" id="nav-payroll"><span class="icon">💰</span><span>Payroll</span></button>
+        <button class="nav-item" id="nav-development"><span class="icon">🎓</span><span>Development</span></button>
+      </nav>
+      <div class="sidebar-footer">v4.0 · AI-HR Bridge</div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <div class="topbar">
+        <div class="page-title" id="page-title">Dashboard</div>
+        <div>
+          <span class="badge-status" id="healthBadge">● Checking...</span>
+        </div>
+      </div>
+      <div class="content">
+        <!-- ============ DASHBOARD ============ -->
+        <div id="section-dashboard" class="section">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">Total Employees</div>
+              <div class="stat-value" id="dashTotal">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Active</div>
+              <div class="stat-value" id="dashActive">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">On Leave</div>
+              <div class="stat-value" id="dashOnLeave">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Departments</div>
+              <div class="stat-value" id="dashDepts">—</div>
+            </div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">Present Today</div>
+              <div class="stat-value" id="dashPresent">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Pending Approvals</div>
+              <div class="stat-value" id="dashPending">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Active Projects</div>
+              <div class="stat-value" id="dashProjects">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Avg Salary</div>
+              <div class="stat-value" id="dashAvgSalary">—</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">📋 Recent Screening History</div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Candidates</th>
+                    <th>JD Preview</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="recentScreenings"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ CV SCREENING ============ -->
+        <div id="section-cv" class="section">
+          <div class="card">
+            <div class="card-title">Batch CV Screening</div>
+            <div class="card-sub">
+              Upload up to 25 resumes — AI evaluates candidates against your job description.
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Job Description (JD)</label>
+              <textarea id="jdInput" rows="4"
+                placeholder="Describe the role: required skills, experience level, responsibilities..."></textarea>
+            </div>
+            <div class="card" style="margin-bottom: 16px">
+              <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer"
+                onclick="toggleWeights()">
+                <div class="card-title" style="margin-bottom: 0">⚖️ Custom Scoring Weights</div>
+                <span id="weightsToggle">▼</span>
+              </div>
+              <div id="weightsPanel" style="display: none; margin-top: 16px">
+                <div class="form-row" style="grid-template-columns: repeat(3, 1fr)">
+                  <div class="field">
+                    <label>Core Competency</label>
+                    <input type="range" id="w-core" min="0" max="100" value="25" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">25%</span>
+                  </div>
+                  <div class="field">
+                    <label>Experience</label>
+                    <input type="range" id="w-exp" min="0" max="100" value="20" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">20%</span>
+                  </div>
+                  <div class="field">
+                    <label>Education</label>
+                    <input type="range" id="w-edu" min="0" max="100" value="10" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">10%</span>
+                  </div>
+                  <div class="field">
+                    <label>Culture Fit</label>
+                    <input type="range" id="w-culture" min="0" max="100" value="15" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">15%</span>
+                  </div>
+                  <div class="field">
+                    <label>Development</label>
+                    <input type="range" id="w-dev" min="0" max="100" value="15" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">15%</span>
+                  </div>
+                  <div class="field">
+                    <label>Intelligence</label>
+                    <input type="range" id="w-int" min="0" max="100" value="15" oninput="updateWeightDisplay()" />
+                    <span class="weight-val">15%</span>
+                  </div>
+                </div>
+                <div style="margin-top: 8px">
+                  <span id="weightTotal" style="font-weight: 700; color: var(--green)">Total: 100%</span>
+                </div>
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>
+                Candidate Resumes
+                <span style="color: var(--muted)">(PDF, DOCX, TXT)</span>
+              </label>
+              <div class="dropzone">
+                <input type="file" id="cvFiles" multiple="" accept=".pdf,.docx,.txt"
+                  onchange="handleFiles('cvFiles', 'cvChips')" />
+                <div class="dropzone-icon">📥</div>
+                <p>
+                  Drag &amp; drop resumes or
+                  <strong>browse files</strong>
+                </p>
+              </div>
+              <div id="cvChips" style="margin-top: 10px"></div>
+            </div>
+            <button class="btn btn-primary btn-full" id="screenBtn" onclick="runScreening()">
+              🎯 Start AI Screening
+            </button>
+            <div id="screenAlert" class="alert"></div>
+          </div>
+          <div class="loader" id="screenLoader">
+            <div class="spinner"></div>
+            <p>Embedding CVs and running AI analysis…</p>
+          </div>
+          <div id="chartContainer" style="display: none; margin-bottom: 24px">
+            <div class="card">
+              <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                    margin-bottom: 20px;
+                  ">
+                <div>
+                  <div class="card-title">📊 Score Chart</div>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center">
+                  <button class="btn btn-outline btn-sm" onclick="sortResults('desc')">🔽 Highest</button>
+                  <button class="btn btn-outline btn-sm" onclick="sortResults('asc')">🔼 Lowest</button>
+                </div>
+              </div>
+              <canvas id="scoreChart" height="300" style="max-height: 300px; width: 100%"></canvas>
+            </div>
+          </div>
+          <div id="screenResults"></div>
+        </div>
+
+        <!-- ============ CULTURE ============ -->
+        <div id="section-culture" class="section">
+          <div class="card">
+            <div class="card-title">Company Culture, Detail Information &amp; Rules</div>
+            <div class="card-sub">Upload handbook, values, policy documents or financial reports with automatic version control.</div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Culture Document</label>
+              <div class="dropzone">
+                <input type="file" id="cultureFile" accept=".pdf,.docx,.txt"
+                  onchange="handleFiles('cultureFile', 'cultureChips')" />
+                <div class="dropzone-icon">🏢</div>
+                <p>
+                  Drag &amp; drop or
+                  <strong>browse</strong>
+                </p>
+              </div>
+              <div id="cultureChips" style="margin-top: 10px"></div>
+            </div>
+            <button class="btn btn-primary" id="cultureBtn" onclick="uploadCulture()">📤 Upload &amp; Index</button>
+            <div id="cultureAlert" class="alert"></div>
+          </div>
+        </div>
+
+        <!-- ============ INTERVIEW ASSIST ============ -->
+        <div id="section-interview" class="section">
+          <div class="card">
+            <div class="card-title">🎤 Interview Assistant</div>
+            <div class="card-sub">Paste interview transcript for AI evaluation across 7 dimensions.</div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Job Description</label>
+              <textarea id="interviewJD" rows="3" placeholder="Paste the job description..."></textarea>
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Core Competency Requirements (optional)</label>
+              <input type="text" id="interviewCompetency" placeholder="e.g., Python, Leadership, Agile" />
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Interview Transcript</label>
+              <textarea id="interviewTranscript" rows="10"
+                placeholder="Paste the interview transcript or notes..."></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="runInterviewAnalysis()">🔍 Analyze Interview</button>
+            <div id="interviewAlert" class="alert"></div>
+          </div>
+          <div id="interviewResult"></div>
+        </div>
+
+        <!-- REPLACE the risk section (around line 748) with this: -->
+        <!-- ============ EMPLOYEE CHAT ============ -->
+        <div id="section-risk" class="section">
+          <div class="card">
+            <div class="card-title">💬 Employee AI Chat</div>
+            <div class="card-sub">Chat with AI about any employee using their complete data (RAG-powered).</div>
+
+            <!-- Employee selector -->
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <div style="display: flex; gap: 8px">
+                  <select id="riskEmpId" onchange="loadEmployeeProfile()" style="flex: 1">
+                    <option value="">— Select Employee —</option>
+                  </select>
+                  <button class="btn btn-outline btn-sm" onclick="loadEmployeeList()">🔄</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Employee quick info -->
+            <div id="empQuickInfo" style="
+                  display: none;
+                  margin-bottom: 16px;
+                  padding: 12px;
+                  background: var(--surface2);
+                  border-radius: var(--radius);
+                  font-size: 0.88rem;
+                "></div>
+
+            <!-- Chat history display -->
+            <div id="chatHistory" style="
+                  max-height: 400px;
+                  overflow-y: auto;
+                  margin-bottom: 16px;
+                  padding: 12px;
+                  background: var(--surface2);
+                  border-radius: var(--radius);
+                  border: 1px solid var(--border);
+                "></div>
+
+            <!-- Query input -->
+            <div class="field" style="margin-bottom: 16px">
+              <label>Your Question</label>
+              <textarea id="riskQuery" rows="3"
+                placeholder="Ask anything about this employee... e.g. What are their key strengths? How is their attendance? What risks do you see?"></textarea>
+            </div>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap">
+              <button class="btn btn-primary" onclick="runRisk()">💬 Ask AI</button>
+              <button class="btn btn-outline btn-sm" onclick="runQuickRisk()">⚠️ Quick Risk Check</button>
+              <button class="btn btn-outline btn-sm" onclick="runSkillCheck()">🔍 Skills Review</button>
+              <button class="btn btn-outline btn-sm" onclick="runAttendanceCheck()">📊 Attendance</button>
+              <button class="btn btn-outline btn-sm" onclick="runDevelopmentSuggestions()">🎓 Development
+                Suggestions</button>
+              <button class="btn btn-outline btn-sm" onclick="clearChat()">🗑️ Clear Chat</button>
+            </div>
+
+            <div id="riskAlert" class="alert"></div>
+            <div id="riskResult" style="margin-top: 16px"></div>
+          </div>
+        </div>
+
+        <!-- ============ EMPLOYEE DOCS ============ -->
+        <div id="section-empdoc" class="section">
+          <div class="card">
+            <div class="card-title">Upload Employee Documents</div>
+            <div class="card-sub">Index CV, reviews, or profile documents per employee for semantic search.</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="empDocId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Document Type</label>
+                <select id="empDocType">
+                  <option value="cv">CV / Resume</option>
+                  <option value="profile">Profile / Bio</option>
+                  <option value="review">Performance Review</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Document File</label>
+              <div class="dropzone">
+                <input type="file" id="empDocFile" accept=".pdf,.docx,.txt"
+                  onchange="handleFiles('empDocFile', 'empDocChips')" />
+                <div class="dropzone-icon">📁</div>
+                <p>
+                  Drag &amp; drop or
+                  <strong>browse</strong>
+                </p>
+              </div>
+              <div id="empDocChips" style="margin-top: 10px"></div>
+            </div>
+            <button class="btn btn-primary" id="empDocBtn" onclick="uploadEmpDoc()">📤 Upload &amp; Index</button>
+            <div id="empDocAlert" class="alert"></div>
+          </div>
+        </div>
+
+        <!-- ============ HRMS EMPLOYEES ============ -->
+        <div id="section-hrms" class="section">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">Total</div>
+              <div class="stat-value" id="statTotal">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Active</div>
+              <div class="stat-value" id="statActive">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">On Leave</div>
+              <div class="stat-value" id="statOnLeave">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Departments</div>
+              <div class="stat-value" id="statDepts">—</div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 16px;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                ">
+              <div class="card-title" style="margin-bottom: 0">Employee Directory</div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap">
+                <input type="text" id="empSearch" placeholder="🔍 Search..." oninput="filterTable()"
+                  style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius)" />
+                <select id="empStatusFilter" onchange="filterTable()"
+                  style="padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius)">
+                  <option value="">All</option>
+                  <option value="Active">Active</option>
+                  <option value="On Leave">On Leave</option>
+                  <option value="Terminated">Terminated</option>
+                </select>
+                <button class="btn btn-primary btn-sm" id="addEmpBtn">+ Add</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Status</th>
+                    <th>Hire Date</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="empTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ ATTENDANCE ============ -->
+        <div id="section-attendance" class="section">
+          <div class="card">
+            <div class="card-title">🕐 Attendance Management</div>
+            <div class="card-sub">Record check-in/out and view daily attendance.</div>
+            <div class="form-row" style="align-items: flex-end">
+              <div class="field">
+                <label>Employee</label>
+                <select id="attEmpId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <button class="btn btn-primary btn-full" onclick="checkIn()">✅ Check In</button>
+              </div>
+              <div class="field">
+                <button class="btn btn-primary btn-full" onclick="checkOut()">🏁 Check Out</button>
+              </div>
+            </div>
+            <div id="attAlert" class="alert"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Daily Summary</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Date</label>
+                <input type="date" id="attDate" onchange="loadDailyAttendance()" />
+              </div>
+            </div>
+            <div id="dailyAttResult"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Monthly Records</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="monthlyAttEmp">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Year-Month</label>
+                <input type="month" id="monthlyAttPeriod" />
+              </div>
+              <div class="field">
+                <button class="btn btn-primary btn-sm" onclick="loadMonthlyAttendance()">🔍 View</button>
+              </div>
+            </div>
+            <div id="monthlyAttResult" style="margin-top: 16px"></div>
+          </div>
+        </div>
+
+        <!-- ============ LEAVE MANAGEMENT ============ -->
+        <div id="section-leave" class="section">
+          <div class="card">
+            <div class="card-title">📅 Submit Leave Request</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="leaveEmpId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Leave Type</label>
+                <select id="leaveType">
+                  <option value="annual_leave">Annual Leave</option>
+                  <option value="sick_leave">Sick Leave</option>
+                  <option value="personal_leave">Personal Leave</option>
+                  <option value="special_leave">Special Leave</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Start Date</label>
+                <input type="date" id="leaveStart" />
+              </div>
+              <div class="field">
+                <label>End Date</label>
+                <input type="date" id="leaveEnd" />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label>Reason</label>
+              <textarea id="leaveReason" rows="2"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="submitLeave()">📤 Submit</button>
+            <div id="leaveAlert" class="alert"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Pending Approvals</div>
+            <div id="pendingLeaveList"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Leave Balances</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="leaveBalEmp">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="loadLeaveBalance()">🔍 Check</button>
+            <div id="leaveBalResult" style="margin-top: 16px"></div>
+          </div>
+        </div>
+
+        <!-- ============ PAYROLL ============ -->
+        <div id="section-payroll" class="section">
+          <div class="card">
+            <div class="card-title">💰 Payroll Calculation</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="payrollEmpId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Period</label>
+                <input type="month" id="payrollPeriod" />
+              </div>
+            </div>
+            <button class="btn btn-primary" onclick="calculatePayroll()">🧮 Calculate</button>
+            <button class="btn btn-outline" onclick="viewPayslip()" style="margin-left: 8px">📄 View Payslip</button>
+            <div id="payrollAlert" class="alert"></div>
+            <div id="payrollResult" style="margin-top: 16px"></div>
+          </div>
+          <div class="card">
+            <div class="card-title">Salary Adjustment Suggestion</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="adjustEmpId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="suggestAdjustment()">💡 Suggest</button>
+            <div id="adjustResult" style="margin-top: 16px"></div>
+          </div>
+        </div>
+
+        <!-- ============ LABOUR DEMAND ============ -->
+        <div id="section-labour" class="section">
+          <div class="card">
+            <div class="card-title">🔮 Predictive Labour Demand Analysis</div>
+            <p style="color: #8892b0; margin-bottom: 16px;">
+              Dynamic 3-12 month recruitment and headcount forecasting driven by historical turnover rates,
+              business expansion metrics, and AI-powered employee competitiveness assessment.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-title">⚙️ Analysis Configuration</div>
+            <p style="color: #8892b0; margin-bottom: 12px; font-size: 13px;">
+              Uses all system data automatically — employee records, KPIs, attendance, payroll,
+              and company culture documents (from <strong>Company Culture</strong> tab).
+              No separate file upload required.
+            </p>
+            <div class="form-row">
+              <div class="field">
+                <label>Company Name</label>
+                <input type="text" id="labourCompanyName" value="Our Company" />
+              </div>
+              <div class="field">
+                <label>Industry</label>
+                <input type="text" id="labourIndustry" value="General" placeholder="e.g., Technology, Finance" />
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px">
+              <button class="btn btn-accent" onclick="runLabourAnalysis()">🔮 Run Predictive Analysis</button>
+              <button class="btn btn-outline" onclick="loadLabourHistory()">📋 View History</button>
+              <label
+                style="color: #8892b0; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px; margin-left: 8px">
+                <input type="checkbox" id="labourRefresh" /> Force re-run (ignore cache)
+              </label>
+            </div>
+            <div id="labourAlert" class="alert"></div>
+          </div>
+
+          <div id="labourLoading" style="display: none; text-align: center; padding: 40px">
+            <div class="spinner"
+              style="width: 48px; height: 48px; border: 4px solid #1e2a3a; border-top-color: #64ffda; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px">
+            </div>
+            <div style="color: #8892b0">Running Predictive Labour Demand Analysis AI...</div>
+            <div style="color: #5a6a7a; font-size: 13px; margin-top: 8px">Analyzing employee records, company culture
+              docs, and market trends across the entire system</div>
+          </div>
+
+          <div id="labourResult" style="display: none"></div>
+        </div>
+
+        <!-- ============ DEVELOPMENT ============ -->
+        <div id="section-development" class="section">
+          <div class="card">
+            <div class="card-title">🎓 Employee Development</div>
+            <div class="form-row">
+              <div class="field">
+                <label>Employee</label>
+                <select id="devEmpId">
+                  <option value="">— Select Employee —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Target Role (optional)</label>
+                <input type="text" id="devTargetRole" placeholder="e.g., Senior Engineer" />
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px">
+              <button class="btn btn-primary btn-sm" onclick="extractSkills()">🔍 Extract Skills</button>
+              <div id="devAlert" class="alert"></div>
+              <div id="devResult" style="margin-top: 16px"></div>
+            </div>
+          </div>
+        </div>
+        <!-- EMPLOYEE MODAL -->
+        <div class="modal-backdrop" id="empModal">
+          <div class="modal">
+            <div class="modal-header">
+              <h3 id="modalTitle">Add Employee</h3>
+              <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="tab-pills">
+              <button class="tab-pill active" onclick="switchModalTab(0)">Basic</button>
+              <button class="tab-pill" onclick="switchModalTab(1)">Salary</button>
+              <button class="tab-pill" onclick="switchModalTab(2)">Leave</button>
+              <button class="tab-pill" onclick="switchModalTab(3)">KPI</button>
+              <button class="tab-pill" onclick="switchModalTab(4)">Profile</button>
+            </div>
+            <div id="mt-0">
+              <div class="form-row">
+                <div class="field">
+                  <label>Employee ID *</label>
+                  <input type="text" id="f-id" />
+                </div>
+                <div class="field">
+                  <label>Full Name *</label>
+                  <input type="text" id="f-name" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Email</label>
+                  <input type="email" id="f-email" />
+                </div>
+                <div class="field">
+                  <label>Phone</label>
+                  <input type="text" id="f-phone" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Department</label>
+                  <input type="text" id="f-dept" />
+                </div>
+                <div class="field">
+                  <label>Position</label>
+                  <input type="text" id="f-position" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Type</label>
+                  <select id="f-emptype">
+                    <option>Full-time</option>
+                    <option>Part-time</option>
+                    <option>Contract</option>
+                    <option>Intern</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Hire Date</label>
+                  <input type="date" id="f-hiredate" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Status</label>
+                  <select id="f-status">
+                    <option>Active</option>
+                    <option>On Leave</option>
+                    <option>Terminated</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Emergency Contact</label>
+                  <input type="text" id="f-ec-name" placeholder="Name" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Relationship</label>
+                  <input type="text" id="f-ec-rel" />
+                </div>
+                <div class="field">
+                  <label>Emergency Phone</label>
+                  <input type="text" id="f-ec-phone" />
+                </div>
+              </div>
+              <div class="form-row full">
+                <div class="field">
+                  <label>Notes</label>
+                  <textarea id="f-notes" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+            <div id="mt-1" style="display: none">
+              <div class="form-row">
+                <div class="field">
+                  <label>Base Salary</label>
+                  <input type="number" id="f-salary-base" />
+                </div>
+                <div class="field">
+                  <label>Currency</label>
+                  <select id="f-salary-currency">
+                    <option>HKD</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Pay Cycle</label>
+                  <select id="f-salary-cycle">
+                    <option>Monthly</option>
+                    <option>Bi-weekly</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Bonus</label>
+                  <input type="number" id="f-salary-bonus" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label>Last Review</label>
+                  <input type="date" id="f-salary-review" />
+                </div>
+              </div>
+            </div>
+            <div id="mt-2" style="display: none">
+              <div class="form-row tri">
+                <div class="field">
+                  <label>Annual Total</label>
+                  <input type="number" id="f-al-total" />
+                </div>
+                <div class="field">
+                  <label>Annual Used</label>
+                  <input type="number" id="f-al-used" />
+                </div>
+              </div>
+              <div class="form-row tri">
+                <div class="field">
+                  <label>Sick Total</label>
+                  <input type="number" id="f-sl-total" />
+                </div>
+                <div class="field">
+                  <label>Sick Used</label>
+                  <input type="number" id="f-sl-used" />
+                </div>
+              </div>
+              <div class="form-row tri">
+                <div class="field">
+                  <label>Personal Total</label>
+                  <input type="number" id="f-pl-total" />
+                </div>
+                <div class="field">
+                  <label>Personal Used</label>
+                  <input type="number" id="f-pl-used" />
+                </div>
+              </div>
+              <div class="form-row tri">
+                <div class="field">
+                  <label>Special Total</label>
+                  <input type="number" id="f-spl-total" />
+                </div>
+                <div class="field">
+                  <label>Special Used</label>
+                  <input type="number" id="f-spl-used" />
+                </div>
+              </div>
+            </div>
+            <div id="mt-3" style="display: none">
+              <div id="kpiEntries"></div>
+              <button class="btn btn-outline btn-sm" onclick="addKPIEntry()">+ Add KPI</button>
+            </div>
+            <div id="mt-4" style="display: none">
+              <div class="field">
+                <label>Profile Document (Text)</label>
+                <textarea id="profileDocContent" rows="15" placeholder="Paste profile text..."></textarea>
+              </div>
+            </div>
+            <div style="margin-top: 20px; text-align: right">
+              <button class="btn btn-outline" id="modalCancelBtn">Cancel</button>
+              <button class="btn btn-primary" id="modalSaveBtn">Save</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT MODAL -->
+        <div class="modal-backdrop" id="projectModal">
+          <div class="modal" style="max-width: 600px">
+            <div class="modal-header">
+              <h3>New Internal Project</h3>
+              <button class="modal-close" onclick="closeProjectModal()">×</button>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Title</label>
+                <input type="text" id="projTitle" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Description</label>
+                <textarea id="projDesc" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Required Skills (comma separated)</label>
+                <input type="text" id="projSkills" placeholder="Python, SQL, Leadership" />
+              </div>
+              <div class="field">
+                <label>Duration (weeks)</label>
+                <input type="number" id="projDuration" value="4" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Department</label>
+                <input type="text" id="projDept" />
+              </div>
+              <div class="field">
+                <label>Max Participants</label>
+                <input type="number" id="projMax" value="3" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Requester ID</label>
+                <input type="text" id="projRequester" placeholder="EMP001" />
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="createProject()">Create Project</button>
+          </div>
+        </div>
+
+        <script>
+          // ========== CONFIG ==========
+          const API = "/api";
+          let employees = [],
+            editingId = null,
+            kpiCount = 0;
+          let currentScreeningResults = [],
+            scoreChart = null,
+            currentLabourAnalysis = null;
+
+          // ========== TTS HELPERS ==========
+          function stripMarkdown(t) {
+            return t
+              .replace(/```[\s\S]*?```/g, "")
+              .replace(/`([^`]+)`/g, "$1")
+              .replace(/!\[.*?\]\(.*?\)/g, "")
+              .replace(/\[([^\]]*)\]\(.*?\)/g, "$1")
+              .replace(/(\*{1,3}|_{1,3})(.*?)\1/g, "$2")
+              .replace(/~~(.*?)~~/g, "$1")
+              .replace(/^#{1,6}\s+/gm, "")
+              .replace(/^>\s+/gm, "")
+              .replace(/^[-*+]\s+/gm, "")
+              .replace(/^\d+\.\s+/gm, "")
+              .replace(/\|/g, " ")
+              .replace(/---+/g, "")
+              .replace(/\n{3,}/g, "\n\n")
+              .replace(/<[^>]*>/g, "")
+              .replace(/\s+/g, " ")
+              .trim();
+          }
+
+          function speakText(text) {
+            if (!window.speechSynthesis) return;
+            window.speechSynthesis.cancel();
+            const cleaned = stripMarkdown(text);
+            if (!cleaned) return;
+            const u = new SpeechSynthesisUtterance(cleaned);
+            u.lang = "en-GB";
+            u.rate = 0.75;
+            u.pitch = 1.0;
+            window.speechSynthesis.speak(u);
+          }
+
+          function stopSpeaking() {
+            if (window.speechSynthesis) window.speechSynthesis.cancel();
+          }
+
+          function speakChatMessage(msgId) {
+            const m = chatHistory.find(x => x.msgId === msgId);
+            if (m) speakText(m.text);
+          }
+
+          // ========== NAVIGATION ==========
+          function showSection(id) {
+            document.querySelectorAll(".section").forEach((s) => s.classList.remove("active"));
+            document.querySelectorAll(".nav-item").forEach((n) => n.classList.remove("active"));
+            const sec = document.getElementById("section-" + id);
+            if (sec) sec.classList.add("active");
+            const nav = document.getElementById("nav-" + id);
+            if (nav) nav.classList.add("active");
+            const titles = {
+              dashboard: "Dashboard",
+              cv: "AI CV Screening",
+              culture: "Company Culture",
+              interview: "Interview Assist",
+              risk: "Employee Chat",
+              chat: "Employee Chat",
+              empdoc: "Employee Docs",
+              hrms: "Employees",
+              attendance: "Attendance",
+              leave: "Leave Mgmt",
+              payroll: "Payroll",
+              development: "Development",
+              marketplace: "Marketplace",
+              labour: "Labour Demand",
+            };
+            document.getElementById("page-title").textContent = titles[id] || id;
+            if (id === "hrms") loadEmployees();
+            if (id === "dashboard") loadDashboard();
+            if (id === "attendance") {
+              document.getElementById("attDate").value = new Date().toISOString().split("T")[0];
+              loadDailyAttendance();
+            }
+            if (id === "leave") loadPendingLeaves();
+            if (id === "marketplace") loadProjects();
+            if (id === "labour") loadLabourHistory();
+          }
+
+          // ========== HEALTH CHECK ==========
+          let _healthData = null;
+          async function checkHealth() {
+            try {
+              const r = await fetch(`${API}/health`);
+              if (r.ok) {
+                _healthData = await r.json();
+                const badge = document.getElementById("healthBadge");
+                badge.textContent = `● Live · ${_healthData.employees?.total || "?"} emp · ${_healthData.uptime || "?"}`;
+                badge.title = `Service: ${_healthData.service || "N/A"}
+Uptime: ${_healthData.uptime || "N/A"}
+Employees: ${_healthData.employees?.total || 0} (${_healthData.employees?.active || 0} active)
+Version: ${_healthData.version || "N/A"}`;
+              } else document.getElementById("healthBadge").textContent = "● Offline";
+            } catch {
+              document.getElementById("healthBadge").textContent = "● Offline";
+            }
+          }
+
+          // ========== DASHBOARD ==========
+          async function loadDashboard() {
+            try {
+              const r = await fetch(`${API}/dashboard`);
+              const d = await r.json();
+              document.getElementById("dashTotal").textContent = d.employee_stats?.total || 0;
+              document.getElementById("dashActive").textContent = d.employee_stats?.active || 0;
+              document.getElementById("dashOnLeave").textContent = d.employee_stats?.on_leave || 0;
+              document.getElementById("dashDepts").textContent = d.department_count || 0;
+              document.getElementById("dashPresent").textContent = d.attendance_today?.present || 0;
+              document.getElementById("dashPending").textContent =
+                (d.pending_approvals?.leave_requests || 0) + (d.pending_approvals?.project_applications || 0);
+              document.getElementById("dashProjects").textContent = d.active_internal_projects || 0;
+              document.getElementById("dashAvgSalary").textContent =
+                "$" + ((d.payroll_this_month?.average || 0) / 1000).toFixed(1) + "K";
+              const tbody = document.getElementById("recentScreenings");
+              if (d.recent_screenings?.screenings?.length) {
+                tbody.innerHTML = d.recent_screenings.screenings
+                  .map(
+                    (s) =>
+                      `<tr><td>${s.screening_id}</td><td>${new Date(s.timestamp).toLocaleDateString()}</td><td>${s.total_candidates}</td><td>${s.jd_preview?.substring(0, 80)}...</td><td><button class="btn btn-outline btn-sm" onclick="viewScreening('${s.screening_id}')">View</button></td></tr>`,
+                  )
+                  .join("");
+              } else tbody.innerHTML = '<tr><td colspan="5">No screenings yet</td></tr>';
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          async function viewScreening(id) {
+            try {
+              const r = await fetch(`${API}/cv/screening-history/${id}`);
+              const d = await r.json();
+              currentScreeningResults = d.results || [];
+              renderScreeningResults({
+                screening_results: [{ results: currentScreeningResults }],
+                screening_id: id,
+                weights_used: d.weights,
+              });
+              document.getElementById("chartContainer").style.display = "";
+              renderScoreChart(currentScreeningResults);
+              showSection("cv");
+            } catch (e) {
+              alert("Error loading screening");
+            }
+          }
+
+          // ========== CV SCREENING ==========
+          function toggleWeights() {
+            const p = document.getElementById("weightsPanel");
+            const t = document.getElementById("weightsToggle");
+            p.style.display = p.style.display === "none" ? "" : "none";
+            t.textContent = p.style.display === "none" ? "▼" : "▲";
+          }
+
+          function updateWeightDisplay() {
+            const keys = ["w-core", "w-exp", "w-edu", "w-culture", "w-dev", "w-int"];
+            let total = 0;
+            keys.forEach((k) => (total += parseInt(document.getElementById(k).value) || 0));
+            document.getElementById("weightTotal").textContent = `Total: ${total}%`;
+            document.getElementById("weightTotal").style.color = total === 100 ? "var(--green)" : "var(--red)";
+            keys.forEach((k) => {
+              const span = document.getElementById(k).parentElement.querySelector(".weight-val");
+              if (span) span.textContent = (parseInt(document.getElementById(k).value) || 0) + "%";
+            });
+          }
+
+          function getWeights() {
+            return {
+              core_competency: parseInt(document.getElementById("w-core").value) || 25,
+              experience: parseInt(document.getElementById("w-exp").value) || 20,
+              education: parseInt(document.getElementById("w-edu").value) || 10,
+              culture_fit: parseInt(document.getElementById("w-culture").value) || 15,
+              development: parseInt(document.getElementById("w-dev").value) || 15,
+              intelligence: parseInt(document.getElementById("w-int").value) || 15,
+            };
+          }
+
+          async function runScreening() {
+            const jd = document.getElementById("jdInput").value.trim();
+            const files = document.getElementById("cvFiles").files;
+            if (!jd) return alert_("screenAlert", "JD required", "error");
+            if (!files.length) return alert_("screenAlert", "Upload resumes", "error");
+            const fd = new FormData();
+            fd.append("jd", jd);
+            Array.from(files).forEach((f) => fd.append("files", f));
+            fd.append("weights_json", JSON.stringify(getWeights()));
+            document.getElementById("screenBtn").disabled = true;
+            document.getElementById("screenLoader").classList.add("show");
+            try {
+              const r = await fetch(`${API}/cv/screen-with-weights`, {
+                method: "POST",
+                body: fd,
+              });
+              const d = await r.json();
+              if (!r.ok) throw new Error(d.detail || "Failed");
+              const all = (d.screening_results || []).flatMap((b) => b.results || []);
+              currentScreeningResults = all;
+              renderScreeningResults(d);
+              renderScoreChart(all);
+              document.getElementById("chartContainer").style.display = "";
+              alert_(
+                "screenAlert",
+                `✅ ${d.successful}/${d.total_processed} candidates · ${d.screening_id}`,
+                "success",
+              );
+            } catch (e) {
+              alert_("screenAlert", `❌ ${e.message}`, "error");
+            } finally {
+              document.getElementById("screenBtn").disabled = false;
+              document.getElementById("screenLoader").classList.remove("show");
+            }
+          }
+
+          function renderScreeningResults(d) {
+            const area = document.getElementById("screenResults");
+            const all = (d.screening_results || []).flatMap((b) => b.results || []);
+            if (!all.length) {
+              area.innerHTML = "<p>No results</p>";
+              return;
+            }
+            let html = `<div style="margin-bottom:8px;display:flex;gap:8px"><button class="btn btn-sm btn-outline" onclick="speakScreeningResults()">🔊 Speak Results</button><button class="btn btn-sm btn-outline" onclick="stopSpeaking()">⏹ Stop</button></div>`;
+            html += `<h3 style="font-family:Syne;margin-bottom:8px">${all.length} Candidate(s) · ID: ${d.screening_id}</h3>`;
+            if (d.weights_used)
+              html += `<p style="font-size:.8rem;color:var(--muted)">Weights: ${JSON.stringify(d.weights_used)}</p>`;
+            all.forEach((c) => {
+              const score = c.overall_score || 0;
+              if (c._cached) html += '<div style="padding:6px 12px;margin-bottom:8px;border:1px solid var(--accent);border-radius:6px;font-size:.8rem;color:var(--accent)">⚡ 快取結果 (AI 模擬延遲 5s)</div>';
+              const sc =
+                {
+                  "Highly Suitable": "green",
+                  "Partially Suitable": "teal",
+                  Borderline: "amber",
+                  "Not Suitable": "red",
+                }[c.match_status] || "blue";
+              html += `<div class="cand-card">
+              <div class="cand-header"><div><div class="cand-name">${c.candidate_name || c.candidate_file}</div><div>📄 ${c.candidate_file || ""}</div></div><div style="text-align:right"><div class="cand-score">${score}<span style="font-size:1rem">/100</span></div><span class="pill pill-${sc}">${c.match_status || "—"}</span></div></div>
+              ${c.summary ? `<div class="summary-strip">${c.summary}</div>` : ""}
+              <div class="metrics-grid">
+                ${["Core Competency", "Experience", "Education", "Culture Fit", "Development", "Intelligence"]
+                  .map((l, i) => {
+                    const v =
+                      [
+                        c.core_competency_match,
+                        c.experience_match,
+                        c.education_match,
+                        c.culture_fit_score,
+                        c.development_potential,
+                        c.intelligence_score,
+                      ][i] || 0;
+                    return `<div class="metric-item"><div class="metric-label">${l}</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${v}%"></div></div><div class="score-num">${v}</div></div></div>`;
+                  })
+                  .join("")}
+              </div>
+              ${c.eight_dim_scores ? `<div style="margin-top:16px;padding-top:12px;border-top:1px dashed var(--border)"><div style="font-size:.85rem;font-weight:700;margin-bottom:8px;color:var(--accent)">📊 8-Dimension Competency Score</div><div class="metrics-grid">${[
+                  ["Professional Skills", c.eight_dim_scores.professional_skills],
+                  ["Communication", c.eight_dim_scores.communication],
+                  ["Teamwork", c.eight_dim_scores.teamwork],
+                  ["Problem Solving", c.eight_dim_scores.problem_solving],
+                  ["Learning Ability", c.eight_dim_scores.learning_ability],
+                  ["Execution", c.eight_dim_scores.execution],
+                  ["Cultural Fit", c.eight_dim_scores.cultural_fit],
+                  ["Leadership", c.eight_dim_scores.leadership],
+                ].map(([l, v]) => `<div class="metric-item"><div class="metric-label">${l}</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${v || 0}%"></div></div><div class="score-num">${v || 0}</div></div></div>`).join("")}</div></div>` : ""}
+              <div class="analysis-grid">
+                <div class="analysis-box"><h4>✅ Strengths</h4><ul>${(c.analysis?.strengths || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>⚠️ Weaknesses</h4><ul>${(c.analysis?.weaknesses || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>🏢 Culture</h4><ul>${(c.analysis?.culture_alignment || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>🚀 Dev</h4><ul>${(c.analysis?.development_potential_and_suggestions || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>🚩 Risks</h4><ul>${(c.analysis?.hiring_risks || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>🎯 Interview</h4><ol>${(c.interview_focus || []).map((q) => `<li>${q}</li>`).join("") || "<li>—</li>"}</ol></div>
+              </div>
+            </div>`;
+            });
+            area.innerHTML = html;
+          }
+
+          function speakScreeningResults() {
+            if (!currentScreeningResults.length) return;
+            const parts = currentScreeningResults.map(c => `${c.candidate_name || c.candidate_file}: ${c.overall_score || 0} out of 100, ${c.match_status || "no status"}`);
+            speakText(`CV screening results for ${currentScreeningResults.length} candidates. ${parts.join(". ")}`);
+          }
+
+          function renderScoreChart(results) {
+            const ctx = document.getElementById("scoreChart").getContext("2d");
+            if (scoreChart) scoreChart.destroy();
+            const labels = results.map((r) => (r.candidate_name || r.candidate_file || "?").substring(0, 20));
+            const scores = results.map((r) => r.overall_score || 0);
+            const colors = scores.map((s) =>
+              s >= 80 ? "#2f9e44" : s >= 60 ? "#3b5bdb" : s >= 40 ? "#e8590c" : "#e03131",
+            );
+            try { scoreChart = new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels,
+                datasets: [
+                  {
+                    label: "Score",
+                    data: scores,
+                    backgroundColor: colors,
+                    borderRadius: 6,
+                  },
+                ],
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, max: 100 } },
+                plugins: { legend: { display: false } },
+              },
+            }); } catch(e) { console.warn("Chart.js not loaded", e); }
+          }
+
+          function sortResults(order) {
+            if (!currentScreeningResults.length) return;
+            currentScreeningResults.sort((a, b) =>
+              order === "desc"
+                ? (b.overall_score || 0) - (a.overall_score || 0)
+                : (a.overall_score || 0) - (b.overall_score || 0),
+            );
+            renderScreeningResults({
+              screening_results: [{ results: currentScreeningResults }],
+              screening_id: "sorted",
+            });
+            renderScoreChart(currentScreeningResults);
+          }
+
+          // ========== CULTURE ==========
+          async function uploadCulture() {
+            const f = document.getElementById("cultureFile").files[0];
+            if (!f) return alert_("cultureAlert", "Select file", "error");
+            const fd = new FormData();
+            fd.append("file", f);
+            document.getElementById("cultureBtn").disabled = true;
+            try {
+              const r = await fetch(`${API}/culture/upload`, {
+                method: "POST",
+                body: fd,
+              });
+              const d = await r.json();
+              alert_("cultureAlert", d.is_new ? `✅ Indexed v${d.version_number}` : "♻️ Reused", "info");
+            } catch (e) {
+              alert_("cultureAlert", `❌ ${e.message}`, "error");
+            } finally {
+              document.getElementById("cultureBtn").disabled = false;
+            }
+          }
+
+          // ========== INTERVIEW ASSIST ==========
+          async function runInterviewAnalysis() {
+            const transcript = document.getElementById("interviewTranscript").value.trim();
+            const jd = document.getElementById("interviewJD").value.trim();
+            const competency = document.getElementById("interviewCompetency").value.trim();
+            if (!transcript || !jd) return alert_("interviewAlert", "Transcript and JD required", "error");
+            const fd = new FormData();
+            fd.append("transcript", transcript);
+            fd.append("jd", jd);
+            fd.append("competency", competency);
+            document.getElementById("interviewResult").innerHTML =
+              '<div class="loader show"><div class="spinner"></div><p>Analyzing...</p></div>';
+            try {
+              const r = await fetch(`${API}/interview/analyze`, {
+                method: "POST",
+                body: fd,
+              });
+              const d = await r.json();
+              if (!r.ok) throw new Error(d.detail);
+              const a = d.analysis || {};
+              const dims = a.dimension_scores || {};
+              const recColor =
+                {
+                  "Strongly Recommend": "green",
+                  Recommend: "teal",
+                  Hold: "amber",
+                  "Not Recommend": "red",
+                }[a.hiring_recommendation] || "blue";
+              document.getElementById("interviewResult").innerHTML = `<div class="card">
+              <div class="card-title">🎤 Interview Analysis</div>
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:16px">
+                <div style="display:flex;align-items:center;gap:12px">
+                  <div><div class="cand-score">${a.overall_score || 0}<span style="font-size:1rem">/100</span></div></div>
+                  ${a.red_flag_summary ? `<div style="font-size:.75rem;display:flex;gap:6px">
+                    ${a.red_flag_summary.critical ? `<span style="color:var(--red);font-weight:700">🔴${a.red_flag_summary.critical}</span>` : ""}
+                    ${a.red_flag_summary.warning ? `<span style="color:var(--amber)">🟡${a.red_flag_summary.warning}</span>` : ""}
+                    ${a.red_flag_summary.info ? `<span style="color:var(--teal)">🟢${a.red_flag_summary.info}</span>` : ""}
+                  </div>` : ""}
+                </div>
+                <span class="pill pill-${recColor}">${a.hiring_recommendation || "—"}</span>
+              </div>
+              <div class="metrics-grid">
+                ${[
+                  { k: "technical_match", l: "Technical" },
+                  { k: "communication", l: "Communication" },
+                  { k: "logical_thinking", l: "Logic" },
+                  { k: "adaptability", l: "Adaptability" },
+                  { k: "teamwork", l: "Teamwork" },
+                  { k: "culture_fit", l: "Culture Fit" },
+                  { k: "learning_agility", l: "Learning" },
+                ]
+                  .map((d) => {
+                    const v = dims[d.k] || 0;
+                    return `<div class="metric-item"><div class="metric-label">${d.l}</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${v}%"></div></div><div class="score-num">${v}</div></div></div>`;
+                  })
+                  .join("")}
+              </div>
+              ${dims.eight_dim_scores ? `<div style="margin-top:16px;padding-top:12px;border-top:1px dashed var(--border)"><div style="font-size:.85rem;font-weight:700;margin-bottom:8px;color:var(--accent)">📊 8-Dimension Competency Score</div><div class="metrics-grid">${[
+                  ["Professional Skills", dims.eight_dim_scores.professional_skills],
+                  ["Communication", dims.eight_dim_scores.communication],
+                  ["Teamwork", dims.eight_dim_scores.teamwork],
+                  ["Problem Solving", dims.eight_dim_scores.problem_solving],
+                  ["Learning Ability", dims.eight_dim_scores.learning_ability],
+                  ["Execution", dims.eight_dim_scores.execution],
+                  ["Cultural Fit", dims.eight_dim_scores.cultural_fit],
+                  ["Leadership", dims.eight_dim_scores.leadership],
+                ].map(([l, v]) => `<div class="metric-item"><div class="metric-label">${l}</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:${v || 0}%"></div></div><div class="score-num">${v || 0}</div></div></div>`).join("")}</div></div>` : ""}
+              <div class="analysis-grid">
+                <div class="analysis-box"><h4>✅ Strengths</h4><ul>${(a.strengths || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>⚠️ Weaknesses</h4><ul>${(a.weaknesses || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+                <div class="analysis-box"><h4>🚩 Red Flags</h4><ul>${(a.red_flags || []).map(function (r) {
+                  const rf = typeof r === "string" ? { label: r, severity: "warning", category: "AI_DETECTED" } : r;
+                  const sevColor = { critical: "var(--red)", warning: "var(--amber)", info: "var(--teal)" }[rf.severity] || "var(--muted)";
+                  const sevLabel = { critical: "🔴", warning: "🟡", info: "🟢" }[rf.severity] || "⚪";
+                  return `<li style="border-left:3px solid ${sevColor};padding-left:8px;margin-bottom:8px">
+                    <div style="display:flex;align-items:center;gap:6px">
+                      <span>${sevLabel}</span>
+                      <strong>${rf.label || rf.category || "Concern"}</strong>
+                      <span style="font-size:.7rem;color:var(--muted);background:var(--surface);padding:1px 6px;border-radius:4px">${rf.category || ""}</span>
+                    </div>
+                    ${rf.quote ? `<div style="font-size:.8rem;color:var(--muted);margin:4px 0;font-style:italic">"${rf.quote}"</div>` : ""}
+                    ${rf.explanation ? `<div style="font-size:.8rem;color:var(--text)">${rf.explanation}</div>` : ""}
+                  </li>`;
+                }).join("") || "<li>No red flags detected</li>"}</ul></div>
+                <div class="analysis-box"><h4>💬 Key Quotes</h4><ul>${(a.key_quotes || []).map((s) => `<li>${s}</li>`).join("") || "<li>—</li>"}</ul></div>
+              </div>
+              <div class="analysis-box" style="margin-top:12px"><h4>🎯 Follow-up Questions</h4><ol>${(a.follow_up_questions || []).map((q) => `<li>${q}</li>`).join("") || "<li>—</li>"}</ol></div>
+              ${a.overall_assessment ? `<div class="summary-strip">${a.overall_assessment}</div>` : ""}
+            </div>`;
+            } catch (e) {
+              document.getElementById("interviewResult").innerHTML =
+                `<div class="alert alert-error show">❌ ${e.message}</div>`;
+            }
+          }
+
+          // REPLACE the runRisk function and add these new functions:
+
+          // Store conversation history
+          let currentEmpId = "";
+          let chatHistory = [];
+
+          async function loadEmployeeProfile() {
+            const id = document.getElementById("riskEmpId").value.trim();
+            if (!id) return;
+            currentEmpId = id;
+
+            try {
+              const r = await fetch(`${API}/employees/${id}`);
+              const emp = await r.json();
+              if (!emp || emp.detail) {
+                document.getElementById("empQuickInfo").style.display = "none";
+                return;
+              }
+
+              const info = document.getElementById("empQuickInfo");
+              info.style.display = "block";
+              info.innerHTML = `
+      <strong>${emp.full_name || "N/A"}</strong> | 
+      ${emp.position || "N/A"} | 
+      ${emp.department || "N/A"} | 
+      <span class="pill pill-${emp.status === "Active" ? "green" : emp.status === "On Leave" ? "amber" : "red"}">${emp.status || "N/A"}</span>
+      <br><small>Hired: ${emp.hire_date || "N/A"} | Type: ${emp.employment_type || "N/A"}</small>
+    `;
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          async function runRisk() {
+            const id = document.getElementById("riskEmpId").value.trim();
+            const q = document.getElementById("riskQuery").value.trim();
+            if (!id) return alert_("riskAlert", "Employee ID required", "error");
+            if (!q) return alert_("riskAlert", "Please enter a question", "error");
+
+            currentEmpId = id;
+
+            // Build conversation history (exclude prior typing indicators)
+            const historyText = chatHistory
+              .filter((m) => !m.isTyping)
+              .map((m) => `${m.role}: ${m.text}`)
+              .join("\n");
+
+            // Add user message and typing indicator
+            addChatMessage("user", q);
+            const typingId = addChatMessage("ai", "<em>Thinking...</em>", true);
+            setRaw(typingId);
+
+            document.getElementById("riskQuery").value = "";
+
+            // Try streaming first, fall back to regular fetch
+            try {
+              const fd2 = new FormData();
+              fd2.append("employee_id", id);
+              fd2.append("query", q);
+              fd2.append("conversation_history", historyText);
+
+              const resp = await fetch("/api/employee-chat/stream", {
+                method: "POST",
+                body: fd2,
+              });
+
+              if (!resp.ok) throw new Error("Stream not available");
+
+              removeChatMessage(typingId);
+              const msgId = addChatMessage("ai", "");
+              setRaw(msgId);
+              let fullText = "";
+              const reader = resp.body.getReader();
+              const decoder = new TextDecoder();
+              let buffer = "";
+
+              while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split("\n");
+                buffer = lines.pop() || "";
+
+                for (const line of lines) {
+                  if (line.startsWith("data: ")) {
+                    const payload = line.slice(6);
+                    if (payload === "[DONE]") continue;
+                    try {
+                      const parsed = JSON.parse(payload);
+                      if (parsed.t) {
+                        fullText += parsed.t;
+                        const found = chatHistory.find(m => m.msgId === msgId);
+                        if (found) { found.text = fullText; renderChatHistory(); scrollChat(); }
+                      } else if (parsed.e) {
+                        fullText += "\n\n[Error: " + parsed.e + "]";
+                      }
+                    } catch { }
+                  }
+                }
+              }
+
+              const found = chatHistory.find(m => m.msgId === msgId);
+              if (found) {
+                found.isRaw = false;
+                renderChatHistory();
+                scrollChat();
+              }
+            } catch (e) {
+              removeChatMessage(typingId);
+              try {
+                const fd2 = new FormData();
+                fd2.append("employee_id", id);
+                fd2.append("query", q);
+                fd2.append("conversation_history", historyText);
+                const r = await fetch("/api/employee-chat", { method: "POST", body: fd2 });
+                const d = await r.json();
+                if (!r.ok) throw new Error(d.detail || "Failed");
+                addChatMessage("ai", d.response || d.analysis || "No response");
+              } catch (e2) {
+                const errId = addChatMessage("ai", "❌ Error: ");
+                setRaw(errId);
+                alert_("riskAlert", "Error: ", "error");
+              }
+            }
+          }
+
+          let msgCounter = 0;
+
+          function addChatMessage(role, text, isTyping = false) {
+            const msgId = ++msgCounter;
+            chatHistory.push({
+              msgId: msgId,
+              role: role,
+              text: text,
+              time: new Date().toLocaleTimeString(),
+              isTyping: isTyping,
+            });
+            renderChatHistory();
+            return msgId;
+          }
+
+          function scrollChat() { const c = document.getElementById("chatHistory"); if (c) c.scrollTop = c.scrollHeight; }
+
+          function removeChatMessage(msgId) {
+            const idx = chatHistory.findIndex(m => m.msgId === msgId);
+            if (idx !== -1) chatHistory.splice(idx, 1);
+            renderChatHistory();
+          }
+
+          function setRaw(msgId) {
+            const m = chatHistory.find(m => m.msgId === msgId);
+            if (m) m.isRaw = true;
+          }
+
+          function renderChatHistory() {
+            const container = document.getElementById("chatHistory");
+            if (!container) return;
+
+            container.innerHTML =
+              chatHistory.length === 0
+                ? '<p style="color:var(--muted);text-align:center">Start a conversation by asking a question about the employee</p>'
+                : chatHistory
+                  .map((m) => {
+                    const isUser = m.role === "user";
+                    const bg = isUser ? "var(--accent-light)" : "var(--surface)";
+                    const align = isUser ? "right" : "left";
+                    return `<div style="margin-bottom:12px;text-align:${align}">
+          <div style="display:inline-block;max-width:80%;padding:10px 14px;background:${bg};
+               border-radius:12px;font-size:0.85rem;text-align:left;
+               ${isUser ? "border-bottom-right-radius:4px;" : "border-bottom-left-radius:4px;border:1px solid var(--border);"}">
+            <div style="font-size:0.7rem;color:var(--muted);margin-bottom:4px">
+              ${isUser ? "You" : "🤖 AI"} · ${m.time}
+            </div>
+            ${m.isTyping || m.isRaw ? `<div style="white-space:pre-wrap">${m.text}</div>` : `<div class="markdown-body">${typeof marked !== 'undefined' ? marked.parse(m.text) : m.text}</div>`}
+            ${!isUser && !m.isTyping ? `<div style="margin-top:4px"><button class="speak-btn" onclick="speakChatMessage(${m.msgId})" title="Read aloud">🔊</button></div>` : ""}
+          </div>
+        </div>`;
+                  })
+                  .join("");
+
+            // Scroll to bottom
+            container.scrollTop = container.scrollHeight;
+          }
+
+          async function runDevelopmentSuggestions() {
+            if (!currentEmpId) {
+              return alert_("riskAlert", "Please select an employee first", "error");
+            }
+            const id = currentEmpId;
+            addChatMessage("user", "Generate career development suggestions for me.");
+            const typingId = addChatMessage("ai", "<em>Thinking...</em>", true);
+            setRaw(typingId);
+
+            const fd = new FormData();
+            fd.append("employee_id", id);
+            try {
+              const r = await fetch(`${API}/employee/development`, {
+                method: "POST",
+                body: fd,
+              });
+              const d = await r.json();
+              removeChatMessage(typingId);
+              if (!r.ok) throw new Error(d.detail || "Failed");
+              const responseText = d.suggestions || "No response";
+              addChatMessage("ai", responseText);
+            } catch (e) {
+              removeChatMessage(typingId);
+              const errId = addChatMessage("ai", `❌ Error: ${e.message}`);
+              setRaw(errId);
+              alert_("riskAlert", `Error: ${e.message}`, "error");
+            }
+            renderChatHistory();
+          }
+
+          function clearChat() {
+            chatHistory = [];
+            renderChatHistory();
+          }
+
+          async function runQuickRisk() {
+            if (!currentEmpId) {
+              return alert_("riskAlert", "Please select an employee first", "error");
+            }
+            document.getElementById("riskQuery").value =
+              "Analyze this employee's overall risk profile. Consider performance, retention, compliance, and any red flags.";
+            await runRisk();
+          }
+
+          async function runSkillCheck() {
+            if (!currentEmpId) {
+              return alert_("riskAlert", "Please select an employee first", "error");
+            }
+            document.getElementById("riskQuery").value =
+              "What are this employee's key skills, strengths, and areas for improvement? What training would you recommend?";
+            await runRisk();
+          }
+
+          async function runAttendanceCheck() {
+            if (!currentEmpId) {
+              return alert_("riskAlert", "Please select an employee first", "error");
+            }
+            document.getElementById("riskQuery").value =
+              "Review this employee's attendance pattern. Are there any concerning trends?";
+            await runRisk();
+          }
+
+          async function loadEmployeeList() {
+            await populateEmployeeSelects();
+            document.getElementById("riskEmpId").focus();
+          }
+          // ========== EMPLOYEE DOCS ==========
+          async function uploadEmpDoc() {
+            const id = document.getElementById("empDocId").value.trim();
+            const type = document.getElementById("empDocType").value;
+            const file = document.getElementById("empDocFile").files[0];
+            if (!id || !file) return alert_("empDocAlert", "ID and file required", "error");
+            const fd = new FormData();
+            fd.append("employee_id", id);
+            fd.append("doc_type", type);
+            fd.append("file", file);
+            document.getElementById("empDocBtn").disabled = true;
+            try {
+              const r = await fetch(`${API}/employee/documents`, {
+                method: "POST",
+                body: fd,
+              });
+              const d = await r.json();
+              if (d.success) {
+                alert_(
+                  "empDocAlert",
+                  `✅ ${d.message || "Indexed"}${d.chunk_count ? " (" + d.chunk_count + " chunks)" : ""}`,
+                  "success",
+                );
+              } else {
+                alert_("empDocAlert", `❌ ${d.message || d.error}`, "error");
+              }
+            } finally {
+              document.getElementById("empDocBtn").disabled = false;
+            }
+          }
+          // ========== HRMS ==========
+          async function populateEmployeeSelects() {
+            try {
+              const r = await fetch(`${API}/employees`);
+              const d = await r.json();
+              const emps = d.employees || [];
+              const ids = ["riskEmpId", "empDocId", "attEmpId", "monthlyAttEmp", "leaveEmpId", "leaveBalEmp", "payrollEmpId", "adjustEmpId", "devEmpId"];
+              const opts = emps.map(e => `<option value="${e.employee_id}">${e.employee_id} — ${e.full_name || "N/A"} (${e.department || "N/A"})</option>`).join("");
+              for (const id of ids) {
+                const sel = document.getElementById(id);
+                if (!sel) continue;
+                const curr = sel.value;
+                sel.innerHTML = `<option value="">— Select Employee —</option>${opts}`;
+                if (curr) sel.value = curr;
+              }
+              return emps;
+            } catch { return []; }
+          }
+
+          async function loadEmployees() {
+            try {
+              const r = await fetch(`${API}/employees`);
+              const d = await r.json();
+              employees = d.employees || [];
+              updateStats();
+              renderTable(employees);
+              populateEmployeeSelects();
+            } catch {
+              employees = [];
+              updateStats();
+              renderTable([]);
+              populateEmployeeSelects();
+            }
+          }
+
+          function updateStats() {
+            const a = employees.filter((e) => e.status === "Active").length;
+            const o = employees.filter((e) => e.status === "On Leave").length;
+            const depts = new Set(employees.map((e) => e.department).filter(Boolean)).size;
+            document.getElementById("statTotal").textContent = employees.length;
+            document.getElementById("statActive").textContent = a;
+            document.getElementById("statOnLeave").textContent = o;
+            document.getElementById("statDepts").textContent = depts;
+          }
+
+          function renderTable(list) {
+            const tbody = document.getElementById("empTableBody");
+            if (!list.length) {
+              tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:32px">No employees</td></tr>';
+              return;
+            }
+            const sp = { Active: "green", "On Leave": "amber", Terminated: "red" };
+            tbody.innerHTML = list
+              .map(
+                (e) =>
+                  `<tr><td style="font-weight:600">${e.employee_id}</td><td>${e.full_name || "—"}</td><td>${e.department || "—"}</td><td>${e.position || "—"}</td><td><span class="pill pill-${sp[e.status] || "blue"}">${e.status}</span></td><td>${e.hire_date || "—"}</td><td>${(e.salary?.base || 0).toLocaleString()}</td><td><button class="btn btn-outline btn-sm edit-emp" data-id="${e.employee_id}">Edit</button> <button class="btn btn-danger btn-sm del-emp" data-id="${e.employee_id}">Del</button></td></tr>`,
+              )
+              .join("");
+          }
+
+          function filterTable() {
+            const q = document.getElementById("empSearch").value.toLowerCase();
+            const s = document.getElementById("empStatusFilter").value;
+            renderTable(
+              employees.filter(
+                (e) =>
+                  (!q || e.full_name?.toLowerCase().includes(q) || e.employee_id?.toLowerCase().includes(q)) &&
+                  (!s || e.status === s),
+              ),
+            );
+          }
+
+          // ========== EMPLOYEE MODAL ==========
+          function openCreateModal() {
+            editingId = null;
+            kpiCount = 0;
+            document.getElementById("modalTitle").textContent = "Add Employee";
+            clearModalFields();
+            switchModalTab(0);
+            document.getElementById("empModal").classList.add("open");
+          }
+          function openEditModal(id) {
+            const e = employees.find((x) => x.employee_id === id);
+            if (!e) return;
+            editingId = id;
+            document.getElementById("modalTitle").textContent = `Edit — ${e.full_name || id}`;
+            fillModalFields(e);
+            switchModalTab(0);
+            document.getElementById("empModal").classList.add("open");
+          }
+          function closeModal() {
+            document.getElementById("empModal").classList.remove("open");
+            editingId = null;
+          }
+          function switchModalTab(i) {
+            for (let j = 0; j < 5; j++) {
+              document.getElementById(`mt-${j}`).style.display = j === i ? "" : "none";
+              document.querySelectorAll(".tab-pill")[j]?.classList.toggle("active", j === i);
+            }
+          }
+          function clearModalFields() {
+            [
+              "f-id",
+              "f-name",
+              "f-email",
+              "f-phone",
+              "f-dept",
+              "f-position",
+              "f-hiredate",
+              "f-notes",
+              "f-salary-base",
+              "f-salary-bonus",
+              "f-salary-review",
+              "f-al-total",
+              "f-al-used",
+              "f-sl-total",
+              "f-sl-used",
+              "f-pl-total",
+              "f-pl-used",
+              "f-spl-total",
+              "f-spl-used",
+              "f-ec-name",
+              "f-ec-rel",
+              "f-ec-phone",
+              "profileDocContent",
+            ].forEach((id) => {
+              const el = document.getElementById(id);
+              if (el) el.value = "";
+            });
+            document.getElementById("kpiEntries").innerHTML = "";
+            kpiCount = 0;
+          }
+          function fillModalFields(emp) {
+            const set = (id, val) => {
+              const el = document.getElementById(id);
+              if (el) el.value = val ?? "";
+            };
+            set("f-id", emp.employee_id);
+            set("f-name", emp.full_name);
+            set("f-email", emp.email);
+            set("f-phone", emp.phone);
+            set("f-dept", emp.department);
+            set("f-position", emp.position);
+            set("f-hiredate", emp.hire_date);
+            set("f-notes", emp.notes);
+            document.getElementById("f-emptype").value = emp.employment_type || "Full-time";
+            document.getElementById("f-status").value = emp.status || "Active";
+            const s = emp.salary || {};
+            set("f-salary-base", s.base);
+            set("f-salary-bonus", s.bonus);
+            set("f-salary-review", s.last_review);
+            document.getElementById("f-salary-currency").value = s.currency || "HKD";
+            const l = emp.leave || {};
+            set("f-al-total", l.annual_leave_total);
+            set("f-al-used", l.annual_leave_used);
+            set("f-sl-total", l.sick_leave_total);
+            set("f-sl-used", l.sick_leave_used);
+            set("f-pl-total", l.personal_leave_total);
+            set("f-pl-used", l.personal_leave_used);
+            set("f-spl-total", l.special_leave_total);
+            set("f-spl-used", l.special_leave_used);
+            const ec = emp.emergency_contact || {};
+            set("f-ec-name", ec.name);
+            set("f-ec-rel", ec.relationship);
+            set("f-ec-phone", ec.phone);
+            set("profileDocContent", emp.profile_document || "");
+            document.getElementById("kpiEntries").innerHTML = "";
+            kpiCount = 0;
+            (emp.kpi || []).forEach((k) => addKPIEntry(k));
+          }
+          function addKPIEntry(data = {}) {
+            const id = kpiCount++;
+            const div = document.createElement("div");
+            div.id = `kpi-${id}`;
+            div.style.cssText =
+              "background:var(--surface2);border-radius:var(--radius);padding:12px;margin-bottom:10px;border:1px solid var(--border)";
+            div.innerHTML = `<div class="form-row"><div class="field"><label>Period</label><input type="text" id="kpi-period-${id}" value="${data.period || ""}"></div><div class="field"><label>Score</label><input type="number" id="kpi-score-${id}" value="${data.score || ""}"></div></div><div class="form-row"><div class="field"><label>Rating</label><select id="kpi-rating-${id}"><option ${data.rating === "Outstanding" ? "selected" : ""}>Outstanding</option><option ${data.rating === "Exceeds" ? "selected" : ""}>Exceeds Expectations</option><option ${data.rating === "Meets" ? "selected" : ""}>Meets Expectations</option><option ${data.rating === "Below" ? "selected" : ""}>Below Expectations</option></select></div><div class="field"><button class="btn btn-danger btn-sm" onclick="document.getElementById('kpi-${id}').remove()">Remove</button></div></div><div class="field"><label>Comments</label><textarea id="kpi-comments-${id}" rows="2">${data.comments || ""}</textarea></div>`;
+            document.getElementById("kpiEntries").appendChild(div);
+          }
+          function collectKPI() {
+            const entries = [];
+            for (let i = 0; i < kpiCount; i++) {
+              const el = document.getElementById(`kpi-${i}`);
+              if (!el) continue;
+              entries.push({
+                period: document.getElementById(`kpi-period-${i}`)?.value || "",
+                score: parseInt(document.getElementById(`kpi-score-${i}`)?.value) || 0,
+                rating: document.getElementById(`kpi-rating-${i}`)?.value || "",
+                comments: document.getElementById(`kpi-comments-${i}`)?.value || "",
+              });
+            }
+            return entries;
+          }
+          async function saveEmployee() {
+            const id = editingId || document.getElementById("f-id").value.trim();
+            if (!id) return alert("Employee ID required");
+            const payload = {
+              employee_id: id,
+              full_name: document.getElementById("f-name").value,
+              email: document.getElementById("f-email").value,
+              phone: document.getElementById("f-phone").value,
+              department: document.getElementById("f-dept").value,
+              position: document.getElementById("f-position").value,
+              employment_type: document.getElementById("f-emptype").value,
+              hire_date: document.getElementById("f-hiredate").value,
+              status: document.getElementById("f-status").value,
+              notes: document.getElementById("f-notes").value,
+              salary: {
+                base: parseFloat(document.getElementById("f-salary-base").value) || 0,
+                currency: document.getElementById("f-salary-currency").value,
+                pay_cycle: document.getElementById("f-salary-cycle").value,
+                bonus: parseFloat(document.getElementById("f-salary-bonus").value) || 0,
+                last_review: document.getElementById("f-salary-review").value,
+              },
+              leave: {
+                annual_leave_total: parseInt(document.getElementById("f-al-total").value) || 0,
+                annual_leave_used: parseInt(document.getElementById("f-al-used").value) || 0,
+                sick_leave_total: parseInt(document.getElementById("f-sl-total").value) || 0,
+                sick_leave_used: parseInt(document.getElementById("f-sl-used").value) || 0,
+                personal_leave_total: parseInt(document.getElementById("f-pl-total").value) || 0,
+                personal_leave_used: parseInt(document.getElementById("f-pl-used").value) || 0,
+                special_leave_total: parseInt(document.getElementById("f-spl-total").value) || 0,
+                special_leave_used: parseInt(document.getElementById("f-spl-used").value) || 0,
+              },
+              kpi: collectKPI(),
+              emergency_contact: {
+                name: document.getElementById("f-ec-name").value,
+                relationship: document.getElementById("f-ec-rel").value,
+                phone: document.getElementById("f-ec-phone").value,
+              },
+              profile_document: document.getElementById("profileDocContent").value,
+            };
+            try {
+              const url = editingId ? `${API}/employees/${editingId}` : `${API}/employees`;
+              const r = await fetch(url, {
+                method: editingId ? "PUT" : "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              });
+              if (!r.ok) throw new Error((await r.json()).detail);
+
+              const profileText = document.getElementById("profileDocContent").value.trim();
+              if (profileText) {
+                fetch(`${API}/employees/${id}/profile`, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: new URLSearchParams({
+                    content: profileText,
+                    doc_type: "profile",
+                  }),
+                }).catch(err => console.warn("Profile embedding skipped:", err));
+              }
+
+              closeModal();
+              loadEmployees();
+            } catch (e) {
+              alert("Error: " + e.message);
+            }
+          }
+          async function deleteEmployee(id) {
+            if (!confirm(`Delete ${id}?`)) return;
+            try {
+              await fetch(`${API}/employees/${id}`, { method: "DELETE" });
+              loadEmployees();
+            } catch (e) {
+              alert(e.message);
+            }
+          }
+
+          // ========== ATTENDANCE ==========
+          async function checkIn() {
+            const id = document.getElementById("attEmpId").value.trim();
+            if (!id) return alert_("attAlert", "Employee ID required", "error");
+            try {
+              const r = await fetch(`${API}/attendance/check-in`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ employee_id: id }),
+              });
+              const d = await r.json();
+              alert_("attAlert", d.message || "Checked in", "success");
+            } catch (e) {
+              alert_("attAlert", "Error: " + e.message, "error");
+            }
+          }
+          async function checkOut() {
+            const id = document.getElementById("attEmpId").value.trim();
+            if (!id) return alert_("attAlert", "Employee ID required", "error");
+            try {
+              const r = await fetch(`${API}/attendance/check-out`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ employee_id: id }),
+              });
+              const d = await r.json();
+              alert_("attAlert", d.message || "Checked out", "success");
+            } catch (e) {
+              alert_("attAlert", "Error: " + e.message, "error");
+            }
+          }
+          async function loadDailyAttendance() {
+            const date = document.getElementById("attDate").value;
+            if (!date) return;
+            try {
+              const r = await fetch(`${API}/attendance/daily?date=${date}`);
+              const d = await r.json();
+              const s = d.data || {};
+              document.getElementById("dailyAttResult").innerHTML = `<div class="stats-row" style="margin-top:16px">
+              <div class="stat-card"><div class="stat-label">Present</div><div class="stat-value">${s.present || 0}</div></div>
+              <div class="stat-card"><div class="stat-label">Late</div><div class="stat-value">${s.late || 0}</div></div>
+              <div class="stat-card"><div class="stat-label">Absent</div><div class="stat-value">${s.absent || 0}</div></div>
+              <div class="stat-card"><div class="stat-label">On Leave</div><div class="stat-value">${s.on_leave || 0}</div></div>
+            </div>`;
+            } catch (e) {
+              console.error(e);
+            }
+          }
+          async function loadMonthlyAttendance() {
+            const id = document.getElementById("monthlyAttEmp").value.trim();
+            const period = document.getElementById("monthlyAttPeriod").value;
+            if (!id || !period) return;
+            const [y, m] = period.split("-");
+            try {
+              const r = await fetch(`${API}/attendance/monthly/${id}?year=${y}&month=${parseInt(m)}`);
+              const d = await r.json();
+              const records = d.data || [];
+              document.getElementById("monthlyAttResult").innerHTML = records.length
+                ? `<table><thead><tr><th>Date</th><th>Check In</th><th>Check Out</th><th>Hours</th><th>Status</th></tr></thead><tbody>${records.map((r) => `<tr><td>${r.date}</td><td>${r.check_in || "—"}</td><td>${r.check_out || "—"}</td><td>${r.work_hours || 0}h</td><td>${r.status}</td></tr>`).join("")}</tbody></table>`
+                : "<p>No records</p>";
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          // ========== LEAVE ==========
+          async function submitLeave() {
+            const payload = {
+              employee_id: document.getElementById("leaveEmpId").value.trim(),
+              leave_type: document.getElementById("leaveType").value,
+              start_date: document.getElementById("leaveStart").value,
+              end_date: document.getElementById("leaveEnd").value,
+              reason: document.getElementById("leaveReason").value,
+            };
+            if (!payload.employee_id || !payload.start_date)
+              return alert_("leaveAlert", "Fill required fields", "error");
+            try {
+              const r = await fetch(`${API}/leave/requests`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              });
+              const d = await r.json();
+              alert_("leaveAlert", d.message, "success");
+              loadPendingLeaves();
+            } catch (e) {
+              alert_("leaveAlert", "Error: " + e.message, "error");
+            }
+          }
+          async function loadPendingLeaves() {
+            try {
+              const r = await fetch(`${API}/leave/requests/pending`);
+              const d = await r.json();
+              const list = d.data || [];
+              document.getElementById("pendingLeaveList").innerHTML = list.length
+                ? list
+                  .map(
+                    (l) =>
+                      `<div class="card" style="margin-bottom:8px"><strong>${l.request_id}</strong> — ${l.employee_name} (${l.leave_type}) ${l.start_date}~${l.end_date} (${l.days}d)<br><em>${l.reason || ""}</em><br><button class="btn btn-sm btn-primary" onclick="approveLeave('${l.request_id}')">✅ Approve</button> <button class="btn btn-sm btn-danger" onclick="rejectLeave('${l.request_id}')">❌ Reject</button></div>`,
+                  )
+                  .join("")
+                : "<p>No pending requests</p>";
+            } catch (e) {
+              console.error(e);
+            }
+          }
+          async function approveLeave(id) {
+            try {
+              await fetch(`${API}/leave/requests/${id}/approve`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ approver_id: "admin" }),
+              });
+              loadPendingLeaves();
+              alert_("leaveAlert", "Approved!", "success");
+            } catch (e) {
+              alert_("leaveAlert", e.message, "error");
+            }
+          }
+          async function rejectLeave(id) {
+            const reason = prompt("Rejection reason:");
+            if (reason === null) return;
+            try {
+              await fetch(`${API}/leave/requests/${id}/reject`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ approver_id: "admin", reason }),
+              });
+              loadPendingLeaves();
+            } catch (e) {
+              alert_("leaveAlert", e.message, "error");
+            }
+          }
+          async function loadLeaveBalance() {
+            const id = document.getElementById("leaveBalEmp").value.trim();
+            if (!id) return;
+            try {
+              const r = await fetch(`${API}/leave/summary/${id}`);
+              const d = await r.json();
+              const s = d.data || {};
+              document.getElementById("leaveBalResult").innerHTML = Object.entries(s)
+                .map(
+                  ([k, v]) =>
+                    `<div class="leave-item"><div class="leave-header"><span>${k}</span><span>${v.remaining}/${v.total}</span></div><div class="leave-track"><div class="leave-fill" style="width:${v.total > 0 ? (v.used / v.total) * 100 : 0}%;background:var(--accent)"></div></div></div>`,
+                )
+                .join("");
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          // ========== PAYROLL ==========
+          async function calculatePayroll() {
+            const id = document.getElementById("payrollEmpId").value.trim();
+            const period = document.getElementById("payrollPeriod").value;
+            if (!id || !period) return alert_("payrollAlert", "Fill all fields", "error");
+            const [y, m] = period.split("-");
+            try {
+              const r = await fetch(`${API}/payroll/${id}?year=${y}&month=${parseInt(m)}`);
+              const d = await r.json();
+              const b = d.data?.breakdown || {};
+              document.getElementById("payrollResult").innerHTML =
+                `<table><thead><tr><th>Item</th><th>Amount</th></tr></thead><tbody>
+              <tr><td>Base Salary</td><td>${b.base_salary?.toLocaleString() || 0}</td></tr>
+              <tr><td>Overtime Pay</td><td style="color:var(--green)">+${b.overtime_pay?.toLocaleString() || 0}</td></tr>
+              <tr><td>Bonus</td><td style="color:var(--green)">+${b.bonus?.toLocaleString() || 0}</td></tr>
+              <tr><td>Absent Deduction</td><td style="color:var(--red)">-${b.absent_deduction?.toLocaleString() || 0}</td></tr>
+              <tr><td>Late Penalty</td><td style="color:var(--red)">-${b.late_penalty?.toLocaleString() || 0}</td></tr>
+              <tr><td>Leave Deduction</td><td style="color:var(--red)">-${b.leave_deduction?.toLocaleString() || 0}</td></tr>
+              <tr style="font-weight:700"><td>Gross Salary</td><td>${b.gross_salary?.toLocaleString() || 0}</td></tr>
+            </tbody></table>`;
+            } catch (e) {
+              alert_("payrollAlert", e.message, "error");
+            }
+          }
+          async function viewPayslip() {
+            const id = document.getElementById("payrollEmpId").value.trim();
+            const period = document.getElementById("payrollPeriod").value;
+            if (!id || !period) return alert_("payrollAlert", "Fill all fields", "error");
+            const [y, m] = period.split("-");
+            try {
+              const r = await fetch(`${API}/payroll/${id}/payslip?year=${y}&month=${parseInt(m)}`);
+              const text = await r.text();
+              document.getElementById("payrollResult").innerHTML =
+                `<pre style="background:var(--surface2);padding:16px;border-radius:var(--radius);font-family:monospace;white-space:pre-wrap">${text}</pre>`;
+            } catch (e) {
+              alert_("payrollAlert", e.message, "error");
+            }
+          }
+          async function suggestAdjustment() {
+            const id = document.getElementById("adjustEmpId").value.trim();
+            if (!id) return;
+            try {
+              const r = await fetch(`${API}/payroll/${id}/adjustment`);
+              const d = await r.json();
+              const a = d.data || {};
+              document.getElementById("adjustResult").innerHTML = `<div class="card">
+              <p><strong>Current:</strong> ${a.current_salary?.toLocaleString()}</p>
+              <p><strong>KPI Avg:</strong> ${a.kpi_avg} | <strong>Tenure:</strong> ${a.years}yr</p>
+              <p><strong>Range:</strong> ${a.range?.min}%–${a.range?.max}%</p>
+              <p><strong>Suggested:</strong> ${a.suggested?.toLocaleString()}</p>
+              <p><em>${a.reason}</em></p>
+            </div>`;
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          // ========== DEVELOPMENT ==========
+          async function extractSkills() {
+            const id = document.getElementById("devEmpId").value.trim();
+            if (!id) return;
+            try {
+              const r = await fetch(`${API}/employees/${id}/skills`);
+              const d = await r.json();
+              const skills = d.data || [];
+              document.getElementById("devResult").innerHTML =
+                `<h4>Skills (${skills.length})</h4><div>${skills.map((s) => `<span class="pill pill-blue" style="margin:4px">${s.skill} (${s.proficiency})</span>`).join("")}</div>`;
+            } catch (e) {
+              alert_("devAlert", e.message, "error");
+            }
+          }
+          async function identifyGaps() {
+            const id = document.getElementById("devEmpId").value.trim();
+            const role = document.getElementById("devTargetRole").value.trim();
+            if (!id) return;
+            try {
+              const url = `${API}/employees/${id}/skill_gaps${role ? `?target_role=${encodeURIComponent(role)}` : ""}`;
+              const r = await fetch(url);
+              const d = await r.json();
+              const data = d.data || {};
+              document.getElementById("devResult").innerHTML = `<h4>Gap Analysis — ${data.target_role}</h4>
+              <div>${(data.skill_gaps || []).map((g) => `<div class="leave-item"><div class="leave-header"><span>${g.skill} (${g.gap_type})</span><span>${g.priority}</span></div></div>`).join("") || "<p>No gaps</p>"}</div>`;
+            } catch (e) {
+              alert_("devAlert", e.message, "error");
+            }
+          }
+          async function recommendCourses() {
+            const id = document.getElementById("devEmpId").value.trim();
+            if (!id) return;
+            try {
+              const r = await fetch(`${API}/employees/${id}/course-recommendations`);
+              const d = await r.json();
+              const data = d.data || {};
+              document.getElementById("devResult").innerHTML = `<h4>Recommended Courses</h4>
+              <div>${(data.recommended_courses || []).map((c) => `<div class="card" style="margin-bottom:8px"><strong>${c.title}</strong> (${c.provider})<br>${c.skill} · ${c.level} · ${c.duration_hours}h · ${c.cost ? "$" + c.cost : "Free"}<br>⭐ ${c.rating}</div>`).join("") || "<p>No courses</p>"}</div>`;
+            } catch (e) {
+              alert_("devAlert", e.message, "error");
+            }
+          }
+          async function generateDevPlan() {
+            const id = document.getElementById("devEmpId").value.trim();
+            if (!id) return;
+            try {
+              const r = await fetch(`${API}/employees/${id}/development-plan`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ months: 6 }),
+              });
+              const d = await r.json();
+              const plan = d.data || {};
+              document.getElementById("devResult").innerHTML = `<h4>Development Plan</h4>
+              <p>Duration: ${plan.plan_duration_months}mo | Courses: ${plan.total_courses} | Hours: ${plan.total_learning_hours}</p>
+              ${(plan.phases || []).map((p) => `<div class="card" style="margin-bottom:8px"><strong>Phase ${p.phase}: ${p.name}</strong><br>${p.period}<br>${(p.courses || []).map((c) => `📚 ${c.title}`).join("<br>")}</div>`).join("")}`;
+            } catch (e) {
+              alert_("devAlert", e.message, "error");
+            }
+          }
+
+          // ========== MARKETPLACE ==========
+          async function loadProjects() {
+            try {
+              const r = await fetch(`${API}/marketplace/projects?all_projects=true`);
+              const d = await r.json();
+              const projects = d.data || [];
+              document.getElementById("projectList").innerHTML = projects.length
+                ? projects
+                  .map(
+                    (p) => `<div class="card" style="margin-bottom:8px">
+              <div class="cand-header"><div><div class="cand-name">${p.title}</div><div>${p.description || ""}</div></div><span class="pill ${p.status === "Open" ? "pill-green" : "pill-red"}">${p.status}</span></div>
+              <p>🛠 ${(p.required_skills || []).join(", ")} | 📅 ${p.duration_weeks}w | 👥 ${(p.approved_participants || []).length}/${p.max_participants}</p>
+              <button class="btn btn-outline btn-sm" onclick="matchProject('${p.project_id}')">🔍 Match</button>
+            </div>`,
+                  )
+                  .join("")
+                : "<p>No projects found</p>";
+            } catch (e) {
+              console.error(e);
+            }
+          }
+          function openProjectModal() {
+            document.getElementById("projectModal").classList.add("open");
+          }
+          function closeProjectModal() {
+            document.getElementById("projectModal").classList.remove("open");
+          }
+          async function createProject() {
+            const payload = {
+              title: document.getElementById("projTitle").value,
+              description: document.getElementById("projDesc").value,
+              required_skills: document
+                .getElementById("projSkills")
+                .value.split(",")
+                .map((s) => s.trim())
+                .filter(Boolean),
+              duration_weeks: parseInt(document.getElementById("projDuration").value) || 4,
+              department: document.getElementById("projDept").value,
+              max_participants: parseInt(document.getElementById("projMax").value) || 3,
+              requester_id: document.getElementById("projRequester").value,
+            };
+            try {
+              const r = await fetch(`${API}/marketplace/projects`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              });
+              const d = await r.json();
+              alert_("marketplaceAlert", d.message, "success");
+              closeProjectModal();
+              loadProjects();
+            } catch (e) {
+              alert_("marketplaceAlert", e.message, "error");
+            }
+          }
+          async function matchProject(id) {
+            try {
+              const r = await fetch(`${API}/marketplace/projects/${id}/matches`);
+              const d = await r.json();
+              const data = d.data || {};
+              document.getElementById("projectList").innerHTML =
+                `<div class="card"><div class="card-title">Candidates for: ${data.project_title}</div>
+              ${(data.candidates || []).map((c) => `<div class="leave-item"><div class="leave-header"><span>${c.full_name} (${c.department})</span><span>${c.match_score}%</span></div><div class="leave-track"><div class="leave-fill" style="width:${c.match_score}%;background:var(--accent)"></div></div><small>${(c.matched_skills || []).join(", ")}</small></div>`).join("")}
+              <button class="btn btn-outline btn-sm" onclick="loadProjects()">← Back</button></div>`;
+            } catch (e) {
+              console.error(e);
+            }
+          }
+
+          // ========== LABOUR DEMAND ==========
+
+          async function runLabourAnalysis() {
+            const companyName = document.getElementById("labourCompanyName").value.trim() || "Our Company";
+            const industry = document.getElementById("labourIndustry").value.trim() || "General";
+            const refresh = document.getElementById("labourRefresh").checked ? "true" : "false";
+
+            document.getElementById("labourLoading").style.display = "block";
+            document.getElementById("labourResult").style.display = "none";
+            alert_("labourAlert", "");
+
+            try {
+                const fd = new FormData();
+                fd.append("company_name", companyName);
+                fd.append("industry", industry);
+                fd.append("refresh", refresh);
+                const r = await fetch(`${API}/workforce-planning/forecast`, { method: "POST", body: fd });
+                const d = await r.json();
+                document.getElementById("labourLoading").style.display = "none";
+
+                if (d.success && d.analysis) {
+                    // ===== 新增：標記快取狀態 =====
+                    d.analysis._cached = d.from_cache || false;
+                    renderLabourAnalysis(d.analysis);
+                    
+                    // ===== 顯示快取狀態訊息（僅在 alert 中顯示）=====
+                    if (d.from_cache) {
+                        alert_("labourAlert", "⚡ 使用快取結果", "info");
+                    } else {
+                        alert_("labourAlert", "✅ 分析完成", "success");
+                    }
+                } else {
+                    alert_("labourAlert", d.error || "Analysis failed", "error");
+                }
+            } catch (e) {
+                document.getElementById("labourLoading").style.display = "none";
+                alert_("labourAlert", "Error: " + e.message, "error");
+            }
+        }
+
+          function renderLabourAnalysis(a) {
+            currentLabourAnalysis = a;
+            const container = document.getElementById("labourResult");
+            container.style.display = "block";
+            
+            // ===== 新增：檢查是否為快取結果 =====
+            const isCached = a._cached || false;
+            const cacheBadge = isCached ? ' ⚡' : '';
+            
+            const f = a.forecast || {};
+            const empComp = a.employee_competitiveness || [];
+            const termAnalysis = a.termination_analysis || [];
+            const termSuggestions = a.termination_suggestions || [];
+            const deptProj = a.department_projections || [];
+            const turnover = a.turnover_analysis || {};
+            const market = a.market_trends || {};
+            const recs = a.recommendations || {};
+
+            let html = `<div style="margin-bottom:12px;display:flex;gap:8px;align-items:center">
+                <button class="btn btn-sm btn-outline" onclick="speakLabourAnalysis()">🔊 Speak Results</button>
+                <button class="btn btn-sm btn-outline" onclick="stopSpeaking()">⏹ Stop</button>
+                ${isCached ? '<span style="font-size:1.2rem;color:var(--amber);" title="Cached result">⚡</span>' : ''}
+            </div>`;
+            
+            html += `<div class="card" style="margin-bottom:16px"><div class="card-title">📊 Headcount Forecast ${cacheBadge}</div>`;
+            html += `<div class="labour-stat-grid">`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${f.current_headcount ?? "—"}</div><div class="stat-label">Current Headcount</div></div>`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${f.projected_headcount_3m ?? "—"}</div><div class="stat-label">Projected (3mo)</div></div>`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${f.projected_headcount_6m ?? "—"}</div><div class="stat-label">Projected (6mo)</div></div>`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${f.projected_headcount_12m ?? "—"}</div><div class="stat-label">Projected (12mo)</div></div>`;
+            html += `</div>`;
+            html += `<div class="labour-stat-grid">`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${turnover.historical_turnover_rate ?? "—"}%</div><div class="stat-label">Historical Turnover</div></div>`;
+            html += `<div class="labour-stat-card"><div class="stat-value">${turnover.projected_turnover_rate ?? "—"}%</div><div class="stat-label">Projected Turnover</div></div>`;
+            html += `</div></div>`;
+
+            html += `<div class="card" style="margin-bottom:16px"><div class="card-title">📋 招募需求 (Recruitment Needs)</div>`;
+            for (const period of ["3_months", "6_months", "12_months"]) {
+              const needs = (f.recruitment_needs && f.recruitment_needs[period]) || [];
+              if (needs.length > 0) {
+                const periodLabel = period === "3_months" ? "3 個月" : period === "6_months" ? "6 個月" : "12 個月";
+                html += `<div class="labour-section-title">${periodLabel}</div>`;
+                html += `<table class="labour-table"><thead><tr><th>Position</th><th>Count</th><th>Urgency</th><th>Reason</th></tr></thead><tbody>`;
+                for (const n of needs) {
+                  const urgentClass = n.urgency === "Critical" ? "tag-critical" : n.urgency === "High" ? "tag-high" : "tag-medium";
+                  html += `<tr><td>${n.position || ""}</td><td>${n.count ?? 0}</td><td><span class="${urgentClass}">${n.urgency || ""}</span></td><td>${n.reason || ""}</td></tr>`;
+                }
+                html += `</tbody></table>`;
+              }
+            }
+            html += `</div>`;
+
+            if (deptProj.length > 0) {
+              html += `<div class="card" style="margin-bottom:16px"><div class="card-title">🏢 Department Projections</div>`;
+              html += `<table class="labour-table"><thead><tr><th>Department</th><th>Current</th><th>Projected 12mo</th><th>Gap</th><th>Expansion</th><th>Critical Roles</th></tr></thead><tbody>`;
+              for (const d of deptProj) {
+                html += `<tr><td>${d.department || ""}</td><td>${d.current_headcount ?? 0}</td><td>${d.projected_headcount_12m ?? 0}</td><td>${d.gap ?? 0}</td><td>${d.expansion_factor ?? 0}x</td><td>${(d.critical_roles || []).join(", ")}</td></tr>`;
+              }
+              html += `</tbody></table></div>`;
+            }
+
+            if (empComp.length > 0) {
+              html += `<div class="card" style="margin-bottom:16px"><div class="card-title">👤 Employee Competitiveness Assessment</div>`;
+              html += `<table class="labour-table"><thead><tr><th>Employee</th><th>Dept</th><th>Score</th><th>Level</th><th>Risk</th><th>Action</th><th>Priority</th></tr></thead><tbody>`;
+              const sorted = [...empComp].sort((a, b) => (a.competitive_score || 0) - (b.competitive_score || 0));
+              for (const e of sorted) {
+                const score = e.competitive_score || 0;
+                const barW = Math.min(score, 100);
+                const levelClass = e.competitiveness_level === "High" ? "tag-retain" : e.competitiveness_level === "Medium" ? "tag-medium" : "tag-separate";
+                const riskClass = e.risk_of_obsolescence === "High" ? "tag-critical" : e.risk_of_obsolescence === "Medium" ? "tag-medium" : "tag-low";
+                const actionClass = e.recommended_action === "Retain" ? "tag-retain" : e.recommended_action === "Upskilling" ? "tag-upskill" : e.recommended_action === "Performance Improvement Plan" ? "tag-pip" : "tag-separate";
+                const priorityClass = e.action_priority === "High" ? "tag-critical" : e.action_priority === "Medium" ? "tag-medium" : "tag-low";
+                html += `<tr><td><strong>${e.name || e.employee_id || ""}</strong><br><small style="color:var(--ink3)">${e.position || ""}</small></td><td>${e.department || ""}</td>`;
+                html += `<td><div class="labour-score-bar" style="width:${barW * 0.6}px;background:${score >= 70 ? "#2ed573" : score >= 40 ? "#ffa502" : "#ff4757"}"></div>${score}</td>`;
+                html += `<td><span class="${levelClass}">${e.competitiveness_level || ""}</span></td>`;
+                html += `<td><span class="${riskClass}">${e.risk_of_obsolescence || ""}</span></td>`;
+                html += `<td><span class="${actionClass}">${e.recommended_action || ""}</span></td>`;
+                html += `<td><span class="${priorityClass}">${e.action_priority || ""}</span></td></tr>`;
+              }
+              html += `</tbody></table>`;
+
+              html += `<div style="margin-top:12px"><button class="btn btn-outline btn-sm" onclick="toggleLabourDetail()">📖 Toggle Details</button></div>`;
+              html += `<div id="labourDetail" style="display:none;margin-top:12px">`;
+              for (const e of sorted) {
+                if (e.strengths && e.strengths.length || e.weaknesses && e.weaknesses.length || e.justification) {
+                  html += `<div class="labour-rec-box"><strong>${e.name || e.employee_id || ""}</strong> — ${e.justification || ""}`;
+                  if (e.strengths && e.strengths.length) html += `<br><small style="color:#2ed573">Strengths:</small> ${e.strengths.join("; ")}`;
+                  if (e.weaknesses && e.weaknesses.length) html += `<br><small style="color:#ff4757">Weaknesses:</small> ${e.weaknesses.join("; ")}`;
+                  if (e.market_comparison) html += `<br><small style="color:#1e90ff">Market:</small> ${e.market_comparison}`;
+                  html += `</div>`;
+                }
+              }
+              html += `</div>`;
+              html += `</div>`;
+            }
+
+            if (termAnalysis.length > 0) {
+              html += `<div class="card" style="margin-bottom:16px"><div class="card-title">⚠️ Termination Analysis (資遣分析)</div>`;
+              html += `<table class="labour-table"><thead><tr><th>Employee</th><th>Issue</th><th>Savings</th><th>Severance</th><th>Legal Risk</th><th>Timeline</th></tr></thead><tbody>`;
+              for (const t of termAnalysis) {
+                const legalClass = t.legal_risk === "High" ? "tag-critical" : t.legal_risk === "Medium" ? "tag-medium" : "tag-low";
+                html += `<tr><td><strong>${t.name || t.employee_id || ""}</strong><br><small style="color:var(--ink3)">${t.position || ""}</small></td><td>${t.primary_issue || ""}</td><td>$${(t.expected_savings || 0).toLocaleString()}</td><td>$${(t.severance_estimate || 0).toLocaleString()}</td><td><span class="${legalClass}">${t.legal_risk || ""}</span></td><td>${t.recommended_timeline || ""}</td></tr>`;
+              }
+              html += `</tbody></table></div>`;
+            }
+            if (termSuggestions.length > 0) {
+              html += `<div class="card" style="margin-bottom:16px"><div class="card-title">🔴 建議資遣員工 (Recommended for Termination)</div>`;
+              html += `<table class="labour-table"><thead><tr><th>Employee</th><th>Position</th><th>Dept</th><th>Avg KPI</th><th>Trend</th><th>Reason</th><th>Severity</th><th>Timeline</th><th>Savings</th></tr></thead><tbody>`;
+              for (const s of termSuggestions) {
+                const sevClass = s.severity === "high" ? "tag-critical" : s.severity === "medium" ? "tag-medium" : "tag-low";
+                const trendIcon = s.kpi_trend === "down" ? "📉" : s.kpi_trend === "up" ? "📈" : "➡️";
+                html += `<tr><td><strong>${s.name || s.employee_id || ""}</strong></td><td>${s.position || ""}</td><td>${s.department || ""}</td><td>${s.avg_kpi ?? "—"}</td><td>${trendIcon} ${s.kpi_trend || ""}</td><td>${s.reason_for_termination || s.primary_issue || ""}</td><td><span class="${sevClass}">${s.severity || ""}</span></td><td>${s.recommended_timeline || ""}</td><td>$${(s.expected_savings || 0).toLocaleString()}</td></tr>`;
+              }
+              html += `</tbody></table></div>`;
+            }
+
+            html += `<div class="card" style="margin-bottom:16px"><div class="card-title">📈 Market Trends</div>`;
+            html += `<div class="labour-rec-box">`;
+            if (market.industry_outlook) html += `<p><strong>Outlook:</strong> ${market.industry_outlook}</p>`;
+            if (market.key_trends && market.key_trends.length) {
+              html += `<p><strong>Key Trends:</strong></p><ul>${market.key_trends.map(t => `<li>${t}</li>`).join("")}</ul>`;
+            }
+            if (market.salary_benchmarks) html += `<p><strong>Salary Benchmarks:</strong> ${market.salary_benchmarks}</p>`;
+            if (market.talent_availability) html += `<p><strong>Talent Availability:</strong> ${market.talent_availability}</p>`;
+            html += `</div></div>`;
+
+            html += `<div class="card"><div class="card-title">💡 Recommendations</div>`;
+            if (recs.immediate_actions && recs.immediate_actions.length) {
+              html += `<div class="labour-section-title">Immediate Actions</div><ul>${recs.immediate_actions.map(a => `<li>${a}</li>`).join("")}</ul>`;
+            }
+            if (recs.strategic_hiring_plan) {
+              html += `<div class="labour-section-title">Strategic Hiring Plan</div><p>${recs.strategic_hiring_plan}</p>`;
+            }
+            if (recs.cost_savings_estimate) {
+              html += `<p><strong>Estimated Cost Savings:</strong> $${(recs.cost_savings_estimate || 0).toLocaleString()}</p>`;
+            }
+            if (recs.workforce_optimization && recs.workforce_optimization.length) {
+              html += `<div class="labour-section-title">Workforce Optimization</div><ul>${recs.workforce_optimization.map(o => `<li>${o}</li>`).join("")}</ul>`;
+            }
+            html += `</div>`;
+
+            container.innerHTML = html;
+            container.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+
+          function speakLabourAnalysis() {
+            if (!currentLabourAnalysis) return;
+            const a = currentLabourAnalysis;
+            const f = a.forecast || {};
+            const t = a.turnover_analysis || {};
+            const parts = [];
+            if (f.current_headcount) parts.push(`Current headcount: ${f.current_headcount}`);
+            if (f.projected_headcount_12m) parts.push(`Projected headcount in 12 months: ${f.projected_headcount_12m}`);
+            if (t.historical_turnover_rate) parts.push(`Historical turnover rate: ${t.historical_turnover_rate} percent`);
+            if (t.projected_turnover_rate) parts.push(`Projected turnover rate: ${t.projected_turnover_rate} percent`);
+            const recs = a.recommendations || {};
+            if (recs.immediate_actions && recs.immediate_actions.length) {
+              parts.push(`Recommended actions: ${recs.immediate_actions.join(", ")}`);
+            }
+            speakText(`Labour demand analysis results. ${parts.join(". ")}`);
+          }
+
+          function toggleLabourDetail() {
+            const el = document.getElementById("labourDetail");
+            el.style.display = el.style.display === "none" ? "block" : "none";
+          }
+
+          async function loadLabourHistory() {
+            try {
+                const r = await fetch(`${API}/workforce-planning/forecasts`);
+                const d = await r.json();
+                if (d.success && d.data && d.data.analyses && d.data.analyses.length > 0) {
+                    // 取得最新的分析
+                    const latest = d.data.analyses[0];
+                    const isCached = latest.from_cache || false;
+                    const cacheBadge = isCached ? ' ⚡' : '';
+                    
+                    let html = `<div class="card"><div class="card-title">📋 Analysis History ${cacheBadge}</div>` +
+                        `<p style="font-size:0.85rem;color:var(--muted);margin-bottom:12px">Latest analysis from ${new Date(latest.timestamp).toLocaleString()}</p>` +
+                        d.data.analyses.map(a =>
+                            `<div class="leave-item"><div class="leave-header"><span>${a.company_name || "N/A"} (${a.industry || "N/A"})</span><span>${new Date(a.timestamp).toLocaleString()} · ${a.employee_count || 0} emp ${a.from_cache ? '⚡' : ''}</span></div></div>`
+                        ).join("") + `</div>`;
+                    document.getElementById("labourResult").style.display = "block";
+                    document.getElementById("labourResult").innerHTML = html;
+                    
+                    // ===== 同時載入上一次的分析內容 =====
+                    if (latest.analysis) {
+                        latest.analysis._cached = latest.from_cache || false;
+                        renderLabourAnalysis(latest.analysis);
+                    }
+                } else {
+                    alert_("labourAlert", "No analysis history found.", "info");
+                }
+            } catch (e) {
+                alert_("labourAlert", "Error loading history: " + e.message, "error");
+            }
+        }
+          // ========== UTILS ==========
+          function alert_(id, msg, type = "info") {
+            const el = document.getElementById(id);
+            if (el) {
+              el.className = `alert alert-${type} show`;
+              el.innerHTML = msg;
+              setTimeout(() => el.classList.remove("show"), 5000);
+            }
+          }
+          function handleFiles(inputId, chipsId) {
+            const input = document.getElementById(inputId);
+            const chips = document.getElementById(chipsId);
+            chips.innerHTML = "";
+            Array.from(input.files).forEach((f, i) => {
+              const chip = document.createElement("span");
+              chip.className = "file-chip";
+              chip.innerHTML = `📄 ${f.name} <button onclick="removeFile('${inputId}','${chipsId}',${i})">×</button>`;
+              chips.appendChild(chip);
+            });
+          }
+          function removeFile(inputId, chipsId, idx) {
+            const input = document.getElementById(inputId);
+            const dt = new DataTransfer();
+            Array.from(input.files).forEach((f, i) => {
+              if (i !== idx) dt.items.add(f);
+            });
+            input.files = dt.files;
+            handleFiles(inputId, chipsId);
+          }
+
+          // ========== MODAL CLOSE ON BACKDROP ==========
+          document.getElementById("empModal").addEventListener("click", (e) => {
+            if (e.target === document.getElementById("empModal")) closeModal();
+          });
+          document.getElementById("projectModal")?.addEventListener("click", (e) => {
+            if (e.target === document.getElementById("projectModal")) closeProjectModal();
+          });
+
+          // ========== INIT ==========
+          document.getElementById("addEmpBtn")?.addEventListener("click", openCreateModal);
+          document.getElementById("modalSaveBtn")?.addEventListener("click", saveEmployee);
+          document.getElementById("modalCancelBtn")?.addEventListener("click", closeModal);
+          document.querySelectorAll(".nav-item").forEach(function(btn) {
+            btn.addEventListener("click", function() {
+              var id = this.id.replace("nav-", "");
+              if (id) showSection(id);
+            });
+          });
+          document.getElementById("empTableBody")?.addEventListener("click", function(e) {
+            var t = e.target;
+            if (t.classList.contains("edit-emp")) openEditModal(t.dataset.id);
+            if (t.classList.contains("del-emp")) deleteEmployee(t.dataset.id);
+          });
+          window.onload = () => {
+            try {
+              checkHealth();
+              showSection("dashboard");
+              loadDashboard();
+              loadEmployees();
+              setInterval(checkHealth, 10000);
+            } catch(e) { console.warn("Init error:", e); }
+          };
+        </script>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

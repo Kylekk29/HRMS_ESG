@@ -1,0 +1,44 @@
+Employee: Michael Ho
+ID: EMP005
+Department: Engineering
+Position: Engineering Manager
+Email: michael.ho@company.com
+Phone: +852-9123-4005
+Hire Date: 2018-09-01
+Status: Active
+Salary: HKD$120000/month
+KPI Average: 91/100
+Notes: Key leadership, succession planning for Director role
+
+--- Recent KPI ---
+  2025-Q1: 95/100 (Outstanding) — Exceptional leadership, team delivered all Q1 goals
+  2025-Q2: 90/100 (Outstanding) — Reduced team attrition from 15% to 5%
+  2025-Q3: 92/100 (Outstanding) — Successfully hired 3 senior engineers
+  2025-Q4: 88/100 (Exceeds Expectations) — Team delivered Q4 roadmap on time
+
+--- CV ---
+CV: Michael Ho
+Email: michael.ho@company.com | Phone: +852-9123-4005
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Engineering Manager with 9+ years in engineering. KPI average: 91.2/100.
+
+EXPERIENCE
+Engineering Manager | AI-HR Bridge Tech | 2018-09-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 95/100 (Outstanding)
+  - 2025-Q2: Score 90/100 (Outstanding)
+  - 2025-Q3: Score 92/100 (Outstanding)
+  - 2025-Q4: Score 88/100 (Exceeds Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- UBC
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

@@ -1,0 +1,44 @@
+Employee: Fiona Ng
+ID: EMP021
+Department: Engineering
+Position: QA Engineer
+Email: fiona.ng@company.com
+Phone: +852-9123-4021
+Hire Date: 2024-03-01
+Status: Active
+Salary: HKD$35000/month
+KPI Average: 84/100
+Notes: Promising QA engineer, automation skills growing
+
+--- Recent KPI ---
+  2025-Q1: 88/100 (Exceeds Expectations) — Automated 60% of regression tests, great start
+  2025-Q2: 85/100 (Exceeds Expectations) — Bug detection rate improved, zero critical escapes
+  2025-Q3: 83/100 (Exceeds Expectations) — Introduced performance testing framework
+  2025-Q4: 80/100 (Meets Expectations) — Consistent QA support for releases
+
+--- CV ---
+CV: Fiona Ng
+Email: fiona.ng@company.com | Phone: +852-9123-4021
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+QA Engineer with 4+ years in engineering. KPI average: 84.0/100.
+
+EXPERIENCE
+QA Engineer | AI-HR Bridge Tech | 2024-03-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 88/100 (Exceeds Expectations)
+  - 2025-Q2: Score 85/100 (Exceeds Expectations)
+  - 2025-Q3: Score 83/100 (Exceeds Expectations)
+  - 2025-Q4: Score 80/100 (Meets Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

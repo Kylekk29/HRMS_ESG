@@ -1,0 +1,35 @@
+Name: 郭宗翰 (Kuo Tsung-Han)
+Email: kuo.tsung.han@email.com
+Phone: +886-9XXXXXXXXX
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+Experienced Senior Python Developer with 7+ years of expertise in Python. Proven track record of delivering scalable solutions and leading technical initiatives. Strong problem-solving skills and passion for clean, maintainable code.
+
+=== TARGET ROLE ===
+Senior Python Developer
+
+=== WORK EXPERIENCE ===
+
+Sr. Senior Python Developer | Tech Company | 2019-Present
+  • Led development of core platform features
+  • Mentored junior team members
+  • Drove technical architecture decisions
+
+Senior Python Developer | Previous Company | 2016-2019
+  • Contributed to product development
+  • Collaborated with cross-functional teams
+  • Implemented best practices and code reviews
+
+=== EDUCATION ===
+MSc Computer Science — National Taiwan University
+• GPA 3.7/4.0
+
+=== TECHNICAL SKILLS ===
+Core Technologies: Python, FastAPI, PostgreSQL, Kafka, Docker, AWS, Microservices
+Languages: English (TOEIC 850), Chinese (Native)
+
+=== KEY ACHIEVEMENTS ===
+• 7+ years of professional experience in Python
+• Successfully delivered 10+ major projects on time and within budget
+• Strong advocate for code quality, testing, and documentation

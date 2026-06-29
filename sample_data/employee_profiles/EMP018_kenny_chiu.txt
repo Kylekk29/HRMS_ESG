@@ -1,0 +1,42 @@
+Employee: Kenny Chiu
+ID: EMP018
+Department: Product
+Position: UI/UX Designer
+Email: kenny.chiu@company.com
+Phone: +852-9123-4018
+Hire Date: 2023-02-15
+Status: Active
+Salary: HKD$42000/month
+KPI Average: 82/100
+Notes: Creative designer with solid skills
+
+--- Recent KPI ---
+  2025-Q1: 86/100 (Exceeds Expectations) — Redesigned user dashboard, NPS up 20 points
+  2025-Q2: 83/100 (Exceeds Expectations) — Design system completed, adopted by engineering
+  2025-Q3: 80/100 (Meets Expectations) — Good design work on mobile app
+  2025-Q4: 77/100 (Meets Expectations) — Steady output but less innovative recently
+
+--- CV ---
+CV: Kenny Chiu
+Email: kenny.chiu@company.com | Phone: +852-9123-4018
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+UI/UX Designer with 5+ years in product. KPI average: 81.5/100.
+
+EXPERIENCE
+UI/UX Designer | AI-HR Bridge Tech | 2023-02-15 - Present
+Based in Hong Kong, product department.
+  - 2025-Q1: Score 86/100 (Exceeds Expectations)
+  - 2025-Q2: Score 83/100 (Exceeds Expectations)
+  - 2025-Q3: Score 80/100 (Meets Expectations)
+  - 2025-Q4: Score 77/100 (Meets Expectations)
+
+Tools: Jira, Figma, Mixpanel, Amplitude
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

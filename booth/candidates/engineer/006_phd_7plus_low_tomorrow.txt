@@ -1,0 +1,31 @@
+Name: 王俊傑 (Wang Chun-Chieh)
+Email: candidate6@email.com
+Phone: +886-910000006
+Location: Taipei, Taiwan
+
+=== SUMMARY ===
+博士學歷 | 7年以上經驗 | 低技能 | 明天早上就上班報到
+
+=== TARGET ROLE ===
+  軟體工程師 | 學歷：phd | 經歷：7plus | 技能：low | 報到：tomorrow
+
+=== AVAILABILITY ===
+明天早上即可報到，已準備就緒立即上工
+
+=== WORK EXPERIENCE ===
+資深專案經理 | 科技公司 | 2019-Present
+  • 管理 5-8 人專案團隊，抵達多項重大專案
+  • 開發合作夥伴關係，年營收增長 30%
+
+工程師 | 軟體服務 | 2015-2019
+  • 主導核心系統架構設計與開發
+  • 管理跨部門協作專案
+
+=== EDUCATION ===
+博士 資訊工程 — 國立臺灣大學 (GPA 3.8/4.0)
+
+=== TECHNICAL SKILLS ===
+專業領域：行政處理・文件管理・基本辦公軟體
+語言：英文 (TOEIC 680) ・中文 (母語)
+
+=== KEY ACHIEVEMENTS ===

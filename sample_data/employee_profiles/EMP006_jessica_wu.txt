@@ -1,0 +1,42 @@
+Employee: Jessica Wu
+ID: EMP006
+Department: Sales
+Position: Sales Director
+Email: jessica.wu@company.com
+Phone: +852-9123-4006
+Hire Date: 2019-04-01
+Status: Active
+Salary: HKD$110000/month
+KPI Average: 90/100
+Notes: Top sales leader, possible VP promotion
+
+--- Recent KPI ---
+  2025-Q1: 93/100 (Outstanding) — Exceeded quarterly sales target by 25%
+  2025-Q2: 90/100 (Outstanding) — Secured 3 enterprise accounts worth $2M ARR
+  2025-Q3: 87/100 (Exceeds Expectations) — Expanded into Singapore market successfully
+  2025-Q4: 91/100 (Outstanding) — Closed year with record revenue of $8.5M
+
+--- CV ---
+CV: Jessica Wu
+Email: jessica.wu@company.com | Phone: +852-9123-4006
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Sales Director with 9+ years in sales. KPI average: 90.2/100.
+
+EXPERIENCE
+Sales Director | AI-HR Bridge Tech | 2019-04-01 - Present
+Based in Hong Kong, sales department.
+  - 2025-Q1: Score 93/100 (Outstanding)
+  - 2025-Q2: Score 90/100 (Outstanding)
+  - 2025-Q3: Score 87/100 (Exceeds Expectations)
+  - 2025-Q4: Score 91/100 (Outstanding)
+
+Tools: Salesforce, HubSpot, Tableau, LinkedIn Sales Nav
+
+EDUCATION
+Relevant degree -- CUHK
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

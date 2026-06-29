@@ -1,0 +1,42 @@
+Employee: Mandy Kwan
+ID: EMP010
+Department: Marketing
+Position: Content Strategist
+Email: mandy.kwan@company.com
+Phone: +852-9123-4010
+Hire Date: 2023-09-01
+Status: Active
+Salary: HKD$38000/month
+KPI Average: 70/100
+Notes: Performance declining, may need role adjustment
+
+--- Recent KPI ---
+  2025-Q1: 76/100 (Meets Expectations) — Published 12 blog posts, 15% traffic increase
+  2025-Q2: 72/100 (Meets Expectations) — Content output consistent, quality average
+  2025-Q3: 68/100 (Below Expectations) — Deadlines missed, content quality declined
+  2025-Q4: 65/100 (Below Expectations) — Engagement metrics down, needs improvement
+
+--- CV ---
+CV: Mandy Kwan
+Email: mandy.kwan@company.com | Phone: +852-9123-4010
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Content Strategist with 4+ years in marketing. KPI average: 70.2/100.
+
+EXPERIENCE
+Content Strategist | AI-HR Bridge Tech | 2023-09-01 - Present
+Based in Hong Kong, marketing department.
+  - 2025-Q1: Score 76/100 (Meets Expectations)
+  - 2025-Q2: Score 72/100 (Meets Expectations)
+  - 2025-Q3: Score 68/100 (Below Expectations)
+  - 2025-Q4: Score 65/100 (Below Expectations)
+
+Tools: Google Analytics, SEMrush, HubSpot, Canva
+
+EDUCATION
+Relevant degree -- UBC
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

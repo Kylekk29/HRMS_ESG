@@ -1,0 +1,40 @@
+=== Company Profile: AI-HR Bridge Platform ===
+
+Industry: Human Resources Technology / AI SaaS
+Founded: 2018
+Headquarters: Hong Kong
+Employees: 35
+CEO: Patrick Ma
+
+=== Mission ===
+Revolutionize hiring through AI-powered talent intelligence.
+
+=== Core Values ===
+1. Innovation First — We build AI tools that push what's possible in HR tech.
+2. Data Driven — Every decision backed by metrics, not intuition.
+3. People Matter — Our platform serves people; our team respects people.
+4. Speed & Quality — Ship fast, but never at the expense of reliability.
+5. Continuous Learning — We invest in growth, training, and experimentation.
+
+=== Culture & Work Style ===
+- Hybrid work: 3 days in office (T/W/Th), remote Mon/Fri
+- Flat hierarchy, open-door policy with leadership
+- Bi-weekly demo days where any team presents their work
+- Quarterly hackathons for innovation projects
+- Annual learning budget of HKD$15,000 per employee
+- Team lunches every Friday
+
+=== Engineering Culture ===
+- Agile (Scrum) with 2-week sprints
+- Code reviews required for all PRs
+- 20% time allocated to refactoring/tech debt
+- On-call rotation with SLO targets
+- Blameless postmortems for incidents
+
+=== HR Policies ===
+- Probation: 3 months
+- Annual leave: 18 days (increases with tenure)
+- Sick leave: 12 days fully paid
+- Medical insurance provided
+- Stock options for all full-time employees
+- Referral bonus: HKD$20,000 per successful hire

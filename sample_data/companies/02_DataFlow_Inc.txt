@@ -1,0 +1,41 @@
+=== Company Profile: DataFlow Inc. ===
+
+Industry: Data Analytics / Business Intelligence
+Founded: 2016
+Headquarters: Singapore
+Employees: 120
+CEO: Marcus Lim
+
+=== Mission ===
+Empower businesses to make real-time decisions with data they can trust.
+
+=== Core Values ===
+1. Clarity — Make the complex simple.
+2. Ownership — Every team member acts like an owner.
+3. Customer Obsession — User feedback shapes our roadmap.
+4. Integrity — Data privacy and security are non-negotiable.
+5. Global Mindset — We build for diverse markets and cultures.
+
+=== Culture & Work Style ===
+- Fully remote-first with co-working space access
+- Async communication via Slack and Notion
+- Monthly all-hands with transparent financial updates
+- 4-day work week trial (Fridays half-day)
+- Annual company retreat (last year: Bali)
+- Wellness stipend: SGD$200/month
+
+=== R&D Culture ===
+- OKR-driven quarterly planning
+- Product trios: PM + Designer + Engineer
+- Weekly user research sessions open to all
+- Open source contributions encouraged
+- Monthly innovation sprints for experimental features
+
+=== HR Policies ===
+- Probation: 4 months
+- Annual leave: 22 days
+- Sick leave: 14 days fully paid
+- Maternity: 16 weeks fully paid
+- Paternity: 4 weeks fully paid
+- Remote work equipment budget: SGD$3,000
+- Annual bonus: 10-20% of base based on company performance

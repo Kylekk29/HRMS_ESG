@@ -1,0 +1,40 @@
+Employee: Ronald Yu
+ID: EMP031
+Department: Sales
+Position: Account Executive
+Email: ronald.yu@company.com
+Phone: +852-9123-4031
+Hire Date: 2025-03-01
+Status: Active
+Salary: HKD$35000/month
+KPI Average: 55/100
+Notes: Contract not performing, likely non-renewal
+
+--- Recent KPI ---
+  2025-Q2: 60/100 (Below Expectations) — New hire, ramping up slowly
+  2025-Q3: 55/100 (Below Expectations) — Struggling to meet targets, needs coaching
+  2025-Q4: 50/100 (Below Expectations) — Contract may not be renewed
+
+--- CV ---
+CV: Ronald Yu
+Email: ronald.yu@company.com | Phone: +852-9123-4031
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Account Executive with 3+ years in sales. KPI average: 55.0/100.
+
+EXPERIENCE
+Account Executive | AI-HR Bridge Tech | 2025-03-01 - Present
+Based in Hong Kong, sales department.
+  - 2025-Q2: Score 60/100 (Below Expectations)
+  - 2025-Q3: Score 55/100 (Below Expectations)
+  - 2025-Q4: Score 50/100 (Below Expectations)
+
+Tools: Salesforce, HubSpot, Tableau, LinkedIn Sales Nav
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

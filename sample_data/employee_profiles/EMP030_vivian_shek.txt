@@ -1,0 +1,42 @@
+Employee: Vivian Shek
+ID: EMP030
+Department: Product
+Position: Associate Product Manager
+Email: vivian.shek@company.com
+Phone: +852-9123-4030
+Hire Date: 2024-11-01
+Status: Active
+Salary: HKD$35000/month
+KPI Average: 73/100
+Notes: New APM, growing well
+
+--- Recent KPI ---
+  2025-Q1: 70/100 (Meets Expectations) — Learning product management processes
+  2025-Q2: 74/100 (Meets Expectations) — Good support on feature documentation
+  2025-Q3: 76/100 (Meets Expectations) — Taking on more responsibility, improving
+  2025-Q4: 72/100 (Meets Expectations) — Steady growth, potential for PM role
+
+--- CV ---
+CV: Vivian Shek
+Email: vivian.shek@company.com | Phone: +852-9123-4030
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Associate Product Manager with 3+ years in product. KPI average: 73.0/100.
+
+EXPERIENCE
+Associate Product Manager | AI-HR Bridge Tech | 2024-11-01 - Present
+Based in Hong Kong, product department.
+  - 2025-Q1: Score 70/100 (Meets Expectations)
+  - 2025-Q2: Score 74/100 (Meets Expectations)
+  - 2025-Q3: Score 76/100 (Meets Expectations)
+  - 2025-Q4: Score 72/100 (Meets Expectations)
+
+Tools: Jira, Figma, Mixpanel, Amplitude
+
+EDUCATION
+Relevant degree -- CityU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

@@ -1,0 +1,299 @@
+2026-06-27 09:31:05 | INFO     | screening_cache | [CACHE] Loaded 7 entries from disk in 0.000s
+2026-06-27 09:31:05 | INFO     | payroll_manager | Initializing PayrollManager...
+2026-06-27 09:31:05 | INFO     | payroll_manager | PayrollManager initialized.
+2026-06-27 09:31:05 | INFO     | task_router | ============================================================
+2026-06-27 09:31:05 | INFO     | task_router | Initializing TaskRouter...
+2026-06-27 09:31:05 | INFO     | model_provider | Initializing AI Model Provider...
+2026-06-27 09:31:05 | INFO     | model_provider |   Model: deepseek-v4-flash
+2026-06-27 09:31:05 | INFO     | model_provider |   Base URL: https://api.deepseek.com
+2026-06-27 09:31:05 | INFO     | model_provider | Loaded prompts for 4 features
+2026-06-27 09:31:05 | INFO     | embedding_mgr | ============================================================
+2026-06-27 09:31:05 | INFO     | embedding_mgr | Initializing EmbeddingManager...
+2026-06-27 09:31:05 | INFO     | version_manager | Initializing VersionManager...
+2026-06-27 09:31:05 | INFO     | version_manager |   Metadata dir: F:\Kyle\Coding\ESG_HRMS\data\metadata
+2026-06-27 09:31:05 | INFO     | version_manager |   Archive dir: F:\Kyle\Coding\ESG_HRMS\data\archive
+2026-06-27 09:31:05 | INFO     | embedding_mgr | Embedding Manager initialized (model loads on first use)
+2026-06-27 09:31:05 | INFO     | embedding_mgr | ============================================================
+2026-06-27 09:31:05 | INFO     | task_router | TaskRouter initialized in 0.00s
+2026-06-27 09:31:05 | INFO     | task_router | ============================================================
+2026-06-27 09:31:05 | INFO     | development_manager | Initializing DevelopmentManager...
+2026-06-27 09:31:05 | INFO     | development_manager | \u2713 EmbeddingManager available for full skill extraction
+2026-06-27 09:31:05 | INFO     | development_manager | DevelopmentManager initialized.
+INFO:     Started server process [13588]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on https://0.0.0.0:8443 (Press CTRL+C to quit)
+2026-06-27 09:31:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:31:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:31:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:31:37 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:31:37 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:31:38 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:31:38 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:31:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:31:46 | INFO     | payroll_manager | Calculating salary for EMP001 ¡ª 2026-06
+2026-06-27 09:31:46 | INFO     | payroll_manager |   Gross salary: 135,000 | Deductions: absent=0.0, late=0.0, half_day=0.0, leave=0.0
+2026-06-27 09:31:46 | INFO     | __main__ | [GET] /api/payroll/EMP001 ¡ú 200 in 0.02s
+2026-06-27 09:31:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:31:55 | INFO     | payroll_manager | Generating salary adjustment suggestion for EMP001
+2026-06-27 09:31:55 | INFO     | __main__ | [GET] /api/payroll/EMP001/adjustment ¡ú 200 in 0.00s
+2026-06-27 09:32:03 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:03 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:32:04 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:32:04 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:32:05 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.02s
+2026-06-27 09:32:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:18 | INFO     | hrms_manager | Leave request submitted: LR20260627_001, 8 days of sick_leave for EMP005
+2026-06-27 09:32:18 | INFO     | __main__ | [POST] /api/leave/requests ¡ú 200 in 0.00s
+2026-06-27 09:32:18 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:32:19 | INFO     | hrms_manager | Leave request LR20260627_001 approved
+2026-06-27 09:32:19 | INFO     | __main__ | [POST] /api/leave/requests/LR20260627_001/approve ¡ú 200 in 0.01s
+2026-06-27 09:32:19 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:32:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:23 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:38 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:39 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:40 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:42 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:32:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:43 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:32:47 | INFO     | payroll_manager | Calculating salary for EMP005 ¡ª 2026-06
+2026-06-27 09:32:47 | INFO     | payroll_manager |   Gross salary: 220,000 | Deductions: absent=0.0, late=0.0, half_day=0.0, leave=0.0
+2026-06-27 09:32:47 | INFO     | __main__ | [GET] /api/payroll/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:32:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:32:57 | INFO     | payroll_manager | Generating salary adjustment suggestion for EMP005
+2026-06-27 09:32:57 | INFO     | __main__ | [GET] /api/payroll/EMP005/adjustment ¡ú 200 in 0.00s
+2026-06-27 09:33:00 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:33:01 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:33:03 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:10 | INFO     | hrms_manager | Leave request submitted: LR20260627_002, 5 days of annual_leave for EMP005
+2026-06-27 09:33:10 | INFO     | __main__ | [POST] /api/leave/requests ¡ú 200 in 0.00s
+2026-06-27 09:33:10 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:33:12 | INFO     | hrms_manager | Leave request LR20260627_002 approved
+2026-06-27 09:33:12 | INFO     | __main__ | [POST] /api/leave/requests/LR20260627_002/approve ¡ú 200 in 0.00s
+2026-06-27 09:33:12 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:33:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:13 | INFO     | __main__ | [GET] /api/leave/summary/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:33:16 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:16 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:16 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:33:19 | INFO     | __main__ | [POST] /api/attendance/check-out ¡ú 400 in 0.00s
+2026-06-27 09:33:20 | INFO     | __main__ | [POST] /api/attendance/check-in ¡ú 200 in 0.00s
+2026-06-27 09:33:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:23 | INFO     | __main__ | [POST] /api/attendance/check-out ¡ú 200 in 0.00s
+2026-06-27 09:33:25 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:25 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:28 | INFO     | payroll_manager | Calculating salary for EMP005 ¡ª 2026-06
+2026-06-27 09:33:28 | INFO     | payroll_manager |   Gross salary: 190,000 | Deductions: absent=0.0, late=0.0, half_day=2727.0, leave=27273.0
+2026-06-27 09:33:28 | INFO     | __main__ | [GET] /api/payroll/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:33:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:35 | INFO     | payroll_manager | Calculating salary for EMP005 ¡ª 2026-06
+2026-06-27 09:33:35 | INFO     | payroll_manager |   Gross salary: 190,000 | Deductions: absent=0.0, late=0.0, half_day=2727.0, leave=27273.0
+2026-06-27 09:33:35 | INFO     | __main__ | [GET] /api/payroll/EMP005 ¡ú 200 in 0.00s
+2026-06-27 09:33:40 | INFO     | payroll_manager | Generating salary adjustment suggestion for EMP005
+2026-06-27 09:33:40 | INFO     | __main__ | [GET] /api/payroll/EMP005/adjustment ¡ú 200 in 0.07s
+2026-06-27 09:33:41 | INFO     | payroll_manager | Generating salary adjustment suggestion for EMP005
+2026-06-27 09:33:41 | INFO     | __main__ | [GET] /api/payroll/EMP005/adjustment ¡ú 200 in 0.00s
+2026-06-27 09:33:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:43 | INFO     | hrms_manager | [HRMS] Building department summary...
+2026-06-27 09:33:43 | INFO     | __main__ | [GET] /api/dashboard ¡ú 200 in 0.00s
+2026-06-27 09:33:51 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:51 | INFO     | __main__ | [GET] /api/employees ¡ú 200 in 0.00s
+2026-06-27 09:33:51 | INFO     | __main__ | [GET] /api/attendance/daily ¡ú 200 in 0.00s
+2026-06-27 09:33:51 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s
+2026-06-27 09:33:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:33:55 | INFO     | development_manager | Extracting skills for employee: EMP005
+2026-06-27 09:33:55 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:33:55 | INFO     | embedding_mgr | Loading employee DB: EMP005 (cv)
+2026-06-27 09:33:55 | INFO     | version_manager | No existing metadata for EMP005_cv
+2026-06-27 09:33:55 | WARNING  | version_manager | No current DB ID for EMP005_cv
+2026-06-27 09:33:55 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP005
+2026-06-27 09:33:55 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP005
+2026-06-27 09:33:55 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP005 (document not yet embedded)
+2026-06-27 09:33:55 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:33:55 | INFO     | embedding_mgr | Loading employee DB: EMP005 (profile)
+2026-06-27 09:33:55 | INFO     | version_manager | Loaded metadata for EMP005_profile: 1 versions
+2026-06-27 09:33:55 | INFO     | version_manager | Current DB ID for EMP005_profile: EMP005_profile_6177e41dfed5
+2026-06-27 09:33:55 | INFO     | embedding_mgr | Found DB ID: EMP005_profile_6177e41dfed5
+2026-06-27 09:33:55 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:33:55 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP005_profile_6177e41dfed5
+2026-06-27 09:33:55 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP005\profile\EMP005_profile_6177e41dfed5
+2026-06-27 09:33:55 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:33:56 | INFO     | embedding_mgr | Lazy-loading embedding model: ./AImodels/embedding_model
+2026-06-27 09:33:56 | INFO     | embedding_mgr | Device: cpu
+2026-06-27 09:34:05 | INFO     | sentence_transformers.base.model | Loading SentenceTransformer model from ./AImodels/embedding_model.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 199/199 [00:00<00:00, 6610.49it/s]
+2026-06-27 09:34:07 | INFO     | embedding_mgr | Embedding model loaded in 11.25s
+2026-06-27 09:34:07 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-06-27 09:34:07 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-27 09:34:07 | INFO     | faiss.loader | Loading faiss.
+2026-06-27 09:34:07 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-06-27 09:34:07 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:07 | INFO     | embedding_mgr | \u2705 Completed load_db in 11.96s
+2026-06-27 09:34:07 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 11.97s
+2026-06-27 09:34:07 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:07 | INFO     | development_manager |   Found 14 skills for EMP005
+2026-06-27 09:34:07 | INFO     | __main__ | [GET] /api/employees/EMP005/skills ¡ú 200 in 12.05s
+2026-06-27 09:34:07 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:34:10 | INFO     | development_manager | Extracting skills for employee: EMP005
+2026-06-27 09:34:10 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:10 | INFO     | embedding_mgr | Loading employee DB: EMP005 (cv)
+2026-06-27 09:34:10 | INFO     | version_manager | No existing metadata for EMP005_cv
+2026-06-27 09:34:10 | WARNING  | version_manager | No current DB ID for EMP005_cv
+2026-06-27 09:34:10 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP005
+2026-06-27 09:34:10 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP005
+2026-06-27 09:34:10 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP005 (document not yet embedded)
+2026-06-27 09:34:10 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:10 | INFO     | embedding_mgr | Loading employee DB: EMP005 (profile)
+2026-06-27 09:34:10 | INFO     | version_manager | Loaded metadata for EMP005_profile: 1 versions
+2026-06-27 09:34:10 | INFO     | version_manager | Current DB ID for EMP005_profile: EMP005_profile_6177e41dfed5
+2026-06-27 09:34:10 | INFO     | embedding_mgr | Found DB ID: EMP005_profile_6177e41dfed5
+2026-06-27 09:34:10 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:10 | INFO     | embedding_mgr | Using cached FAISS index: EMP005_profile_6177e41dfed5
+2026-06-27 09:34:10 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.00s
+2026-06-27 09:34:10 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.00s
+2026-06-27 09:34:10 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:10 | INFO     | development_manager |   Found 14 skills for EMP005
+2026-06-27 09:34:10 | INFO     | __main__ | [GET] /api/employees/EMP005/skills ¡ú 200 in 0.06s
+2026-06-27 09:34:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:34:17 | INFO     | development_manager | Extracting skills for employee: EMP003
+2026-06-27 09:34:17 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Loading employee DB: EMP003 (cv)
+2026-06-27 09:34:17 | INFO     | version_manager | No existing metadata for EMP003_cv
+2026-06-27 09:34:17 | WARNING  | version_manager | No current DB ID for EMP003_cv
+2026-06-27 09:34:17 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP003
+2026-06-27 09:34:17 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP003
+2026-06-27 09:34:17 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP003 (document not yet embedded)
+2026-06-27 09:34:17 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Loading employee DB: EMP003 (profile)
+2026-06-27 09:34:17 | INFO     | version_manager | Loaded metadata for EMP003_profile: 1 versions
+2026-06-27 09:34:17 | INFO     | version_manager | Current DB ID for EMP003_profile: EMP003_profile_0c89d17f1644
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Found DB ID: EMP003_profile_0c89d17f1644
+2026-06-27 09:34:17 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP003_profile_0c89d17f1644
+2026-06-27 09:34:17 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP003\profile\EMP003_profile_0c89d17f1644
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:34:17 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:17 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.02s
+2026-06-27 09:34:17 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.04s
+2026-06-27 09:34:17 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:17 | INFO     | development_manager |   Found 14 skills for EMP003
+2026-06-27 09:34:17 | INFO     | __main__ | [GET] /api/employees/EMP003/skills ¡ú 200 in 0.08s
+2026-06-27 09:34:19 | INFO     | development_manager | Extracting skills for employee: EMP009
+2026-06-27 09:34:19 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Loading employee DB: EMP009 (cv)
+2026-06-27 09:34:19 | INFO     | version_manager | No existing metadata for EMP009_cv
+2026-06-27 09:34:19 | WARNING  | version_manager | No current DB ID for EMP009_cv
+2026-06-27 09:34:19 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP009
+2026-06-27 09:34:19 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP009
+2026-06-27 09:34:19 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP009 (document not yet embedded)
+2026-06-27 09:34:19 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Loading employee DB: EMP009 (profile)
+2026-06-27 09:34:19 | INFO     | version_manager | Loaded metadata for EMP009_profile: 1 versions
+2026-06-27 09:34:19 | INFO     | version_manager | Current DB ID for EMP009_profile: EMP009_profile_825cea71140a
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Found DB ID: EMP009_profile_825cea71140a
+2026-06-27 09:34:19 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP009_profile_825cea71140a
+2026-06-27 09:34:19 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP009\profile\EMP009_profile_825cea71140a
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:34:19 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:19 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.00s
+2026-06-27 09:34:19 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.01s
+2026-06-27 09:34:19 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:19 | INFO     | development_manager |   Found 5 skills for EMP009
+2026-06-27 09:34:19 | INFO     | __main__ | [GET] /api/employees/EMP009/skills ¡ú 200 in 0.04s
+2026-06-27 09:34:22 | INFO     | development_manager | Extracting skills for employee: EMP016
+2026-06-27 09:34:22 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Loading employee DB: EMP016 (cv)
+2026-06-27 09:34:22 | INFO     | version_manager | No existing metadata for EMP016_cv
+2026-06-27 09:34:22 | WARNING  | version_manager | No current DB ID for EMP016_cv
+2026-06-27 09:34:22 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP016
+2026-06-27 09:34:22 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP016
+2026-06-27 09:34:22 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP016 (document not yet embedded)
+2026-06-27 09:34:22 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Loading employee DB: EMP016 (profile)
+2026-06-27 09:34:22 | INFO     | version_manager | Loaded metadata for EMP016_profile: 1 versions
+2026-06-27 09:34:22 | INFO     | version_manager | Current DB ID for EMP016_profile: EMP016_profile_52196a8252b6
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Found DB ID: EMP016_profile_52196a8252b6
+2026-06-27 09:34:22 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP016_profile_52196a8252b6
+2026-06-27 09:34:22 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP016\profile\EMP016_profile_52196a8252b6
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:34:22 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:22 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.02s
+2026-06-27 09:34:22 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.03s
+2026-06-27 09:34:22 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:22 | INFO     | development_manager |   Found 3 skills for EMP016
+2026-06-27 09:34:22 | INFO     | __main__ | [GET] /api/employees/EMP016/skills ¡ú 200 in 0.07s
+2026-06-27 09:34:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:34:26 | INFO     | development_manager | Extracting skills for employee: EMP020
+2026-06-27 09:34:26 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Loading employee DB: EMP020 (cv)
+2026-06-27 09:34:26 | INFO     | version_manager | No existing metadata for EMP020_cv
+2026-06-27 09:34:26 | WARNING  | version_manager | No current DB ID for EMP020_cv
+2026-06-27 09:34:26 | ERROR    | embedding_mgr | No embedded cv found for employee: EMP020
+2026-06-27 09:34:26 | ERROR    | embedding_mgr | \u274c Failed load_employee_db after 0.00s: No embedded cv found for employee: EMP020
+2026-06-27 09:34:26 | INFO     | development_manager |   \u2139\ufe0f  No cv database found for employee EMP020 (document not yet embedded)
+2026-06-27 09:34:26 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Loading employee DB: EMP020 (profile)
+2026-06-27 09:34:26 | INFO     | version_manager | Loaded metadata for EMP020_profile: 1 versions
+2026-06-27 09:34:26 | INFO     | version_manager | Current DB ID for EMP020_profile: EMP020_profile_0e594cf55655
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Found DB ID: EMP020_profile_0e594cf55655
+2026-06-27 09:34:26 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP020_profile_0e594cf55655
+2026-06-27 09:34:26 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP020\profile\EMP020_profile_0e594cf55655
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:34:26 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:26 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.04s
+2026-06-27 09:34:26 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.04s
+2026-06-27 09:34:26 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from profile vector DB
+2026-06-27 09:34:26 | INFO     | development_manager |   Found 6 skills for EMP020
+2026-06-27 09:34:26 | INFO     | __main__ | [GET] /api/employees/EMP020/skills ¡ú 200 in 0.08s
+2026-06-27 09:34:31 | INFO     | development_manager | Extracting skills for employee: EMP002
+2026-06-27 09:34:31 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_employee_db...
+2026-06-27 09:34:31 | INFO     | embedding_mgr | Loading employee DB: EMP002 (cv)
+2026-06-27 09:34:31 | INFO     | version_manager | Loaded metadata for EMP002_cv: 1 versions
+2026-06-27 09:34:31 | INFO     | version_manager | Current DB ID for EMP002_cv: EMP002_cv_00b3f608e660
+2026-06-27 09:34:31 | INFO     | embedding_mgr | Found DB ID: EMP002_cv_00b3f608e660
+2026-06-27 09:34:31 | INFO     | embedding_mgr | \u23f1\ufe0f  Starting load_db...
+2026-06-27 09:34:31 | INFO     | embedding_mgr | Loading FAISS index from disk: EMP002_cv_00b3f608e660
+2026-06-27 09:34:31 | INFO     | embedding_mgr |   Path: F:\Kyle\Coding\ESG_HRMS\data\AIDB\vector_dbs\employees\EMP002\cv\EMP002_cv_00b3f608e660
+2026-06-27 09:34:31 | INFO     | embedding_mgr | Index file size: 0.0 MB
+2026-06-27 09:34:31 | INFO     | embedding_mgr | Index loaded successfully
+2026-06-27 09:34:31 | INFO     | embedding_mgr | \u2705 Completed load_db in 0.04s
+2026-06-27 09:34:31 | INFO     | embedding_mgr | \u2705 Completed load_employee_db in 0.05s
+2026-06-27 09:34:31 | INFO     | development_manager |   \u2713 Retrieved 4 chunks from cv vector DB
+2026-06-27 09:34:31 | INFO     | development_manager |   Found 13 skills for EMP002
+2026-06-27 09:34:31 | INFO     | __main__ | [GET] /api/employees/EMP002/skills ¡ú 200 in 0.09s
+2026-06-27 09:34:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:34:36 | INFO     | __main__ | [GET] /api/employees/EMP006 ¡ú 200 in 0.00s
+2026-06-27 09:34:40 | INFO     | hrms_manager | [HRMS] Building department summary...
+2026-06-27 09:34:40 | INFO     | __main__ | [GET] /api/dashboard ¡ú 200 in 0.00s
+2026-06-27 09:34:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:34:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:03 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:35:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:03 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:13 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:23 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:33 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:43 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:36:53 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:37:03 | INFO     | __main__ | [GET] /api/health ¡ú 200 in 0.00s
+2026-06-27 09:37:06 | INFO     | __main__ | [GET] /api/leave/requests/pending ¡ú 200 in 0.00s

@@ -1,0 +1,39 @@
+=== INTERVIEW TRANSCRIPT ===
+Position: Senior Product Manager
+Candidate: Lin Yi-Jun (林怡君)
+Date: 2026-06-18
+Interviewers: VP of Product (VP), Engineering Director (ED)
+
+--- SESSION START ---
+
+VP: Good afternoon, Yi-Jun. Could you start by telling us about your product management journey and what you're most proud of?
+
+CANDIDATE: Good afternoon. I've been in product management for 6 years, currently leading the B2B SaaS platform at DataFlow Inc. What I'm most proud of is the product turnaround I led last year: our analytics product had declining engagement, so I conducted 40+ customer interviews, identified the core pain points around data visualization, and redefined the product strategy. We pivoted from a reporting tool to an insights platform, which resulted in a 3x increase in weekly active users and 50% reduction in churn within 6 months.
+
+ED: How do you prioritize features when you have multiple stakeholders pulling in different directions?
+
+CANDIDATE: I use a combination of quantitative and qualitative methods. First, I establish clear product OKRs that tie directly to business goals. Every feature request is evaluated against those OKRs. I use RICE scoring (Reach, Impact, Confidence, Effort) to create an initial prioritization, then validate assumptions with user research. I also maintain a stakeholder map and hold monthly prioritization sessions where we review the roadmap together. Transparency is key — I publish the prioritization framework and monthly roadmap decisions to the entire company.
+
+VP: Tell us about a product failure and what you learned.
+
+CANDIDATE: Early in my career, I launched a feature based entirely on internal assumptions without proper user validation. We spent 3 months building an advanced workflow automation tool, only to find that our users preferred simpler solutions. It was a $200k mistake. I learned to always validate with prototypes before committing engineering resources. Now I insist on usability testing with clickable prototypes before any feature enters development. This has saved us from building the wrong thing multiple times.
+
+ED: How do you work with engineering teams on technical decisions?
+
+CANDIDATE: I believe in informed collaboration. While I don't dictate technical solutions, I invest time in understanding the technical landscape. I attend architecture reviews, learn about trade-offs, and bring the customer perspective to technical discussions. I've found that engineers appreciate a PM who understands the implications of technical debt and can advocate for refactoring time based on long-term product benefits.
+
+VP: How do you handle a situation where a key feature is behind schedule?
+
+CANDIDATE: First, I work with the engineering lead to understand the root cause — is it scope creep, technical complexity, or estimation error? Then I look at options: can we reduce scope while maintaining core value, can we shift non-critical items to the next release, or do we need to communicate a timeline change to stakeholders? Communication is critical — I proactively update stakeholders with the situation, impact, and revised plan rather than waiting for them to ask.
+
+ED: What tools and methodologies do you use in your day-to-day work?
+
+CANDIDATE: I use Linear for issue tracking, Figma for wireframes and prototypes, and Notion for documentation. Process-wise, I practice outcome-driven development: instead of measuring output (features shipped), I measure outcomes (user behavior changes). I run bi-weekly sprints with the engineering team and hold regular customer feedback sessions. For analytics, I use Amplitude and Mixpanel.
+
+VP: Any questions for us?
+
+CANDIDATE: Yes, I'd like to understand how product strategy is set at the executive level and how product managers contribute to that process. Also, what does the company view as the biggest product opportunity in the next 12 months?
+
+VP: Excellent questions. The product strategy is set quarterly in an offsite...
+
+--- SESSION END ---

@@ -1,0 +1,42 @@
+Employee: Ryan Li
+ID: EMP007
+Department: Sales
+Position: Account Executive
+Email: ryan.li@company.com
+Phone: +852-9123-4007
+Hire Date: 2022-03-01
+Status: Active
+Salary: HKD$45000/month
+KPI Average: 66/100
+Notes: Underperforming for 2 consecutive quarters, PIP recommended
+
+--- Recent KPI ---
+  2025-Q1: 75/100 (Meets Expectations) — Met 90% of quarterly target
+  2025-Q2: 70/100 (Meets Expectations) — Pipeline generation below expectation
+  2025-Q3: 62/100 (Below Expectations) — Missed target by 30%, lost 2 deals to competitor
+  2025-Q4: 55/100 (Below Expectations) — Only achieved 50% of quota, performance concerns
+
+--- CV ---
+CV: Ryan Li
+Email: ryan.li@company.com | Phone: +852-9123-4007
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Account Executive with 6+ years in sales. KPI average: 65.5/100.
+
+EXPERIENCE
+Account Executive | AI-HR Bridge Tech | 2022-03-01 - Present
+Based in Hong Kong, sales department.
+  - 2025-Q1: Score 75/100 (Meets Expectations)
+  - 2025-Q2: Score 70/100 (Meets Expectations)
+  - 2025-Q3: Score 62/100 (Below Expectations)
+  - 2025-Q4: Score 55/100 (Below Expectations)
+
+Tools: Salesforce, HubSpot, Tableau, LinkedIn Sales Nav
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

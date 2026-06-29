@@ -1,0 +1,1312 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth Game · AI-HR Bridge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', 'Inter', sans-serif;
+            background: linear-gradient(145deg, #f4f5fb 0%, #eef2ff 60%, #f0f7fe 100%);
+            color: #0b0d17;
+            min-height: 100vh;
+            padding: 0 0 40px 0;
+        }
+
+        .topbar {
+            background: linear-gradient(135deg, #0b0d17 0%, #12142b 50%, #1a1b3a 100%);
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .topbar .brand {
+            font-weight: 800;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .topbar .brand span {
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .mode-toggle {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mode-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .mode-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .mode-btn.active {
+            background: rgba(79, 70, 229, 0.25);
+            color: #fff;
+            border-color: #4f46e5;
+        }
+
+        .top-actions button {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .top-actions button:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+        }
+
+        .main {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 18px;
+            padding: 24px 28px;
+            box-shadow: 0 2px 12px rgba(79, 70, 229, 0.04);
+            margin-bottom: 16px;
+            transition: 0.2s;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2px;
+            color: #0b0d17;
+        }
+
+        .card-sub {
+            font-size: 0.8rem;
+            color: #6b6f8e;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            background: transparent;
+            color: #1e1b4b;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        .btn-outline:hover {
+            background: rgba(79, 70, 229, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
+        }
+
+        .btn-gradient:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.25);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(220, 38, 38, 0.25);
+        }
+
+        .opt-btn {
+            flex: 1;
+            padding: 12px 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: transparent;
+            color: #1e1b4b;
+            border: 2px solid #4f46e5;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+
+        .opt-btn:hover {
+            background: rgba(79, 70, 229, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .opt-btn.sel {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: #fff;
+            border-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2), 0 3px 10px rgba(79, 70, 229, 0.15);
+            transform: scale(1.02);
+        }
+
+        .opt-btn.sel::before {
+            content: "✓ ";
+            font-weight: 800;
+        }
+
+        .cat-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid #4f46e5;
+            border-radius: 14px;
+            padding: 24px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.25s;
+            position: relative;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-3px);
+            background: rgba(79, 70, 229, 0.04);
+        }
+
+        .cat-card.active {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .cat-card.active .nm,
+        .cat-card.active .desc,
+        .cat-card.active .ico {
+            color: #fff;
+        }
+
+        .cat-card .ico {
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .cat-card .nm {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #0b0d17;
+        }
+
+        .cat-card .desc {
+            font-size: 0.78rem;
+            color: #6b6f8e;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .row.centered {
+            justify-content: center;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 110px;
+            background: #fff;
+            border: 1.5px solid rgba(79, 70, 229, 0.15);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            resize: vertical;
+            font-family: inherit;
+            color: #0b0d17;
+            transition: 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+        }
+
+        .pbar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .pbtrack {
+            flex: 1;
+            height: 6px;
+            background: #e8eaf6;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #pbar,
+        #qpbar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        #ptxt,
+        #qptxt {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #4f46e5;
+            white-space: nowrap;
+            min-width: 44px;
+            text-align: right;
+        }
+
+        .steps {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 14px;
+            padding: 4px;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 8px 4px;
+            border-radius: 10px;
+            color: #6b6f8e;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .step .sn {
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e8eaf6;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .step.active {
+            background: rgba(79, 70, 229, 0.08);
+            color: #4f46e5;
+        }
+
+        .step.active .sn {
+            background: #4f46e5;
+            color: #fff;
+        }
+
+        .step.done {
+            color: #059669;
+        }
+
+        .step.done .sn {
+            background: #059669;
+            color: #fff;
+        }
+
+        .sel-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .sel-card .hdr {
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0b0d17;
+        }
+
+        .opt-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(79, 70, 229, 0.08);
+            border: 1px solid rgba(79, 70, 229, 0.12);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 14px;
+        }
+
+        .cv-box {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            color: #1e1b4b;
+            margin-top: 6px;
+        }
+
+        .scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+            margin: 14px 0;
+        }
+
+        .sc-item {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(79, 70, 229, 0.08);
+            border-radius: 10px;
+            padding: 10px 12px;
+        }
+
+        .sc-item .lb {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #1e1b4b;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 5px;
+        }
+
+        .sbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sbg {
+            flex: 1;
+            height: 5px;
+            background: rgba(79, 70, 229, 0.08);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .sfl {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .snum {
+            font-weight: 700;
+            font-size: 0.82rem;
+            min-width: 28px;
+            text-align: right;
+        }
+
+        .ablocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .ablock {
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(79, 70, 229, 0.08);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .ablock h4 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0b0d17;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .ablock ul,
+        .ablock ol {
+            padding-left: 16px;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            color: #1e1b4b;
+        }
+
+        .ablock li {
+            margin-bottom: 4px;
+        }
+
+        .match-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin: 16px 0 0;
+        }
+
+        .md-item {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(79, 70, 229, 0.08);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .md-item .ml {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: #6b6f8e;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .md-item .mv {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .strip {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.03));
+            border-left: 3px solid #4f46e5;
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e1b4b;
+            margin: 14px 0;
+        }
+
+        @media(max-width:640px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .opt-row {
+                flex-direction: column;
+            }
+
+            .main {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .ablocks,
+            .match-detail {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        /* Loading */
+        #loading {
+            text-align: center;
+            padding: 50px 0;
+            display: none;
+        }
+
+        #loading .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            border: 3px solid rgba(79, 70, 229, 0.1);
+            border-top-color: #4f46e5;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #ltxt {
+            color: #6b6f8e;
+            font-size: 0.85rem;
+        }
+
+        /* Confetti */
+        @keyframes cfall {
+            0% {
+                transform: translateY(-120vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .cf {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            top: -10px;
+            animation: cfall 3.5s ease-in forwards;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="brand">🎯 AI 人才配對 <span>Booth Game</span></div>
+        <div class="mode-toggle">
+            <button class="mode-btn active" data-mode="dashboard" onclick="setMode('dashboard')">🖥️ 儀表板</button>
+        </div>
+        <div class="top-actions"><button onclick="clearAll()">✕ 清除重選</button></div>
+    </div>
+    <div class="main">
+        <div class="steps">
+            <div class="step active" data-step="0"><span class="sn">0</span>職位類別</div>
+            <div class="step" data-step="1"><span class="sn">1</span>職缺描述</div>
+            <div class="step" data-step="2"><span class="sn">2</span>挑選條件</div>
+        </div>
+
+        <div id="s0" class="step-content">
+            <div id="imageModeCard" class="card" style="display:none">
+                <div class="card-title">👆 快速選擇</div>
+                <div class="card-sub">從下方選擇類別與條件後按配對</div>
+                <div id="quickOpts"></div>
+                <div class="pbar-wrap">
+                    <div class="pbtrack">
+                        <div id="qpbar"></div>
+                    </div>
+                    <p id="qptxt">0 / 4</p>
+                </div>
+                <div class="row centered">
+                    <button class="btn btn-gradient" id="quickMatchBtn" disabled onclick="quickMatch()">🔍 快速配對</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">🎯 選擇職位類別</div>
+                <div class="card-sub">先選擇你想篩選的職位類型</div>
+                <div class="grid-3" id="catGrid"></div>
+                <div class="row centered" style="margin-top:18px">
+                    <button class="btn btn-primary" id="catNext" onclick="confirmCat()" disabled>確認選擇 →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="s1" class="step-content" style="display:none">
+            <div class="card">
+                <div id="lk1" class="badge" style="display:none"></div>
+                <div class="card-title">📋 職缺描述</div>
+                <div class="card-sub">輸入職位需求，AI 將以此為標準評分</div>
+                <textarea id="jdIn" rows="5"></textarea>
+                <div class="row">
+                    <button class="btn btn-outline" onclick="useDef()">📄 使用預設</button>
+                    <button class="btn btn-primary flex-1" onclick="goStep(2)">下一步 →</button>
+                </div>
+                <div class="row"><button class="btn btn-outline" onclick="goStep(0)"
+                        style="font-size:.75rem;padding:7px 14px">← 返回類別選擇</button></div>
+            </div>
+        </div>
+
+        <div id="s2" class="step-content" style="display:none">
+            <div class="card">
+                <div id="lk2" class="badge" style="display:none"></div>
+                <div class="card-title">🎯 挑選條件</div>
+                <div class="card-sub">從三個面向挑選你期望的條件</div>
+                <div class="pbar-wrap">
+                    <div class="pbtrack">
+                        <div id="pbar"></div>
+                    </div>
+                    <p id="ptxt">0 / 3</p>
+                </div>
+                <div id="catOpts"></div>
+                <div class="row">
+                    <button class="btn btn-outline" onclick="goStep(1)">← 修改職缺</button>
+                    <button class="btn btn-gradient flex-1" id="matchBtn" disabled>🔍 尋找配對</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="s3" class="step-content" style="display:none">
+            <div id="candArea"></div>
+
+            <!-- CV 顯示區域 (唯讀) -->
+                        <div id="cvSec" class="card" style="display:none">
+                <div class="card-title" style="margin-bottom:8px">📄 完整履歷</div>
+                <pre id="cvBox" class="cv-box"></pre>
+            </div>
+
+            <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:10px">
+                <button class="btn btn-gradient w-full" id="runBtn" style="padding:12px;font-size:.9rem">🤖 Run AI
+                    Screening</button>
+                <button class="btn btn-outline w-full" onclick="goStep(2)">← 重新挑選</button>
+            </div>
+            <div id="resArea"></div>
+        </div>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p id="ltxt">載入中...</p>
+        </div>
+    </div>
+
+    <script>
+        const API = window.location.origin;
+        let sel = {}, curCat = '', locked = false, curFile = '';
+        let currentCvContent = '';
+
+        const FCATS = {
+            engineer: { label: "工程師 (Engineer)", icon: "⚙️", description: "軟體開發、系統設計、技術研發" },
+            management: { label: "管理職 (Management)", icon: "📊", description: "專案管理、團隊領導、策略規劃" },
+            sales: { label: "業務 (Sales)", icon: "🤝", description: "客戶開發、銷售管理、市場拓展" }
+        };
+        const FMOPTS = {
+            edu: { label: "🎓 學歷", options: [{ id: "phd", label: "博士學位", icon: "🎓" }, { id: "master", label: "碩士學位", icon: "📚" }, { id: "bachelor", label: "學士學位", icon: "📖" }, { id: "highschool", label: "中學畢業", icon: "📝" }] },
+            exp: { label: "💼 工作經驗", options: [{ id: "7plus", label: "7 年以上", icon: "🌟" }, { id: "3to5", label: "3-5 年", icon: "⭐" }, { id: "1to3", label: "1-3 年", icon: "🌱" }, { id: "under1", label: "1 年以下", icon: "🆕" }] },
+            skill: { label: "🔧 專業技能", options: [{ id: "high", label: "高", icon: "🏆" }, { id: "low", label: "低", icon: "📘" }] },
+            avail: { label: "📅 預計入職時間", options: [{ id: "6months", label: "半年", icon: "🕐" }, { id: "1week", label: "一周內", icon: "⏳" }, { id: "tomorrow", label: "明天早上就上班", icon: "💨" }] }
+        };
+        let cats = { ...FCATS }, mopts = { ...FMOPTS };
+
+        // ----- init -----
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            cats = FCATS; renderCats();
+            loadOpts().then(o => {
+                if (o && o.categories) { cats = o.categories; renderCats(); }
+                if (o && o.match_options) mopts = o.match_options;
+            });
+            bindUI();
+            syncBadge();
+            restoreLast();
+        });
+
+        function bindUI() {
+            document.getElementById('matchBtn').onclick = goMatch;
+            document.getElementById('runBtn').onclick = runScreen;
+
+        }
+
+        // ----- state mgmt -----
+        function loadState() {
+            try {
+                const s = JSON.parse(localStorage.getItem('b_booth') || '{}');
+                sel = s.sel || {};
+                curCat = s.cat || '';
+                locked = s.locked || false;
+                if (s.lastMatch) { curFile = s.lastMatch.file; window._lm = s.lastMatch; }
+                if (s.lastScreen) window._ls = s.lastScreen;
+            } catch (e) { sel = {}; curCat = ''; locked = false; }
+        }
+        function saveState() {
+            localStorage.setItem('b_booth', JSON.stringify({
+                sel, cat: curCat, locked,
+                lastMatch: window._lm || null,
+                lastScreen: window._ls || null
+            }));
+        }
+        function clearAll() {
+            if (!confirm('清除所有，重新開始？')) return;
+            localStorage.removeItem('b_booth');
+            sel = {}; curCat = ''; locked = false; curFile = '';
+            currentCvContent = '';
+            window._lm = null; window._ls = null;
+            document.getElementById('s3').style.display = 'none';
+            document.getElementById('candArea').innerHTML = '';
+            document.getElementById('cvSec').style.display = 'none';
+            document.getElementById('resArea').innerHTML = '';
+            goStep(0);
+            document.querySelectorAll('.step').forEach(e => e.classList.remove('done'));
+            renderCats();
+            syncBadge();
+        }
+        function restoreLast() {
+            if (!curCat) return;
+            const m = window._lm, r = window._ls;
+            let ok = m && m.sel && Object.keys(m.sel).length === 4;
+            if (ok) { for (let k in m.sel) if (m.sel[k] !== sel[k]) { ok = false; break; } }
+            if (m && m.name && ok && m.category === curCat) {
+                curFile = m.file;
+                showCand(m);
+                loadCV(curCat, m.file);
+                if (r && r.result) showScores(r.result, r.jd || '');
+                goStep(3);
+            } else if (curCat && locked && Object.keys(sel).length === 3) goStep(2);
+            else if (curCat && locked) goStep(1);
+            window._lm = null; window._ls = null; saveState();
+        }
+
+        function syncBadge() {
+            const ok = curCat && cats[curCat];
+            const t = (cats[curCat]?.icon || '') + ' ' + (cats[curCat]?.label || '');
+            const b1 = document.getElementById('lk1'), b2 = document.getElementById('lk2');
+            if (ok) {
+                b1.innerHTML = '🔒 ' + t; b1.style.display = '';
+                b2.innerHTML = '🔒 ' + t; b2.style.display = '';
+            } else {
+                b1.style.display = 'none'; b2.style.display = 'none';
+            }
+        }
+
+        // ----- category -----
+        function renderCats() {
+            const g = document.getElementById('catGrid');
+            g.innerHTML = '';
+            for (let k in cats) {
+                const v = cats[k];
+                const d = document.createElement('div');
+                d.className = 'cat-card' + (curCat === k ? ' active' : '');
+                d.dataset.cat = k;
+                d.innerHTML = `<div class="ico">${v.icon || '📋'}</div><div class="nm">${v.label}</div><div class="desc">${v.description || ''}</div>`;
+                d.onclick = () => pickCat(k);
+                d.style.cursor = locked ? 'default' : 'pointer';
+                g.appendChild(d);
+            }
+            const btn = document.getElementById('catNext');
+            if (locked) { btn.disabled = true; btn.textContent = '🔒 已鎖定'; btn.style.background = '#059669'; }
+            else { btn.disabled = !curCat; btn.textContent = '確認選擇 →'; btn.style.background = ''; }
+        }
+        function pickCat(k) {
+            if (locked) return;
+            curCat = k;
+            document.querySelectorAll('.cat-card').forEach(c => c.classList.toggle('active', c.dataset.cat === k));
+            document.getElementById('catNext').disabled = false;
+            saveState();
+        }
+        async function confirmCat() {
+            if (!curCat || locked) return;
+            locked = true;
+            saveState();
+            renderCats();
+            syncBadge();
+            const def = await loadDef(curCat);
+            document.getElementById('jdIn').value = def || '';
+            goStep(1);
+        }
+        async function loadDef(cat) {
+            try {
+                const r = await fetch(API + '/api/booth/default-jd?category=' + encodeURIComponent(cat));
+                return (await r.json()).jd || '';
+            } catch { return ''; }
+        }
+        function useDef() {
+            if (!curCat) return;
+            fetch(API + '/api/booth/default-jd?category=' + encodeURIComponent(curCat))
+                .then(r => r.json()).then(d => { document.getElementById('jdIn').value = d.jd || ''; })
+                .catch(() => { });
+        }
+
+        // ----- steps -----
+        function goStep(n) {
+            document.querySelectorAll('.step-content').forEach((e, i) => {
+                const idx = [0, 1, 2, 3].indexOf(i);
+                e.style.display = idx === n ? 'block' : 'none';
+            });
+            document.querySelectorAll('.step').forEach(e => {
+                const s = parseInt(e.dataset.step);
+                e.classList.toggle('active', s === n);
+                e.classList.toggle('done', s < n);
+            });
+            if (n === 0) { renderCats(); syncBadge(); }
+            if (n === 2) { renderOpts(); syncBadge(); }
+        }
+
+        // ----- options -----
+        function renderOpts() {
+            const c = document.getElementById('catOpts');
+            if (!c) return;
+            c.innerHTML = '';
+            for (let k in mopts) {
+                const v = mopts[k];
+                const d = document.createElement('div');
+                d.className = 'sel-card';
+                d.innerHTML = `<div class="hdr">${v.label}</div><div class="opt-row">` +
+                    v.options.map(o => {
+                        const s = sel[k] === o.id ? ' sel' : '';
+                        return `<button class="opt-btn${s}" data-id="${o.id}" onclick="pick('${k}','${o.id}')">${o.icon} ${o.label}</button>`;
+                    }).join('') + `</div>`;
+                c.appendChild(d);
+            }
+            updUI();
+        }
+        function pick(k, v) {
+            if (sel[k] === v) delete sel[k];
+            else sel[k] = v;
+            saveState();
+            updUI();
+        }
+        function updUI() {
+            document.querySelectorAll('.opt-btn').forEach(b => {
+                const cat = b.closest('.sel-card')?.querySelector('.hdr')?.textContent?.trim() || '';
+                let key = null;
+                for (let k in mopts) if (mopts[k].label === cat) key = k;
+                if (key) b.classList.toggle('sel', sel[key] === b.dataset.id);
+            });
+            const n = Object.keys(sel).length;
+            document.getElementById('pbar').style.width = (n / 4 * 100) + '%';
+            document.getElementById('ptxt').textContent = n + ' / 4';
+            document.getElementById('matchBtn').disabled = n < 4;
+        }
+
+        // ----- match -----
+        async function goMatch() {
+            if (Object.keys(sel).length < 3) return;
+            loading('配對最佳候選人中...');
+            try {
+                let u = API + '/api/booth/match?category=' + encodeURIComponent(curCat) + '&';
+                if (sel.edu) u += 'edu=' + sel.edu + '&';
+                if (sel.exp) u += 'experience=' + sel.exp + '&';
+                if (sel.skill) u += 'skill=' + sel.skill + '&';
+                if (sel.avail) u += 'avail=' + sel.avail;
+                const d = await (await fetch(u)).json();
+                doneLoading();
+                curFile = d.candidate_file;
+                window._lm = {
+                    category: d.category,
+                    file: d.candidate_file,
+                    name: d.candidate_name,
+                    match_pct: d.match_pct,
+                    difficulty: d.difficulty,
+                    match_details: d.match_details,
+                    sel: JSON.parse(JSON.stringify(sel))
+                };
+                saveState();
+                document.getElementById('candArea').innerHTML = '';
+                document.getElementById('cvSec').style.display = 'none';
+                document.getElementById('resArea').innerHTML = '';
+                currentCvContent = '';
+
+                    showCand(d);
+                loadCV(curCat, d.candidate_file);
+                goStep(3);
+            } catch (e) { doneLoading(); alert('❌ ' + e.message); }
+        }
+
+        function showCand(d) {
+            const area = document.getElementById('candArea');
+            const cl = cats[d.category]?.label || d.category || '';
+            area.innerHTML = `<div class="card cand-wrap" style="text-align:center;padding:20px">
+            <div style="font-size:2.8rem;margin-bottom:6px">👤</div>
+            <div style="font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:4px">${d.candidate_name}</div>
+            <div style="font-size:.75rem;color:#6b6f8e;margin-bottom:2px">${cl}</div>
+            <span class="pill" style="display:inline-block;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:20px;background:${d.match_pct >= 75 ? 'rgba(5,150,105,0.1)' : d.match_pct >= 50 ? 'rgba(217,119,6,0.1)' : 'rgba(220,38,38,0.1)'};color:${d.match_pct >= 75 ? '#059669' : d.match_pct >= 50 ? '#d97706' : '#dc2626'}">配對率 ${d.match_pct}%</span>
+            <div style="margin-top:4px;color:#8b8fa8;font-size:.78rem">${'⭐'.repeat(d.difficulty || 1)}</div>
+        </div>`;
+            if (d.match_details && Object.keys(d.match_details).length) {
+                const m = { edu: '🎓 學歷', exp: '💼 經驗', skill: '🔧 技能' };
+                area.innerHTML += `<div class="match-detail">` +
+                    Object.keys(d.match_details).map(k => {
+                        const v = d.match_details[k];
+                        return `<div class="md-item">
+                        <span class="ml">${m[k] || k}</span>
+                        <span class="mv" style="color:${v.match ? '#059669' : '#dc2626'}">${v.match ? '✅ 符合' : '❌ 不符'}</span>
+                    </div>`;
+                    }).join('') + `</div>`;
+            }
+        }
+
+        
+        // ===== CV 載入 (唯讀) =====
+        async function loadCV(cat, file) {
+            document.getElementById("cvSec").style.display = "block";
+            document.getElementById("cvBox").textContent = "載入中...";
+            try {
+                const r = await fetch(API + "/api/booth/candidate?category=" + encodeURIComponent(cat) + "&file=" + encodeURIComponent(file));
+                const data = await r.json();
+                currentCvContent = data.content || "";
+                document.getElementById("cvBox").textContent = currentCvContent;
+            } catch (e) {
+                document.getElementById("cvBox").textContent = "❌ " + e.message;
+            }
+        }
+
+        // ===== AI Screening =====
+        async function runScreen() {
+            if (!curFile || !curCat) return;
+            const jd = document.getElementById('jdIn').value.trim();
+            if (!jd) { alert('請先輸入職缺描述'); goStep(1); return; }
+
+            loading('AI 正在分析履歷，請稍候...');
+            const t = Date.now();
+            try {
+                // Use current CV content (modified or original)
+
+                const response = await fetch(API + '/api/booth/screen', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        category: curCat,
+                        candidate_file: curFile,
+                        jd: jd,
+                    })
+                });
+                const d = await response.json();
+                const left = 4000 - (Date.now() - t);
+                if (left > 0) await new Promise(r => setTimeout(r, left));
+                doneLoading();
+                window._ls = { result: d, jd: jd };
+                saveState();
+                document.getElementById('resArea').innerHTML = '';
+                showScores(d, jd);
+            } catch (e) {
+                doneLoading();
+                alert('❌ ' + e.message);
+            }
+        }
+
+        function norm(v) { v = v || 0; return v > 1 ? Math.round(v) : Math.round(v * 100); }
+        function showScores(d, jd) {
+            const all = [];
+            (d.screening_results || []).forEach(b => (b.results || []).forEach(r => all.push(r)));
+            const area = document.getElementById('resArea');
+            if (!all.length && !d.overall_score) {
+                area.innerHTML = '<div class="card"><p style="color:#6b6f8e;text-align:center">暫無結果</p></div>';
+                return;
+            }
+            const c = all.length ? all[0] : d;
+            const s = norm(c.overall_score);
+            const t = s >= 80 ? 'pg' : s >= 60 ? 'pt' : s >= 40 ? 'pa' : 'pr';
+            const st = { pg: 'Highly Suitable', pt: 'Partially Suitable', pa: 'Borderline', pr: 'Not Suitable' };
+            const fb = c._fallback || d._fallback;
+            const cach = d._cached;
+            const modified = '';
+            const cvSource = d.cv_source || 'original_file';
+            const sourceLabel = cvSource === 'modified_text' ? '修改後內容' : '原始檔案';
+
+            let h = `<div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px">
+                <div>
+                    <div style="font-weight:700;font-size:1rem">${c.candidate_name || curFile || ''}${modified}</div>
+                    <div style="font-size:.76rem;color:#6b6f8e;margin-top:2px">📄 ${jd.substring(0, 70)}${jd.length > 70 ? '...' : ''}</div>
+                    <div style="font-size:.7rem;color:#6b6f8e;margin-top:4px">📝 使用: ${sourceLabel}</div>
+                </div>
+                <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:#4f46e5;line-height:1;text-align:right">
+                    ${s}<small style="font-size:.85rem;font-weight:400">/100</small><br>
+                    <span style="display:inline-block;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:20px;background:${s >= 80 ? 'rgba(5,150,105,0.1)' : s >= 60 ? 'rgba(8,145,178,0.1)' : s >= 40 ? 'rgba(217,119,6,0.1)' : 'rgba(220,38,38,0.1)'};color:${s >= 80 ? '#059669' : s >= 60 ? '#0891b2' : s >= 40 ? '#d97706' : '#dc2626'}">${st[t] || '—'}</span>
+                </div>
+            </div>`;
+            if (fb) h += `<div style="background:rgba(217,119,6,0.08);color:#d97706;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:20px;display:inline-block;margin-top:4px">⚠️ AI 暫不可用 — 預設評分</div>`;
+            else if (cach) h += `<div style="background:rgba(8,145,178,0.08);color:#0891b2;font-size:.65rem;font-weight:600;padding:2px 10px;border-radius:20px;display:inline-block;margin-top:4px;border-color:#0891b2">⚡ 快取結果 (AI 模擬延遲 5s)</div>`;
+            if (c.summary) h += `<div class="strip">${c.summary}</div>`;
+            const dims = ['core_competency_match', 'experience_match', 'education_match', 'culture_fit_score', 'development_potential', 'intelligence_score'];
+            const lbs = ['Core Competency', 'Experience', 'Education', 'Culture Fit', 'Development', 'Intelligence'];
+            h += `<div class="scores">` +
+                lbs.map((l, i) => {
+                    const v = norm(c[dims[i]]);
+                    return `<div class="sc-item">
+                    <div class="lb">${l}</div>
+                    <div class="sbar">
+                        <div class="sbg"><div class="sfl" style="width:${v}%"></div></div>
+                        <div class="snum">${v}</div>
+                    </div>
+                </div>`;
+                }).join('') + `</div>`;
+            const eightDims = ['professional_skills', 'communication', 'teamwork', 'problem_solving', 'learning_ability', 'execution', 'cultural_fit', 'leadership'];
+            const eightLbs = ['Professional Skills', 'Communication', 'Teamwork', 'Problem Solving', 'Learning Ability', 'Execution', 'Cultural Fit', 'Leadership'];
+            if (c.eight_dim_scores) {
+                h += `<div class="scores" style="margin-top:8px;padding-top:8px;border-top:1px dashed rgba(79,70,229,0.08)">
+                <div style="font-size:.72rem;font-weight:600;color:#4f46e5;margin-bottom:4px">📊 8-Dimension Competency Score</div>` +
+                    eightDims.map((k, i) => {
+                        const v = norm(c.eight_dim_scores[k]);
+                        return `<div class="sc-item">
+                        <div class="lb">${eightLbs[i]}</div>
+                        <div class="sbar">
+                            <div class="sbg"><div class="sfl" style="width:${v}%"></div></div>
+                            <div class="snum">${v}</div>
+                        </div>
+                    </div>`;
+                    }).join('') + `</div>`;
+            }
+            const a = c.analysis || {};
+            h += `<div class="ablocks">
+            <div class="ablock"><h4>✅ Strengths</h4><ul>${(a.strengths || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ul></div>
+            <div class="ablock"><h4>⚠️ Weaknesses</h4><ul>${(a.weaknesses || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ul></div>
+            <div class="ablock"><h4>🏢 Culture</h4><ul>${(a.culture_alignment || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ul></div>
+            <div class="ablock"><h4>🚀 Dev</h4><ul>${(a.development_potential_and_suggestions || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ul></div>
+            <div class="ablock"><h4>🚩 Risks</h4><ul>${(a.risks || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ul></div>
+            <div class="ablock"><h4>🎯 Interview</h4><ol>${(a.interview_questions || []).map(s => '<li>' + s + '</li>').join('') || '<li>—</li>'}</ol></div>
+        </div></div>`;
+            area.innerHTML = h;
+            if (s >= 80 && !fb) confetti();
+        }
+
+        // ----- misc -----
+        async function loadOpts() {
+            try {
+                const r = await fetch(API + '/api/booth/options');
+                return await r.json();
+            } catch {
+                const g = document.getElementById('catGrid');
+                if (g) {
+                    const ed = document.createElement('div');
+                    ed.className = 'err';
+                    ed.innerHTML = '⚠️ 無法連接到伺服器<div style="color:#6b6f8e;font-size:.72rem;margin-top:4px">請確認伺服器已啟動並重新整理頁面</div>';
+                    g.parentNode.insertBefore(ed, g.nextSibling);
+                }
+                return null;
+            }
+        }
+        function loading(t) { document.getElementById('loading').style.display = 'block'; document.getElementById('ltxt').textContent = t || '載入中...'; }
+        function doneLoading() { document.getElementById('loading').style.display = 'none'; }
+
+        // ----- confetti -----
+        function confetti() {
+            const clr = ['#ef4444', '#f59e0b', '#22c55e', '#3b82f6', '#8b5cf6', '#ec4899'];
+            for (let i = 0; i < 40; i++) {
+                const e = document.createElement('div');
+                e.className = 'cf';
+                e.style.left = Math.random() * 100 + 'vw';
+                e.style.background = clr[i % clr.length];
+                e.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(e);
+                setTimeout(() => e.remove(), 4500);
+            }
+        }
+
+        // ----- image mode -----
+        let mode = 'dashboard', _quickSel = {};
+        function setMode(m) {
+            mode = m;
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+            document.getElementById('imageModeCard').style.display = m === 'image' ? 'block' : 'none';
+            if (m === 'image') {
+                document.querySelectorAll('.step-content').forEach(e => e.style.display = 'none');
+                document.getElementById('s0').style.display = 'block';
+                document.querySelectorAll('.step').forEach(e => e.classList.remove('active', 'done'));
+                renderQuickOpts();
+            } else { goStep(0); }
+        }
+
+        const _qOpts = {
+            category: { label: '📋 職位類別', options: [{ id: 'engineer', label: '⚙️ 工程師' }, { id: 'management', label: '📊 管理職' }, { id: 'sales', label: '🤝 業務' }] },
+            edu: { label: '🎓 學歷', options: [{ id: 'phd', label: '🎓 博士學位' }, { id: 'master', label: '📚 碩士學位' }, { id: 'bachelor', label: '📖 學士學位' }, { id: 'highschool', label: '📝 中學畢業' }] },
+            exp: { label: '💼 工作經驗', options: [{ id: '7plus', label: '🌟 7 年以上' }, { id: '3to5', label: '⭐ 3-5 年' }, { id: '1to3', label: '🌱 1-3 年' }, { id: 'under1', label: '🆕 1 年以下' }] },
+            skill: { label: '🔧 專業技能', options: [{ id: 'high', label: '🏆 高' }, { id: 'low', label: '📘 低' }] },
+        avail: { label: '📅 預計入職時間', options: [{ id: '6months', label: '🕐 半年' }, { id: '1week', label: '⏳ 一周內' }, { id: 'tomorrow', label: '💨 明天早上就上班' }] },
+    };
+
+        function renderQuickOpts() {
+            const c = document.getElementById('quickOpts');
+            if (!c) return;
+            c.innerHTML = '';
+            for (let k in _qOpts) {
+                const v = _qOpts[k];
+                const d = document.createElement('div');
+                d.className = 'sel-card';
+                d.innerHTML = `<div class="hdr">${v.label}</div><div class="opt-row">` +
+                    v.options.map(o => {
+                        const s = _quickSel[k] === o.id ? ' sel' : '';
+                        return `<button class="opt-btn${s}" data-id="${o.id}" onclick="qpick('${k}','${o.id}')">${o.label}</button>`;
+                    }).join('') + `</div>`;
+                c.appendChild(d);
+            }
+            qUpdUI();
+        }
+
+        function qpick(k, v) {
+            _quickSel[k] = (_quickSel[k] === v) ? undefined : v;
+            qUpdUI();
+        }
+
+        function qUpdUI() {
+            const qs = document.getElementById('quickOpts');
+            if (qs) qs.querySelectorAll('.opt-btn').forEach(b => {
+                const hdr = b.parentElement.parentElement.querySelector('.hdr');
+                if (!hdr) return;
+                const txt = hdr.textContent;
+                for (let k in _qOpts) {
+                    if (_qOpts[k].label === txt) {
+                        b.classList.toggle('sel', _quickSel[k] === b.dataset.id);
+                        break;
+                    }
+                }
+            });
+            const n = Object.keys(_quickSel).filter(k => _quickSel[k]).length;
+            document.getElementById('qpbar') && (document.getElementById('qpbar').style.width = (n / 4 * 100) + '%');
+            document.getElementById('qptxt') && (document.getElementById('qptxt').textContent = n + ' / 4');
+            document.getElementById('quickMatchBtn').disabled = n < 4;
+        }
+
+        function quickMatch() {
+            if (Object.keys(_quickSel).filter(k => _quickSel[k]).length < 4) return;
+            const cat = _quickSel.category;
+            if (!cats[cat] && FCATS[cat]) cats = FCATS;
+            if (!cats[cat]) { alert('未知類別'); return; }
+            curCat = cat;
+            locked = true;
+            sel.edu = _quickSel.edu;
+            sel.exp = _quickSel.exp;
+            sel.skill = _quickSel.skill;
+        sel.avail = _quickSel.avail;
+            renderCats();
+            syncBadge();
+            fetch(API + '/api/booth/default-jd?category=' + encodeURIComponent(curCat))
+                .then(r => r.json()).then(d => { document.getElementById('jdIn').value = d.jd || ''; })
+                .catch(() => { });
+            saveState();
+            updUI();
+            goStep(2);
+            setTimeout(() => goMatch(), 600);
+        }
+
+        window._lm = null; window._ls = null;
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+

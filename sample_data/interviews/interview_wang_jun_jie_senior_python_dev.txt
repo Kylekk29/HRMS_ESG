@@ -1,0 +1,39 @@
+=== INTERVIEW TRANSCRIPT ===
+Position: Senior Python Developer
+Candidate: Wang Jun-Jie (王俊傑)
+Date: 2026-06-20
+Interviewers: Hiring Manager (HM), Tech Lead (TL)
+
+--- SESSION START ---
+
+HM: Good morning, Jun-Jie. Thank you for joining us today. Could you start by walking us through your most recent role and your technical background?
+
+CANDIDATE: Good morning, thank you for having me. In my current role at CloudWave Technologies, I work as a Staff Engineer leading the backend platform team. Over the past 7 years, I've specialized in building high-throughput distributed systems using Python, Go, and Kotlin. My most recent project involved redesigning our real-time analytics pipeline to handle 100,000 events per second using Apache Kafka and Flink, with Redis as a caching layer and PostgreSQL for persistent storage. I take a lot of pride in writing clean, maintainable code and mentoring junior engineers.
+
+TL: That's impressive. Could you elaborate on a particularly challenging technical problem you solved?
+
+CANDIDATE: Certainly. We had a critical issue where our recommendation engine was suffering from cold-start problems for new users. The existing collaborative filtering approach required historical data. I proposed and implemented a hybrid solution: we used content-based filtering with user embeddings generated from their initial onboarding data, combined with a lightweight neural network that could make predictions with minimal data points. This improved our new-user recommendation accuracy by 65%. The system was implemented in Python using PyTorch and deployed as a microservice with FastAPI.
+
+TL: How did you handle the deployment and monitoring of this new system?
+
+CANDIDATE: We containerized the service with Docker and deployed on Kubernetes. I set up Prometheus metrics and Grafana dashboards for monitoring latency, throughput, and prediction quality. We implemented canary deployments to gradually roll out the new model. I also wrote comprehensive integration tests and set up CI/CD pipelines using GitHub Actions. The key was making sure we had proper rollback procedures in place.
+
+HM: How do you approach mentoring and team collaboration?
+
+CANDIDATE: I strongly believe in knowledge sharing. I organize weekly tech talks where team members present on topics they're passionate about. I also practice pair programming with junior developers, particularly when working on complex features. I find that explaining concepts to others deepens my own understanding. Last quarter, I mentored two junior engineers who successfully took ownership of major features.
+
+HM: Where do you see your career heading in the next few years?
+
+CANDIDATE: I want to grow into a Principal Engineer role where I can influence technical strategy across the organization. I'm particularly interested in platform engineering and developer experience — building the tools and infrastructure that make other engineers more productive. I've been studying infrastructure-as-code patterns and contributing to internal developer platform initiatives.
+
+TL: Final technical question: design a rate-limiting service for a public API.
+
+CANDIDATE: I'd use a sliding window log approach with Redis sorted sets. Each API key gets a sorted set where the score is the timestamp. For every request, we remove entries outside the window and count remaining entries. If the count exceeds the limit, we reject. For distributed consistency, I'd use Redis Cluster with read-from-replicas for the count check. The rate limit configuration would be stored in a config service and cached locally. For the API, I'd return standard Retry-After headers and X-RateLimit-* headers. The service itself would be stateless and horizontally scalable.
+
+HM: Any questions for us?
+
+CANDIDATE: Yes, I'd like to understand how the engineering team approaches technical debt. What's the balance between shipping features and maintaining code quality? Also, how does the company support continued learning and conference attendance?
+
+HM: Great questions. We allocate 20% of each sprint to refactoring and have bi-annual hackathons...
+
+--- SESSION END ---

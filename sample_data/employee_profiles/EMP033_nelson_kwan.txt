@@ -1,0 +1,38 @@
+Employee: Nelson Kwan
+ID: EMP033
+Department: Engineering
+Position: Software Engineer
+Email: nelson.kwan@company.com
+Phone: +852-9123-4033
+Hire Date: 2021-09-01
+Status: Terminated
+Salary: HKD$58000/month
+KPI Average: 55/100
+Notes: Terminated due to performance and attendance issues in March 2025
+
+--- Recent KPI ---
+  2025-Q1: 55/100 (Below Expectations) — Chronic underperformance, attendance issues
+
+--- CV ---
+CV: Nelson Kwan
+Email: nelson.kwan@company.com | Phone: +852-9123-4033
+Location: Hong Kong
+Status: Former employee
+
+PROFESSIONAL SUMMARY
+Software Engineer with 6+ years in engineering. KPI average: 55.0/100.
+
+EXPERIENCE
+Software Engineer | AI-HR Bridge Tech | 2021-09-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 55/100 (Below Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- UBC
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

@@ -1,0 +1,44 @@
+Employee: Emily Zhang
+ID: EMP004
+Department: Engineering
+Position: Frontend Developer
+Email: emily.zhang@company.com
+Phone: +852-9123-4004
+Hire Date: 2023-06-01
+Status: Active
+Salary: HKD$45000/month
+KPI Average: 81/100
+Notes: High potential junior developer
+
+--- Recent KPI ---
+  2025-Q1: 82/100 (Exceeds Expectations) — Quick learner, delivered UI overhaul successfully
+  2025-Q2: 80/100 (Meets Expectations) — Good progress on React component library
+  2025-Q3: 78/100 (Meets Expectations) — On track, completed assigned features
+  2025-Q4: 85/100 (Exceeds Expectations) — Improved accessibility compliance to WCAG 2.1 AA
+
+--- CV ---
+CV: Emily Zhang
+Email: emily.zhang@company.com | Phone: +852-9123-4004
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Frontend Developer with 5+ years in engineering. KPI average: 81.2/100.
+
+EXPERIENCE
+Frontend Developer | AI-HR Bridge Tech | 2023-06-01 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 82/100 (Exceeds Expectations)
+  - 2025-Q2: Score 80/100 (Meets Expectations)
+  - 2025-Q3: Score 78/100 (Meets Expectations)
+  - 2025-Q4: Score 85/100 (Exceeds Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

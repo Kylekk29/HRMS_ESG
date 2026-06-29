@@ -1,0 +1,44 @@
+Employee: James Chen
+ID: EMP001
+Department: Engineering
+Position: Senior Software Engineer
+Email: james.chen@company.com
+Phone: +852-9123-4001
+Hire Date: 2020-03-15
+Status: Active
+Salary: HKD$85000/month
+KPI Average: 89/100
+Notes: Top performer, potential tech lead candidate
+
+--- Recent KPI ---
+  2025-Q1: 92/100 (Outstanding) — Delivered critical platform migration ahead of schedule
+  2025-Q2: 88/100 (Exceeds Expectations) — Led 3 major feature releases with zero defects
+  2025-Q3: 90/100 (Outstanding) — Mentored 2 junior developers, improved team velocity by 20%
+  2025-Q4: 85/100 (Exceeds Expectations) — Architected microservices redesign, reduced latency by 40%
+
+--- CV ---
+CV: James Chen
+Email: james.chen@company.com | Phone: +852-9123-4001
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Senior Software Engineer with 8+ years in engineering. KPI average: 88.8/100.
+
+EXPERIENCE
+Senior Software Engineer | AI-HR Bridge Tech | 2020-03-15 - Present
+Based in Hong Kong, engineering department.
+  - 2025-Q1: Score 92/100 (Outstanding)
+  - 2025-Q2: Score 88/100 (Exceeds Expectations)
+  - 2025-Q3: Score 90/100 (Outstanding)
+  - 2025-Q4: Score 85/100 (Exceeds Expectations)
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, Go, TypeScript
+Tools: Docker, K8s, AWS, PostgreSQL
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

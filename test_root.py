@@ -1,0 +1,12 @@
+import requests
+r = requests.get("http://localhost:8000/")
+print(f"Status: {r.status_code}")
+print(f"Content-Length header: {r.headers.get('content-length', 'not set')}")
+print(f"Response length: {len(r.text)} bytes")
+print(f"Has addEmpBtn: {'addEmpBtn' in r.text}")
+print(f"Has openCreateModal: {'openCreateModal' in r.text}")
+print(f"Has </script>: {'</script>' in r.text}")
+print(f"Has window.onload: {'window.onload' in r.text}")
+print(f"Has showSection: {'showSection' in r.text}")
+print(f"First 200 chars: {r.text[:200]}")
+print(f"Last 200 chars: {r.text[-200:]}")

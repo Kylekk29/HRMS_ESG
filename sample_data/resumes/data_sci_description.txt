@@ -1,0 +1,29 @@
+Data Scientist
+
+Job Description:
+We are looking for a talented Data Scientist to join our analytics team. You will work on developing machine learning models, analyzing large datasets, and driving data-informed product decisions.
+
+Required Qualifications:
+• 3+ years of experience in data science or related field
+• Proficiency in Python and data science libraries (pandas, numpy, scikit-learn)
+• Experience with deep learning frameworks (PyTorch or TensorFlow)
+• Strong SQL skills and experience with large-scale data processing
+• Experience with data visualization tools (Matplotlib, Plotly, Tableau)
+• Solid understanding of statistics and experimental design
+• Bachelor's degree in Computer Science, Statistics, Mathematics, or related field
+
+Preferred Qualifications:
+• Master's or PhD in a quantitative field
+• Experience with NLP or computer vision
+• Experience with MLOps and model deployment
+• Knowledge of big data technologies (Spark, Dask)
+• Experience with A/B testing and causal inference
+• Published research or contributions to open-source ML projects
+
+Responsibilities:
+• Develop and deploy machine learning models to production
+• Analyze large datasets to identify trends and patterns
+• Design and analyze A/B experiments
+• Collaborate with product and engineering teams
+• Present findings and recommendations to stakeholders
+• Stay current with ML research and best practices

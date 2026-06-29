@@ -1,0 +1,42 @@
+Employee: Patrick Ma
+ID: EMP013
+Department: Finance
+Position: CFO
+Email: patrick.ma@company.com
+Phone: +852-9123-4013
+Hire Date: 2016-03-01
+Status: Active
+Salary: HKD$180000/month
+KPI Average: 93/100
+Notes: Key executive, instrumental in financial growth
+
+--- Recent KPI ---
+  2025-Q1: 95/100 (Outstanding) — Cost reduction initiative saved $1.2M annually
+  2025-Q2: 93/100 (Outstanding) — Secured $5M Series B funding
+  2025-Q3: 91/100 (Outstanding) — Implemented financial controls, audit passed clean
+  2025-Q4: 94/100 (Outstanding) — Exceeded revenue targets, EBITDA up 20%
+
+--- CV ---
+CV: Patrick Ma
+Email: patrick.ma@company.com | Phone: +852-9123-4013
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+CFO with 12+ years in finance. KPI average: 93.2/100.
+
+EXPERIENCE
+CFO | AI-HR Bridge Tech | 2016-03-01 - Present
+Based in Hong Kong, finance department.
+  - 2025-Q1: Score 95/100 (Outstanding)
+  - 2025-Q2: Score 93/100 (Outstanding)
+  - 2025-Q3: Score 91/100 (Outstanding)
+  - 2025-Q4: Score 94/100 (Outstanding)
+
+Tools: Netsuite, Tableau, Advanced Excel, SAP
+
+EDUCATION
+Relevant degree -- HKUST
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)

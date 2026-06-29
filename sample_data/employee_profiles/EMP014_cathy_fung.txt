@@ -1,0 +1,42 @@
+Employee: Cathy Fung
+ID: EMP014
+Department: Finance
+Position: Financial Analyst
+Email: cathy.fung@company.com
+Phone: +852-9123-4014
+Hire Date: 2021-11-01
+Status: Active
+Salary: HKD$48000/month
+KPI Average: 81/100
+Notes: Dependable analyst, growing into senior role
+
+--- Recent KPI ---
+  2025-Q1: 85/100 (Exceeds Expectations) — Monthly reporting accuracy improved, zero errors
+  2025-Q2: 82/100 (Exceeds Expectations) — Built automated dashboard for executive reporting
+  2025-Q3: 80/100 (Meets Expectations) — Consistent financial analysis and forecasting
+  2025-Q4: 78/100 (Meets Expectations) — Year-end closing completed on schedule
+
+--- CV ---
+CV: Cathy Fung
+Email: cathy.fung@company.com | Phone: +852-9123-4014
+Location: Hong Kong
+Status: Currently employed
+
+PROFESSIONAL SUMMARY
+Financial Analyst with 6+ years in finance. KPI average: 81.2/100.
+
+EXPERIENCE
+Financial Analyst | AI-HR Bridge Tech | 2021-11-01 - Present
+Based in Hong Kong, finance department.
+  - 2025-Q1: Score 85/100 (Exceeds Expectations)
+  - 2025-Q2: Score 82/100 (Exceeds Expectations)
+  - 2025-Q3: Score 80/100 (Meets Expectations)
+  - 2025-Q4: Score 78/100 (Meets Expectations)
+
+Tools: Netsuite, Tableau, Advanced Excel, SAP
+
+EDUCATION
+Relevant degree -- CityU
+
+LANGUAGES
+English (Professional), Cantonese (Native), Mandarin (Conversational)
